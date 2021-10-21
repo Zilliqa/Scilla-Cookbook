@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocu_scilla=self.webpackChunkdocu_scilla||[]).push([[3525],{1134:function(c){c.exports=JSON.parse('{"name":"User","permalink":"/tags/user","docs":[{"id":"recipes/scilla-contract/polymorphic-adt","title":"Polymorphic Types (ADTs)","description":"`ocaml","permalink":"/recipes/scilla-contract/polymorphic-adt"}],"allTagsPath":"/tags"}')}}]);

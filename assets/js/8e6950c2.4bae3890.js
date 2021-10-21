@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocu_scilla=self.webpackChunkdocu_scilla||[]).push([[6662],{8895:function(c){c.exports=JSON.parse('{"name":"uint","permalink":"/tags/uint","docs":[{"id":"recipes/scilla-contract/uint","title":"U/int","description":"`ocaml","permalink":"/recipes/scilla-contract/uint"}],"allTagsPath":"/tags"}')}}]);

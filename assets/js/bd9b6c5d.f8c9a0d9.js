@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocu_scilla=self.webpackChunkdocu_scilla||[]).push([[7471],{3238:function(e){e.exports=JSON.parse('{"name":"State","permalink":"/tags/state","docs":[{"id":"recipes/scilla-contract/remoteread","title":"Remote State Reads","description":"`ocaml","permalink":"/recipes/scilla-contract/remoteread"}],"allTagsPath":"/tags"}')}}]);
