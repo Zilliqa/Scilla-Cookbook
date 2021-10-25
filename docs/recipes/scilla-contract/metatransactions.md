@@ -20,7 +20,7 @@ It’s equivalent to adding a checkbook to your bank account (contract). Through
 
 Metatransactions provide an alternative flow for users just getting started with their cryptocurrency and wallets. It allows for gasless transactions, cutting out the barrier of getting ZIL from an exchange or via mining before a Dapp user can interact with the smart contract.
 
-It can also be seen as a way to defer the processing of transactions or even to guard a transition that requires multiparty authorization, although those applications are left to implementations and future standards. 
+It can also be seen as a way to defer the processing of transactions or even to guard a transition that requires multiparty authorization, although those applications are left to implementations and future standards.
 
 [The ZRC-3 contract](https://github.com/Zilliqa/ZRC/blob/master/reference/MetaFungibleToken.scilla) adds a metatransfer transition to the existing ZRC-2 interface.
 

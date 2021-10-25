@@ -43,7 +43,7 @@ end
 
 ### blk_leq
 
-blk_leq is a constant function that takes two blocks. It defines two boolean variables ```bc1``` and ```bc2```.
+blk_leq is a library function that takes two blocks. It defines two boolean variables ```bc1``` and ```bc2```.
 
 If the first block is less than the second variable ```bc1``` is set to true.
 

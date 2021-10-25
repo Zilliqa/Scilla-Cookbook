@@ -18,6 +18,7 @@ All the addresses that can authorise an activity might not be reachable at the t
 [ZRC-4](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-4.md) defines the technical specification document that defines the mutisignature implementation.
 
 ## How does it work?
+
 This contract holds funds that can be paid out to arbitrary users, provided that enough people in the collection of owners sign off on the payout.
 
 The transaction must be added to the contract before signatures can be collected. Once enough signatures are collected,the recipient can ask for the transaction to be executed and the money paid out.
@@ -30,7 +31,7 @@ This wallet does not allow adding or removing owners, or changing the number of 
 
 ## What could go wrong?
 
-:::warning 
+:::warning
 If a sufficient number of owners lose their private keys, or for any other reason are unable or unwilling to sign for new transactions, the funds in the wallet will be locked forever. It is therefore a good idea to set required_signatures to a value strictly less than the number of owners, so that the remaining owners can retrieve the funds should such a scenario occur.
 
 If an owner loses his private key, the remaining owners should move the funds to a new wallet (using the workflow baked into the readme of the contract) to ensure that funds are not locked if another owner loses his private key. The owner who originally lost his private key can generate a new key, and the corresponding address be added to the new wallet, so that the same set of persons own the new wallet.
@@ -85,10 +86,9 @@ ZRC-4 has a reference [interaction](https://github.com/Zilliqa/ZRC/tree/4e92efd3
 
 - Create three wallets (say A, B, C) using the [dev wallet generator](https://dev-wallet.zilliqa.com/generate), store the corresponding keystore files on your machine and note the BECH32(zil...) addresses. (you can import keystores into zilpay at a later convience)
 
-- Request testnet ZILs for these addresses via the faucet: https://dev-wallet.zilliqa.com/faucet.
+- Request testnet ZILs for these addresses [via the faucet](https://dev-wallet.zilliqa.com/faucet).
 
 ### Deployment via UI
-
 
 - Login to the multisig wallet portal using the keystore for address A. Deploy a multisig wallet in a 2 out of 3 mode (i.e., funds from the multisig wallet can be transferred only when 2 out of 3 wallets have signed off).
 

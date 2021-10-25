@@ -4,16 +4,15 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
-/** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Scilla Cookbook',
   tagline: 'For the scilla development community, by the scilla development community',
   url: 'https://scilla-by-example.org',
-  baseUrl: '/',
+  baseUrl: '/Scilla-by-Example/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/site/favicon.ico',
-  organizationName: 'Zilliqa', // Usually your GitHub org/user name.
+  organizationName: 'Elliott-Green', // Usually your GitHub org/user name.
   projectName: 'Scilla-by-Example', // Usually your repo name.
   presets: [
     [
@@ -34,7 +33,6 @@ const config = {
   ],
 
   themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
         title: 'Community Scilla Cookbook',

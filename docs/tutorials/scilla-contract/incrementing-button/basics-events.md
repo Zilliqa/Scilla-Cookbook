@@ -63,5 +63,4 @@ procedure SetNewClicker(new_clicker: ByStr20)
   event e
 end
 ...
-
 ```

@@ -12,8 +12,6 @@ tags:
 
 ## What is a Cookbook
 
-Like an ordinary cookbook, you are not looking for a recipe that can be made from a certain ingredient or using a certain utensil, but you are looking to perform a specific task.
-
 A programmers cookbook contains snippets of code to explain a concept to the reader. In our case, this is a Scilla and Scilla interactivity cookbook. The reader will find Scilla, Javascript and other snippets with a high level description.
 
 The Community Scilla Cookbook (CSC) is maintained by the community and is a reference for various scilla related documents, contracts, howto's, tips and tricks. If you have found this documentation useful, consider contributing your knowledge.
@@ -84,7 +82,7 @@ recipes
 
 If you find yourself wanting to contribute scilla specific snippets about a specific contract type or a specific chain interaction, it belongs in a recipe page.
 
-Recipe pages should contain all the relevent infomation without duplicating text from elsewhere in the CSC. Pages should be as atomic and singular as possible. Adding more infomation to the parent page is always encoraged. Recipe pages should try and write as structured as possible leaving no ambiguity to the reader, be concise and succicent.
+Recipe pages should contain all the relevent infomation without duplicating text from elsewhere in the CSC. Pages should be as atomic and singular as possible. Adding more infomation to the parent page is always encoraged. Write as structured as possible leaving no ambiguity to the reader. Reference standard recipe pages when possible.
 
 ### Side-dishes
 
@@ -147,4 +145,4 @@ tutorials
 
 #### What infomation should tutorial pages have?
 
-Tutorial pages should be informative with details around the topic being discussed, write with enough infomation to convey the point without duplication across topics, write as structured as possible leaving no ambiguity to the reader. Reference standard recipe pages when you can.
+Tutorial pages should be informative with details around the topic being discussed, write as structured as possible leaving no ambiguity to the reader. Reference standard recipe pages when possible.

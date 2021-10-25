@@ -57,7 +57,7 @@ end
 ```IsContractOwner``` will check the calling address against what was deployed out with the contract. If these addresses are not equal then it will raise an error.
 ```_sender```  is a builtin variable which captures the calling addresses value. It's more secure to use ```_sender``` than passing an address that can be defined with a transition call.
 
-```IsContractOwner``` uses ```builtin eq``` to compare ```contract_owner``` to ```_sender``` and returns the bool value to ```is_contract_owner```. 
+```IsContractOwner``` uses ```builtin eq``` to compare ```contract_owner``` to ```_sender``` and returns the bool value to ```is_contract_owner```.
 
 Using pattern matching, we can write a basic function with the pattern ```match type_variable with | type =>```. We can now branch depending if that is true or false.
 
@@ -91,7 +91,7 @@ We read the value of our mutable counter with the similar syntax as above, using
 :::caution
 Take note how the last statement line of the statement is not terminated with a semi-colon.
 
-If this line ended with a semi-colon, the contract would fail to compile with the error ```What follows the statement was unexpected, for example possibly a statement or termination is expected. ```
+If this line ended with a semi-colon, the contract would fail to compile with the error ```What follows the statement was unexpected, for example possibly a statement or termination is expected.```
 :::
 
 ```ocaml
@@ -160,7 +160,7 @@ end
 
 In this section we have defined internal procedure logic to interact with our state parameters. Since procedures only allow for procedures and transitions to call them and we have none, this contract does not allow for the button to be pressed - though we have the parts to create the button.
 
-In the next section we will write some addtional logic to handle the two errors we've identified we want to throw. 
+In the next section we will write some addtional logic to handle the two errors we've identified we want to throw.
 
 ```ocaml
 scilla_version 0

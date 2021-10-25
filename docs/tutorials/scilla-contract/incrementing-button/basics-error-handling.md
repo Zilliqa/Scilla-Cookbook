@@ -6,9 +6,9 @@ sidebar_position: 5
 
 In the below example we implement the ability to raise basic errors and stop execution.
 
-Firstly, a Composite Type (ADT) Type  ``` Error``` is defined with the constructor values we want to raise as errors.
+Firstly, a Composite Type (ADT) Type ```Error``` is defined with the constructor values we want to raise as errors.
 
-Secondly, a library function called ```make_error``` is defined. The function takes a variable called result of type ```Error``` and matches that to an error code. This is wrapped in a JSON object storing both the error name and error code. 
+Secondly, a library function called ```make_error``` is defined. The function takes a variable called result of type ```Error``` and matches that to an error code. This is wrapped in a JSON object storing both the error name and error code.
 
 Lastly, we define a procedure ```ThrowError``` which takes an instance of a variable with type ```Error```. It then calls the library function and returns the error. The keyword ```throw``` stops the execution of the smart contract with the specific error passed.
 
@@ -95,7 +95,4 @@ end
 
 ```
 
-
-
 In the next section, we will create logic that users can interact with to press the button, we will be concerend with the functionality and security of our button, combining the atomic logical blocks we have built with procedures.
-

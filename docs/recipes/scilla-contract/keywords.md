@@ -33,13 +33,13 @@ QA is used when speaking about small values. Default scilla unit that can be rep
 
 ```LI```
 
-1 unit of LI is worth 1000000 QA and 0.000001 ZIL. 
+1 unit of LI is worth 1000000 QA and 0.000001 ZIL.
 
 LI is rarely used as a unit.
 
 ```ZIL```
 
-1 unit of ZIL is worth 1000000 LI and 1000000000000 QA. 
+1 unit of ZIL is worth 1000000 LI and 1000000000000 QA.
 
 ZIL is used when speaking about large values.
 
@@ -81,7 +81,7 @@ However, there is currently no naming convention for transitions that can accept
 
 By having a naming convention for transitions that can accept ZIL, one can easily transfer ZIL to a contract that follows this convention, thereby improving composability between mutiple contracts.
 
-```
+```ocaml
 (* Accepts funds *)
 transition AddFunds ()
   accept

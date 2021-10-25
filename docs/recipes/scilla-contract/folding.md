@@ -6,7 +6,7 @@ tags:
 
 ---
 
-# Folding (Recursion)
+# Folding
 
 Recursion in Scilla is presented by means of "folds" or structural traversals. To see how they are expressed, let us take a look at some Scilla.
 
@@ -72,4 +72,104 @@ let fib = fun (n : Nat) =>
   match res with | Pair x y => x end
 ```
 
+## Recursion example
+
+```ocaml
+(* Two examples how to implement recursive function calls using
+   nat_fold and the builtin ADT Nat
+   1) Adapted version of an example by Amrit that uses
+    recursion to build a list [m, m+1, ..., n-2, n-1] where
+    m and n are parameters
+   2) Compute the factorial of a parameter n:
+    n! = 0 if n=0,
+    n! = n * (n-1) * ... * 1 if n>0                              *)
+
+scilla_version 0
+
+import IntUtils NatUtils
+
+library Recursion
+
+let zero32 = Uint32 0
+let one32 = Uint32 1
+let empty_list = Nil {Uint32}
+
+let build_list : Uint32 -> Uint32 -> List Uint32 =
+  fun (m : Uint32) =>
+  fun (n : Uint32) =>
+    let m_lt_n = builtin lt m n in (* if m >= n the list is empty *)
+    match m_lt_n with
+    | True =>
+        let delta = builtin sub n m in
+        let delta_nat = builtin to_nat delta in
+        let acc_init = Pair {(List Uint32) Uint32} empty_list n in
+        let one = Uint32 1 in
+        let step =
+          fun (xs_n : Pair (List Uint32) Uint32) =>
+          fun (ignore : Nat) =>
+          match xs_n with
+          | Pair xs n =>
+              let new_n = builtin sub n one in
+              let new_xs = Cons {Uint32} new_n xs in
+              Pair {(List Uint32) Uint32} new_xs new_n
+          end in
+        let fold = @nat_fold (Pair (List Uint32) Uint32) in (* from NatUtils *)
+        let xs_m = fold step acc_init delta_nat in
+        match xs_m with
+        | Pair xs m => xs
+        end
+    | False => empty_list
+    end (* m_lt_n *)
+
+let factorial : Uint32 ->  Uint32 =
+  fun (n : Uint32) =>
+    let is_n_gt_zero = uint32_gt n zero32 in
+    match is_n_gt_zero with
+    | False => one32 (* 0!=1 *)
+    | True => (* res = res * (n-1) unless n=1 then res = res *)
+      let n_nat = builtin to_nat n in
+      let acc_init = Pair {Uint32 Uint32} n n in
+      let step =
+        fun (current_acc : Pair Uint32 Uint32) =>
+        fun (previous : Nat) =>
+        let previous_int = nat_to_int previous in
+        match current_acc with
+        | Pair res n =>
+          (* nat_fold goes down to Zero, need to stop at 1 *)
+          let multiplier =
+            let is_zero = is_some_zero previous in (* from NatUtils *)
+            match is_zero with
+            | True => one32
+            | False => previous_int
+            end in (* is_zero *)
+          let new_res = builtin mul res multiplier in
+          Pair {Uint32 Uint32} new_res previous_int
+        end in
+      let fold = @nat_fold (Pair Uint32 Uint32) in (* from NatUtils *)
+      let result_pair = fold step acc_init n_nat in
+      match result_pair with
+      | Pair result n => result
+      end
+    end
+
+
+contract Recursion()
+
+(* create the list [m, m+1, ..., n-1] *)
+transition CreateList(m : Uint32, n : Uint32)
+ l = build_list m n;
+ e = {_eventname : "CreateList"; list : l};
+ event e
+end
+
+(* compute n! *)
+transition Factorial(n: Uint32)
+  f = factorial n;
+  e = {_eventname: "Factorial"; n: n; n_factorial: f};
+  event e
+end
+```
+
 ## Further Reading
+
+[TheDrBee - Recursion.scilla](https://github.com/TheDrBee/oSCILLAtor/blob/main/contracts/Recursion.scilla)

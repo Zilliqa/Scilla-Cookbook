@@ -8,11 +8,15 @@ tags:
 
 # Addresses
 
-Addresses come in two notations Bech32 or Base16. When we refer to a ByStr20 in scilla, we refer to the Base16 address.
+Addresses on the network can either be a wallet or a contract.
+
+Addresses come in two notations Bech32 or Base16.
 
 Bech32's start with the prefix ```zil...``` whereas Base16's are prefixed with ```0x...```.
 
-Converting a Bech32 into a Base16 and visa versa can be achieved manually though ```IDE>Tools>AddressConverter``` or programatically using programs like Zilliqa-JS
+Converting a Bech32 into a Base16 and visa versa can be achieved manually though ```IDE>Tools>AddressConverter``` or programatically using programs like Zilliqa-JS.
+
+When we refer to a ByStr20 in Scilla, we refer to the Base16 address.
 
 ```text
 Bech32 = zil1zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3h6785s
@@ -22,11 +26,11 @@ Base16 = 0x1111111111111111111111111111111111111111
 ```ocaml
 scilla_version 0
 
-library ByStr
+library Example
 
 let constant_bystr = 0x1111111111111111111111111111111111111111
 
-contract ByStr
+contract Example
 (
     immutable_bystr: BNum
 )
@@ -37,6 +41,8 @@ field state_bystr : ByStr20 = constant_bystr
 ## ByStr20 Library Functions
 
 ### equalByStr20
+
+equalByStr20 is a library function that takes two addresses and returns ```True``` from ```builtin eq``` if the addresses are equal.
 
 ```ocaml
 let eqByStr20 =

@@ -1,6 +1,6 @@
 # Utilities
 
-To use functions from the standard library in a contract, the relevant library file must be imported using the import declaration. 
+To use functions from the standard library in a contract, the relevant library file must be imported using the import declaration.
 
 The following code snippet shows how to import the functions from the ListUtils and IntUtils libraries:
 
@@ -13,7 +13,6 @@ contract Example() (* your consumation of said library definitions *)
 ```
 
 ## PairUtils
-
 
 ```ocaml
 fst : Pair 'A 'B -> 'A: Extract the first element of a Pair.
@@ -46,7 +45,7 @@ procedure IsOwnerOrOperator(token_owner: ByStr20)
 
 ## IntUtils
 
-```
+```ocaml
 intX_eq : IntX -> IntX -> Bool: 
 Equality operator specialised for each IntX type.
 
@@ -99,7 +98,7 @@ let b_neq_c = int32_neq b c
 
 ## ListUtils
 
-```
+```ocaml
 list_map : ('A -> 'B) -> List 'A -> : List 'B.
 Apply f : 'A -> 'B to every element of l : List 'A, 
 constructing a list (of type List 'B) of the results.
@@ -182,8 +181,6 @@ Split a list of pairs into a pair of lists consisting of the elements of the pai
 list_nth : Uint32 -> List 'A -> Option 'A.
 ```
 
-###
-
 ```ocaml
 let int_append = @list_append Int32 in
 
@@ -203,7 +200,7 @@ int_append  l4 l2
 
 ## NatUtils
 
-```
+```ocaml
 nat_prev : Nat -> Option Nat: 
 Return the Peano number one less than the current one. 
 If the current number is Zero, the result is None. If the current number is Succ x, then the result is Some x.

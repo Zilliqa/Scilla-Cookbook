@@ -27,7 +27,9 @@ You cannot arbotarily move fungible tokens without you being either the owner or
 
 The fungible contract comes in different flavours depending on what the user needs to leverage. The contracts have the following public transitions :
 
-## Non-mintable
+## Types of fungible contracts
+
+### Non-mintable
 
 :::tip
 The 'non-mintable' fungible contract defines the most basic interface a ZRC-2 token can have. It is considered the safest fungible contract as there is no ```Mint``` transition to be abused.
@@ -62,7 +64,7 @@ transition Transfer(to: ByStr20, amount: Uint128)
 transition TransferFrom(from: ByStr20, to: ByStr20, amount: Uint128)
 ```
 
-## Mintable
+### Mintable
 
 :::warning
 The 'mintable' fungible contract should be viewed skeptically as the ```contract_owner``` can abortarily ```Mint``` new tokens.
@@ -81,7 +83,7 @@ transition Mint(recipient: ByStr20, amount: Uint128)
 transition Burn(burn_account: ByStr20, amount: Uint128)
 ```
 
-## Operatable
+### Operatable
 
 :::warning
 The 'operatorable' fungible contract should be viewed skeptically as an ```operator``` can aborarily move tokens.

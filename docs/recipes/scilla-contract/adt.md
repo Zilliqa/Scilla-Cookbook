@@ -1,16 +1,20 @@
 ---
 tags:
-  - ADT
-  - Polymorphic
-  - Complex
-  - Composite
-  - User
-  - Custom Types
+  - adt
+  - polymorphic
+  - complex
+  - composite
+  - user
+  - custom 
+  - types
+  - algebraic
 ---
 
-# ADTs (Algeberic Data Types)
+# ADT
 
-In functional programming and type theory, an algebraic data type is a kind of composite type, formed of two or more other primative types.
+## Algebraic Data Types
+
+In functional programming and type theory, an algebraic data type (ADT) is a kind of composite type, formed of two or more other primative types.
 
 ```ocaml
 type MyAdt =
@@ -40,13 +44,13 @@ type 'A List =
 
 At the moment, Scilla does not support user-defined polymorphic ADTs. Only the in-built ADTs List, Pair and Option are polymorphic. Users can define concrete ADTs such as MyAdt.
 
-## Bool
+### Bool
 
 ```ocaml
 my_bool = True
 ```
 
-## Option
+### Option
 
 ```ocaml
 let none_value = None {String}
@@ -56,13 +60,13 @@ let some_value = (* setup Option variable *)
   Some {Int32} ten (* create Option variable of type Int32 with Some value 10*)
 ```
 
-## List
+### List
 
-## Pair
+### Pair
 
-## Nat
+### Nat
 
-## User-defined
+### User-defined
 
 ```ocaml
 type SwapDirection = | ZilToToken | TokenToZil
@@ -99,6 +103,154 @@ procedure Example(game: Game)
           (* At this point you have only the int value*)
       end
   end
+end
+```
+
+## Full ADT examples
+
+### Parcel
+
+```ocaml
+scilla_version 0
+(****************************************************************************)
+(*   user defined algebraic data type (ADT) examples:                       *)
+(*   a Parcel with a content consisting of one or two Item(s)               *)
+(*   A single Item can be a Shirt or a Barbell and has a weight             *)
+(*   A Parcel can have one Item or two Items in it and depending on the     *)
+(*   total weight has a cost to ship assigned to it                         *)
+(****************************************************************************)
+library Adt
+
+type Item = (* constructor argument is the weight of the item *)
+  | Shirt of Uint32
+  | Barbell of Uint32
+
+type Parcel =
+  | OneContent of Item (* a parcel with a single item as content *)
+  | TwoContents of Item Item (* a parcel can be filled with 2 items *)
+
+let weight_of_item = fun(i: Item) => (* how much an item weighs *)
+  match i with
+  | Shirt w => w
+  | Barbell w => w
+  end
+
+let cost_per_weight = Uint32 5
+
+let cost_of_parcel = fun(p: Parcel) => (* cost to ship the parcel *)
+  let weight =
+    match p with
+    | OneContent c => (* parcel has only one item as content *)
+        weight_of_item c
+    | TwoContents c1 c2 => (* parcel has two items as content *)
+        let w1 = weight_of_item c1 in
+        let w2 = weight_of_item c2 in
+        builtin add w1 w2 (* total weight is sum of the two *)
+    end in
+  builtin mul weight cost_per_weight (* cost is total weight times cost_per_weight *)
+
+
+contract Adt
+()
+
+(* mutable fields declarations *)
+field parcels : List (Pair Parcel Uint32) = Nil {(Pair Parcel Uint32)} (* a list of parcels and their cost to ship *)
+
+procedure ComputeCostAndAdd(p: Parcel)
+  (* compute cost to ship the new parcel *)
+  cost = cost_of_parcel p;
+  (* add it to the list of parcels *)
+  l <- parcels;
+  pair = Pair {Parcel Uint32} p cost;
+  new_list = Cons {(Pair Parcel Uint32)} pair l; (* front insert *)
+  parcels := new_list;
+  ev = {_eventname : "AddToListOfParcelsSuccess"; cost_to_ship: cost; parcels: new_list};
+  event ev
+end
+
+(* add parcels with different items to the list of parcels *)
+transition AddParcelWithShirt(weight: Uint32)
+  c = Shirt weight;
+  p = OneContent c;
+  ComputeCostAndAdd p
+end
+
+transition AddParcelWithBarbell(weight: Uint32)
+  c = Barbell weight;
+  p = OneContent c;
+  ComputeCostAndAdd p
+end
+
+transition AddParcelWithTwoShirts(weight1: Uint32, weight2: Uint32)
+  c1 = Shirt weight1;
+  c2 = Shirt weight2;
+  p = TwoContents c1 c2;
+  ComputeCostAndAdd p
+end
+
+transition AddParcelWithShirtAndBarbell(weightS: Uint32, weightB: Uint32)
+  c1 = Shirt weightS;
+  c2 = Barbell weightB;
+  p = TwoContents c1 c2;
+  ComputeCostAndAdd p
+end
+```
+
+### PlayerAge
+
+```ocaml
+scilla_version 0
+(************************************************************************)
+(* a map of ByStr20 (address) to a user defined algebraic data type     *)
+(*   the ADT is a Player with an age that either plays tennis or runs   *)
+(************************************************************************)
+library AdtMap
+
+type Sport =
+  | Tennis
+  | Run
+
+type Player = (* Age and preferred Sport *)
+  | Player of Uint32 Sport
+
+
+contract AdtMap
+()
+
+(* mutable fields declarations *)
+field players : Map ByStr20 Player = Emp ByStr20 Player (* players[address] = Player *)
+
+procedure Add(age: Uint32, sport: Sport)
+  player = Player age sport;
+  players[_sender] := player
+end
+
+(* add sender as a Tennis player *)
+transition AddTennis(age: Uint32)
+  sport = Tennis;
+  Add age sport
+end
+(* add sender as a Soccer player *)
+transition AddRun(age: Uint32)
+  sport = Run;
+  Add age sport
+end
+(* change the age of sender, kepp its sport *)
+transition ChangeAge(new_age: Uint32)
+  player_o <- players[_sender]; (* look up in map *)
+  match player_o with
+  | Some player =>
+    match player with (* get the entries and change age *)
+    | Player age sport =>
+      new_player = Player new_age sport;
+      players[_sender] := new_player
+    end (* player *)
+  | None => (* sender is not in map, don't do anything *)
+  end (* player_o *)
+end
+(* remove the sender from the map *)
+transition Remove()
+  delete players[_sender]
 end
 ```
 

@@ -7,13 +7,13 @@ tags:
   - msgs
 ---
 
-# Contract to Contract Interaction
+# Messages, Callbacks & Contract-to-Contract Interaction
 
-## Contract
+## Contract-to-Contract Interaction
 
-Developers may wish to call another contract to perform a specific action. This page details the way this can be achieved.
+Developers may wish to call another contract to perform a specific action.
 
-### Crosschain calling example
+### Crosschain calling example using Messages
 
 Let's assume we have a [button contract](/tutorials/scilla-contract/incrementing-button/basics-introduction). The button contract allows addresses to interact and press the button. In this example we write a contract that interacts with the button contract called ```CallerContract```
 
@@ -24,9 +24,12 @@ contract Example()
 
 transition PressTheButton()
 end
+
 ```
 
-Our contract so far defines a transition called ProxyPressButton, that takes a ByStr20 as an argument. When this transition is called, a call object is created called ```button_contract_call```. A call object takes three manditory arguments called ```_tag```, ```_recipient``` and ```_amount```. These relate to the transition name, contract address and ZIL amount in QA respectively.
+### Messages
+
+Our contract so far defines a transition called ProxyPressButton, that takes a ByStr20 as an argument. When this transition is called, a Message call object is created called ```button_contract_call```. A call object takes three manditory arguments called ```_tag```, ```_recipient``` and ```_amount```. These relate to the transition name, contract address and ZIL amount in QA respectively.
 
 In our case the _tag will be ```PressTheButton```, the_recipient will be the variable we pass ```button_contract_address``` and the _amount we are sending is ```Uint128 0```.
 
@@ -115,5 +118,38 @@ transition Mint(recipient: ByStr20, amount: Uint128)
   send msgs
 end
 ```
+
+## Callbacks
+
+It's typical to provide Callbacks when transitions execute successfully so the proxy callers can update their interactive contracts if possible.
+
+Take the below example where ```Mint``` creates two messages ```msg_to_recipient``` and ```msg_to_sender```. The manditory tags ```_tag```, ```_recipient``` and ```_amount``` are aligned seperately for easier reading.
+
+```msg_to_recipient``` calls the transition ```RecipientAcceptMint``` for the ```recipient``` with ```uint128_zero``` QA.
+
+```msg_to_sender``` calls the transition ```MintSuccessCallBack``` for the ```_sender``` with ```uint128_zero``` QA.
+
+```ocaml
+  msg_to_recipient = {_tag : "RecipientAcceptMint"; _recipient : recipient; _amount : uint128_zero; 
+                      minter : _sender; recipient : recipient; amount : amount};
+  msg_to_sender = {_tag : "MintSuccessCallBack"; _recipient : _sender; _amount : uint128_zero; 
+                      minter : _sender; recipient : recipient; amount : amount};
+```
+
+Take the below diagram of the way these messages could be sent.
+
+Note that there are many ways to call this function and depending on what your chain of execution looks like, you may need to implement one or both messages in your contract.
+
+User wallets do not need to implement any messages, but any contracts where the ```_recipient``` is the address do.
+
+The second example shows the typical proxy interface where a user calls a proxy, which then calls some logical contract to do some work. When the example calls back to it's ```_recipient``` it's looking at ```_sender``` not ```_origin``` therefore the proxy will need to implement the ```MintSuccessCallback``` stub since it's the sender.
+
+The third example shows the case where a contract is the recipient of a Mint. The consuming contract will have to implement the ```RecipientAcceptMint``` stub
+
+:::note
+You will recieve a transaction error if your contract does not implement a callback stub as the chain of execution fails to find the _tag name on your contract.
+:::
+
+![Example banner](./img/../../../../static/img/recipes/messages/flow-diagram.png)
 
 ## Further Reading

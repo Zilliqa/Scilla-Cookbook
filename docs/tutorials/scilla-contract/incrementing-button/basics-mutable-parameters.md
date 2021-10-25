@@ -32,7 +32,6 @@ Back to our example ```IncrementingButton```. Lets define two immutable state va
 
 ```total_count_clicks``` is a mutable field of type Uint128 and will increment and store the amount of times the value ```current_clicker``` has been changed. It is set to the constant value of ```uint128_zero``` when the contract is initalised.
 
-
 ```ocaml {5,12,13}
 scilla_version 0
 
