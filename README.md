@@ -1,1 +1,1 @@
-# Scilla-by-Example
+# Scilla-Cookbook
