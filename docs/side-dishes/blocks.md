@@ -3,6 +3,14 @@
 ---
 # Block Production
 
+## What is a transaction
+
+A transaction is a piece of data, in it's most typical form it's a message to send money from address A to B, can also be as complex as a smart contract interaction consuming or depositing some tokens.
+
+## What is a block
+
+When a transaction occurs, the data is submitted onchain, and the user pays some gas for the privillage to submit and have the chain respect the data they have posted. When it's posted to the network, it is bundled with other transactions that happened in the same period of time and is appended to the head of the blockchain.
+
 ## What is sharding
 
 Sharding is a process of splitting up blockchain nodes into different groups. Each group has roughly the same number of nodes as each other, so if one shard can do ten transactions per second, all shards together can process 100 transactions per second.
@@ -23,4 +31,4 @@ Also, though they are somewhat correlated, there is a difference between confima
 
 ## How many blocks are there per day
 
-The blocks per day can very depending on network sharding, take note of the [statistics of the network](https://viewblock.io/zilliqa/stat/blockCountHistory) to determine this in your calculations.
+The blocks per day can very depending on network sharding, take note of the [statistics of the network](https://viewblock.io/zilliqa/stat/blockCountHistory) to determine this in your calculations. Divide the average blocks per day by 24 to get the hourly rate.

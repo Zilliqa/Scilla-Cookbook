@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 # Zilliqa-JS Quickstart
@@ -16,19 +16,120 @@ Create a burner testing wallet and fund it with tokens from the faucet.
 Do not publish your test wallet private key as a build artifact, your funds could be stolen
 :::
 
+## HelloWorld Interaction Example
+
 Review the documentation from the [examples repo for zilliqa-js](https://github.com/Zilliqa/Zilliqa-JavaScript-Library-Examples)
 
-Call a specific example by installing the dependencies and involking the example
+Call a specific example by installing the dependencies and invoking the example command.
+
+In this example we are calling the transition ```setHello``` with on the ```HelloWorld``` contract with one vname called ```msg``` which has the value ```newMsg``` the contract is at address ```zil1v6tjt9s0nua80tvvays5m2g763npxgkez0gnnq``` on the ```dev-api testnet```.
+
+```ocaml
+transition setHello (msg : String)
+```
 
 ```bash
+git clone Zilliqa/Zilliqa-JavaScript-Library-Examples .
 cd Zilliqa-JavaScript-Library-Examples
 cd node
 npm i
-
 node helloWorld.js
 ```
 
-The console will respond with
+```js
+// Import Zilliqa-JS
+const { BN, Long, bytes, units } = require('@zilliqa-js/util');
+const { Zilliqa } = require('@zilliqa-js/zilliqa');
+const {
+  toBech32Address,
+  getAddressFromPrivateKey,
+} = require('@zilliqa-js/crypto');
+
+// What network to connect on
+const zilliqa = new Zilliqa('https://dev-api.zilliqa.com');
+
+// These are set by the core protocol, and may vary per-chain and network.
+// For more information: https://apidocs.zilliqa.com/?shell#getnetworkid
+const chainId = 333; // chainId of the developer testnet
+const msgVersion = 1; // current msgVersion
+const VERSION = bytes.pack(chainId, msgVersion);
+
+// Populate the wallet with an account
+const privateKey =
+  'deb5c896228f8515146aa16f94a558ba14e52d8496b4b267b2d59cd9036f39a6';
+
+zilliqa.wallet.addByPrivateKey(privateKey);
+
+const address = getAddressFromPrivateKey(privateKey);
+console.log(`My account address is: ${address}`);
+console.log(`My account bech32 address is: ${toBech32Address(address)}`);
+
+async function testBlockchain() {
+  try {
+    // Get Balance
+    const balance = await zilliqa.blockchain.getBalance(address);
+    // Get Minimum Gas Price from blockchain
+    const minGasPrice = await zilliqa.blockchain.getMinimumGasPrice();
+
+    console.log(`Your account balance is:`);
+    console.log(balance.result);
+    console.log(`Current Minimum Gas Price: ${minGasPrice.result}`);
+    const myGasPrice = units.toQa('2000', units.Units.Li); // Gas Price that will be used by all transactions
+    console.log(`My Gas Price ${myGasPrice.toString()}`);
+    const isGasSufficient = myGasPrice.gte(new BN(minGasPrice.result)); // Checks if your gas price is less than the minimum gas price
+    console.log(`Is the gas price sufficient? ${isGasSufficient}`);
+
+    const deployedContract = zilliqa.contracts.at(
+      'zil1v6tjt9s0nua80tvvays5m2g763npxgkez0gnnq',
+    );
+
+    // Create a new timebased message and call setHello
+    // Also notice here we have a default function parameter named toDs as mentioned above.
+    // For calling a smart contract, any transaction can be processed in the DS but not every transaction can be processed in the shards.
+    // For those transactions are involved in chain call, the value of toDs should always be true.
+    // If a transaction of contract invocation is sent to a shard and if the shard is not allowed to process it, then the transaction will be dropped.
+    const newMsg = 'Hello, the time is ' + Date.now();
+    console.log('Calling setHello transition with msg: ' + newMsg);
+    const callTx = await deployedContract.callWithoutConfirm(
+      'setHello',
+      [
+        {
+          vname: 'msg',
+          type: 'String',
+          value: newMsg,
+        },
+      ],
+      {
+        // amount, gasPrice and gasLimit must be explicitly provided
+        version: VERSION,
+        amount: new BN(0),
+        gasPrice: myGasPrice,
+        gasLimit: Long.fromNumber(8000),
+      },
+      false,
+    );
+
+    console.log(callTx.bytes);
+
+    // process confirm
+    console.log(`The transaction id is:`, callTx.id);
+    console.log(`Waiting transaction be confirmed`);
+    const confirmedTxn = await callTx.confirm(callTx.id);
+
+    console.log(`The transaction status is:`);
+    console.log(confirmedTxn.receipt);
+    if (confirmedTxn.receipt.success === true) {
+      console.log(`Contract address is: ${deployedContract.address}`);
+    }
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+testBlockchain();
+```
+
+To which, the console will respond with.
 
 ```bash
 My account address is: 0x8254b2C9aCdf181d5d6796d63320fBb20D4Edd12
@@ -85,47 +186,116 @@ The state of the contract is:
 }
 ```
 
-## Examples
+## Example Interaction Scripts
 
 ```js
-shows the javascript required to call a specific transition
-callContract.js
+//shows the javascript required to call a specific transition
+node callContract.js
 
-shows the javascript required to create a list of signed batch transactions
-createBatchTransaction.js
+// shows the javascript required to create a list of signed batch transactions
+node createBatchTransaction.js
 
-shows the javascript required to create a list of batch transactions with correct nonce
-createBatchTransactionWithoutConfirm.js
+//shows the javascript required to create a list of batch transactions with correct nonce
+node createBatchTransactionWithoutConfirm.js
 
-shows the javascript required to post a raw transaction
+//shows the javascript required to post a raw transaction
 createTransactionRaw.js
 
-shows the javascript required to deploy a contract
+//shows the javascript required to deploy a contract
 deployContract.js
 
-shows the javascript required to return all the particular transactions that happened for a particular block
+//shows the javascript required to return all the particular transactions that happened for a particular block
 getTxnBodiesForTxBlock.js
 
-shows the javascript required to interact with the helloWorld tutorial scilla
+//shows the javascript required to interact with the helloWorld tutorial scilla
 helloWorld.js
 
-shows the javascript required to listen for events
+//shows the javascript required to listen for events
 newEventLogSubscriptions.js
 
-shows the javascript required to listen for new block events
+//shows the javascript required to listen for new block events
 newTxBlockSubscriptions.js
 
-shows the javascript required to query init params, or state params including maps
+//shows the javascript required to query init params, or state params including maps
 queryState.js
 
-get a particular transaction from a given transaction hash
+//get a particular transaction from a given transaction hash
 queryTransaction.js
 
-get the status of a particular transaction from a given transaction hash
+//get the status of a particular transaction from a given transaction hash
 queryTransactionStatus.js
 
-shows the javascript required to sign a unsigned batch transaction
+//shows the javascript required to sign a unsigned batch transaction
 signBatchTransaction.js
 
+//shows examples of offline and online signs
 walletSign.js
+```
+
+## Zilliqa-JS Interaction Examples
+
+### Zilliqa-JS Examples
+
+[Zilliqa-JS Example Interaction](https://github.com/Zilliqa/Zilliqa-JavaScript-Library-Examples/tree/master/node)
+
+### TheDrBee Contract Interactions
+
+[Zilliqa-JS Contract Interaction](https://github.com/TheDrBee/oSCILLAtor/tree/main/js)
+
+### Zilpay Repositories
+
+[https://github.com/zilpay]
+
+## Frontend Zilliqa-JS Examples
+
+### Zillet fullstack
+
+[This example](https://github.com/zillet/zillet) is the zillet web wallet.
+
+Zillet is built using VueJS, NuxtJS and TailwindCSS.
+
+```bash
+npm install
+npm run build
+```
+
+### Zilswap frontend
+
+[This example](https://github.com/Switcheo/zilswap-webapp) is the frontend code for Zilswaps web application
+
+The ZilSwap webapp is built using React, Typescript and CSS.
+
+```bash
+yarn install
+yarn start
+```
+
+### Rent On Zilliqa Fullstack
+
+[This example](https://github.com/Zilliqa/Zilliqa-JavaScript-Library#installation) is an application on the Zilliqa Blockchain for listing and renting house
+
+```bash
+git clone Quinence/zilliqa-fullstack-app-rentOnZilliqa .
+cd zilliqa-fullstack-app-rentOnZilliqa
+yarn install
+yarn start
+```
+
+### Webpacked bundled HTML
+
+[This example](https://github.com/Zilliqa/Zilliqa-JavaScript-Library-Examples/tree/master/webpack/react) will demonstrate how to use the webpack variant of ZilliqaJS in a React project. This react project is created using create-react-app. The webpack variant comes in a zilliqa.min.js file and is meant for users who wishes to use ZilliqaJS functions in traditional HTML. Users need to build the webpack variant and import the js file in the HTML.
+
+:::danger
+If you are using a frontend framework such as React, Vue, AngularJS, etc, we strongly recommend you to use the [node version instead](https://github.com/Zilliqa/Zilliqa-JavaScript-Library#installation) of the webpack variant as the schematic is easier to work with. If you are still interested in using the webpack variant, continue below.
+:::
+
+```bash
+git clone Zilliqa/Zilliqa-JavaScript-Library .
+cd Zilliqa-JavaScript-Library
+yarn install
+yarn build:web
+cp Zilliqa-JavaScript-Library/dist/zilliqa.min.js examples/webpack/react/public
+cd examples/webpack/react
+yarn
+yarn start
 ```

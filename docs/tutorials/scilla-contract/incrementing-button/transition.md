@@ -17,7 +17,7 @@ The arguments to be passed to the transitions are wrapped within  ```()```. The 
 Transitions indicate the end of processing by providing the keyword ```end```.
 
 ```ocaml
-procedure ExampleTransition(vname: vtype)
+transition ExampleTransition(vname: vtype)
 
 end
 ```
