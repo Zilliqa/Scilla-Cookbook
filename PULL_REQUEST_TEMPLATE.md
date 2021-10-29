@@ -2,11 +2,11 @@
 
 ## Description
 
-Please include a summary of the changes. A bulletpoint list of topics covered or pages changed will suffice.
-
+<!-- Please include a summary of the changes. A bulletpoint list of topics covered or pages changed will suffice.
+ -->
 ## Title
 
-The title of your pull request should follow the standard:
+<!-- The title of your pull request should follow the standard:
 
 [docs] create `example` page
 [docs] update `example` section
@@ -15,14 +15,12 @@ The title of your pull request should follow the standard:
 [docs] create scilla dex page
 [docs] update zilliqa-js call contract section
 [docs] delete unused images
-
+ -->
 ## Assets
 
-Images should be `.png` and be less than 15kb in size
+<!-- Images should be `.png` and be less than 15kb in size
 
-Images should be compressed using tinypng.com
-
-## f
+Images should be compressed using tinypng.com -->
 
 ## Testing
 
