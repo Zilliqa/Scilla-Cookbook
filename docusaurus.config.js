@@ -7,13 +7,13 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Scilla Cookbook',
   tagline: 'For the scilla development community, by the scilla development community',
-  url: 'https://scilla-by-example.org',
-  baseUrl: '/Scilla-by-Example/',
+  url: 'https://scilla-cookbook.org',
+  baseUrl: '/Scilla-Cookbook/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/site/favicon.ico',
-  organizationName: 'Elliott-Green', // Usually your GitHub org/user name.
-  projectName: 'Scilla-by-Example', // Usually your repo name.
+  organizationName: 'Zilliqa', // Usually your GitHub org/user name.
+  projectName: 'Scilla-Cookbook', // Usually your repo name.
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -23,7 +23,7 @@ const config = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/',
+          editUrl: 'https://github.com/Zilliqa/Scilla-Cookbook',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

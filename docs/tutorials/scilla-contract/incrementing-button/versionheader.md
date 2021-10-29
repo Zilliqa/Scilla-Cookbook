@@ -19,7 +19,7 @@ scilla_version 0
 
 contract IncrementingButton
 (
-  contract_owner: ByStr20,
+  contract_owner: ByStr20
 )
 ```
 
@@ -48,7 +48,7 @@ library IncrementingButton
 
 contract IncrementingButton
 (
-  contract_owner: ByStr20,
+  contract_owner: ByStr20
 )
 ```
 
