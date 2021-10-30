@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocu_scilla=self.webpackChunkdocu_scilla||[]).push([[2324],{5468:function(s){s.exports=JSON.parse('{"name":"ownership","permalink":"/tags/ownership","docs":[{"id":"recipes/scilla-contract/ownership","title":"Ownership","description":"`ocaml","permalink":"/recipes/scilla-contract/ownership"}],"allTagsPath":"/tags"}')}}]);

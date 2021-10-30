@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocu_scilla=self.webpackChunkdocu_scilla||[]).push([[7786],{3294:function(i){i.exports=JSON.parse('{"name":"mutisig","permalink":"/tags/mutisig","docs":[{"id":"recipes/scilla-contract/mutisig","title":"Muti-signatures","description":"`ocaml","permalink":"/recipes/scilla-contract/mutisig"}],"allTagsPath":"/tags"}')}}]);
