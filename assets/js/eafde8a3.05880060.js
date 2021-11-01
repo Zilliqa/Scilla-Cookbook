@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocu_scilla=self.webpackChunkdocu_scilla||[]).push([[6153],{1304:function(a){a.exports=JSON.parse('{"name":"complex","permalink":"/tags/complex","docs":[{"id":"recipes/scilla-contract/adt","title":"ADT","description":"Algebraic Data Types","permalink":"/recipes/scilla-contract/adt"}],"allTagsPath":"/tags"}')}}]);
