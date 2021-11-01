@@ -23,7 +23,7 @@ Now we have all the dependencies required, we can start to write some Javascript
 
 The require statements are pulling in the logic from Zilliqa-JS to use later in our code.
 
-For example the ```util``` class has methods dealing with BigNumbers and Zilliqa units. Similarly, the ```crypto``` class has methods dealing with converting an Base16 to Bech32 and resolving a Bech32 address from a private key string. 
+For example the ```util``` class has methods dealing with BigNumbers and Zilliqa units. Similarly, the ```crypto``` class has methods dealing with converting an Base16 to Bech32 and resolving a Bech32 address from a private key string.
 
 The notable mention of this snippet is the newing up of a new Zilliqa Object with a network address as a parameter, the value is the network we want to connect to, in this example its ```dev-api``` aka testnet. To determine what network parameters you need for a specific envrionment, consult the [developer network documentation](https://dev.zilliqa.com/docs/apis/api-introduction).
 
@@ -38,7 +38,7 @@ const {
 const zilliqa = new Zilliqa('https://dev-api.zilliqa.com');
 ```
 
-In the below snippet, we begin to create some of the configuration needed later to send a transaction. ```VERSION``` will be used later in the transaction call. We then add a private key to the Zilliqa object so later we can execute against a specific address we own. 
+In the below snippet, we begin to create some of the configuration needed later to send a transaction. ```VERSION``` will be used later in the transaction call. We then add a private key to the Zilliqa object so later we can execute against a specific address we own.
 
 For our example, we ensure chainID and msgVersion are correct for testnet
 

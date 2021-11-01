@@ -4,6 +4,7 @@
 
 <!-- Please include a summary of the changes. A bulletpoint list of topics covered or pages changed will suffice.
  -->
+
 ## Title
 
 <!-- The title of your pull request should follow the standard:
@@ -16,6 +17,7 @@
 [docs] update zilliqa-js call contract section
 [docs] delete unused images
  -->
+
 ## Assets
 
 <!-- Images should be `.png` and be less than 15kb in size
