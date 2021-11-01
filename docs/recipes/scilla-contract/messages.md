@@ -15,7 +15,7 @@ Developers may wish to call another contract to perform a specific action.
 
 ### Crosschain calling example using Messages
 
-Let's assume we have a [button contract](/tutorials/scilla-contract/incrementing-button/basics-introduction). The button contract allows addresses to interact and press the button. In this example we write a contract that interacts with the button contract called ```CallerContract```
+Let's assume we have a button contract. The button contract allows addresses to interact and press the button. In this example we write a contract that interacts with the button contract called ```CallerContract```
 
 Firstly, we need the name of the transition and shape of the parameters we are trying to call. In our case the transition name is ```PressTheButton``` with no arguments.
 
