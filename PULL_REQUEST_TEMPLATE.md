@@ -30,3 +30,20 @@ Images should be compressed using tinypng.com -->
 - [ ] My changes do not cause errors in the browser terminal
 - [ ] I have performed a self-review of my amendmened files
 - [ ] My .md changes are well formatted cause no markdown warnings
+
+
+## Build
+
+```bash
+yarn build
+```
+
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+## Deployment
+
+```bash
+GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
+```
+
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.

@@ -8,12 +8,12 @@ const config = {
   title: 'Scilla Cookbook',
   tagline: 'For the scilla development community, by the scilla development community',
   url: 'https://scilla-by-example.org',
-  baseUrl: '/Scilla-by-Example/',
+  baseUrl: '/Scilla-Cookbook/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/site/favicon.ico',
-  organizationName: 'Elliott-Green', // Usually your GitHub org/user name.
-  projectName: 'Scilla-by-Example', // Usually your repo name.
+  organizationName: 'Zilliqa', // Usually your GitHub org/user name.
+  projectName: 'Scilla-Cookbook', // Usually your repo name.
   presets: [
     [
       '@docusaurus/preset-classic',
