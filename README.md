@@ -41,3 +41,21 @@ This command starts a local development server and opens up a browser window. Mo
 ```bash
 yarn start
 ```
+
+## How to deploy the site
+
+### Local Deployment
+
+Amend docusarus.config.js and change the organisation values to your local repo and Github username.
+
+Build a static site from the dynamic content into /build/ directory.
+
+```bash
+yarn build
+```
+
+Deploy the /build/ directory to the branch /gh-pages/
+
+```bash
+GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
+```
