@@ -153,3 +153,7 @@ You will recieve a transaction error if your contract does not implement a callb
 ![Example banner](./img/../../../../static/img/recipes/messages/flow-diagram.png)
 
 ## Further Reading
+
+[Callee.scilla](https://github.com/TheDrBee/oSCILLAtor/blob/079f2400cfa1e6fdc7a7b0449bd65406186a1f3e/contracts/Callee.scilla)
+
+[Caller.scilla](https://github.com/TheDrBee/oSCILLAtor/blob/079f2400cfa1e6fdc7a7b0449bd65406186a1f3e/contracts/Caller.scilla)
