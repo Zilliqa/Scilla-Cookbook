@@ -7,17 +7,7 @@ tags:
 
 A list is a data type which can hold several instances of a singular type.
 
-Consider the below definition of creating a List of Uint256.
-
-```ocaml
-(* transition with Option argumen *)
-transition OptionTest(option: Option Uint32)
-  ev = {_eventname: "OptionTest"; option: option };
-  event ev
-end
-```
-
-## Example List Contract
+Consider the below definition of creating a List.
 
 ```ocaml
 scilla_version 0
@@ -30,9 +20,10 @@ library List
 
 let empty_list = Nil {Uint32}
 
-let one   = Uint32 1 (* numbers 1, 2 and 3 to use below *)
+let one   = Uint32 1 (* numbers 1, 2, 3 and 4 to use below *)
 let two   = Uint32 2
 let three = Uint32 3
+let four = Uint32 4
 
 let create_3el_list = (* utility to create a list with 3 elements *)
   fun (e1 : Uint32) =>
@@ -50,14 +41,75 @@ let not_equal = fun (a: Uint32) => fun(b: Uint32) =>
   let equal = builtin eq a b in
   negb equal (* from BoolUtils *)
 
+(* utility to remove all elements that equal a value from a lit *)
+let remove_elements_from_list = fun(value: Uint32) => fun(l: List Uint32) =>
+  let f = not_equal value in
+  let filterUint32 = @list_filter Uint32 in (* from ListUtils *)
+  filterUint32 f l
+
+(* check if two list l1 and l2 have no common elements:         *)
+(* for each element in the first list, we check if it exists    *)
+(* in the second list. If any such element exists, we return    *)
+(* False (not disjunct) otherwise we return True                *)
+
+(* return true if l[i] != value for all elements l[i] in the list l *)
+let all_elements_different_from_value =
+  fun(l: List Uint32) =>
+  fun(value: Uint32) =>
+    let f = not_equal value in
+    let for_allUint32 = @list_forall Uint32 in (* from ListUtiles *)
+    for_allUint32 f l (* checks if all elements are NOT equal to value *)
+
+(* return true if no element in l1 is also in l2, or, put differently,  *)
+(* check for each element in l1 if all elements in l2 are different     *)
+let are_lists_disjunct =
+  fun(l1: List Uint32) =>
+  fun(l2: List Uint32) =>
+    let f = all_elements_different_from_value l2 in (* apply above expression to l2 *)
+    let for_allUint32 = @list_forall Uint32 in
+    for_allUint32 f l1 (* apply now this f to l1 *)
+
+
+(* count the number of occurences of a value in a list *)
+let count_in_list =
+  fun(l: List Uint32) =>
+  fun(value: Uint32) =>
+    let f = (* increase accumulator if element equals value *)
+      fun(acc: Uint32) => fun(element: Uint32) =>
+      let equal = builtin eq value element in
+      match equal with
+      | False => acc
+      | True => builtin add acc one
+      end in
+    let init = Uint32 0 in (* initial value of accumulator *)
+    let folder = @list_foldl Uint32 Uint32 in
+    folder f init l
+
+(* check if all elements in a list are unique                               *)
+(* we apply above counter to each element and check if it is exactly 1      *)
+(* if it is bigger than 1 for an element we are done and the result is fale *)
+let is_unique =
+  fun(l: List Uint32) =>
+    let f = fun(value: Uint32) =>
+      let num = count_in_list l value in
+      builtin eq num one in
+    let for_allUint32 = @list_forall Uint32 in
+    for_allUint32 f l (* apply now this f to l1 *)
+
+
 contract List()
 
 field list : List Uint32 = empty_list
 field doubles : Map Uint32 Uint32 = Emp Uint32 Uint32 (* doubles[l[i]]=2*l[i] *)
 
-(* create a list [1,2,3] and store in field list *)
+(* create lists [1,2,3] or [1,2,1] and store in field list *)
 transition Create123()
   l = create_3el_list one two three; (* [1, 2, 3] *)
+  list := l
+end
+
+transition Create121()
+  l = create_3el_list one two one; (* [1, 2, 1] *)
   list := l
 end
 
@@ -79,10 +131,8 @@ end
 
 (* remove elements from list that equal to value *)
 transition RemoveIfEqualtTo(value: Uint32)
-  f = not_equal value;
-  filterUint32 = @list_filter Uint32; (* from ListUtils *)
   l <- list;
-  list_without_values = filterUint32 f l;
+  list_without_values = remove_elements_from_list value l;
   list := list_without_values
 end
 
@@ -132,6 +182,86 @@ transition SumElements112()
   ev = {_eventname: "SumElements112"; sum: sum_of_elements};
   event ev
 end
+
+(* check if two lists l1 and l2 have at least one common element  *)
+(* if they have, they are not disjunct                            *)
+transition AreListsDisjunct()
+  (* create a few lists for testing *)
+  l1 = Cons {Uint32} one empty_list;      (* [1] *)
+  l2 = Cons {Uint32} two empty_list;      (* [2] *)
+  l32 = Cons {Uint32} three l2;           (* [3,2] *)
+  l41 = Cons {Uint32} four l1;            (* [4,1] *)
+  l111 = create_3el_list one one one;     (* [1,1,1] *)
+  l131 = create_3el_list one three one;   (* [1,3,1] *)
+  l243 = create_3el_list two four three;  (* [2,4,3] *)
+  (* apply are_lists_disjunct to some pair of the lists *)
+  check_1_2       = are_lists_disjunct l1 l2;         (* True *)
+  check_1_32      = are_lists_disjunct l1 l32;       (* True *)
+  check_2_32      = are_lists_disjunct l2 l32;       (* False *)
+  check_32_41     = are_lists_disjunct l32 l41;     (* True *)
+  check_1_111     = are_lists_disjunct l1 l111;     (* False *)
+  check_111_2     = are_lists_disjunct l111 l2;     (* True *)
+  check_32_111    = are_lists_disjunct l32 l111;   (* True *)
+  check_111_131   = are_lists_disjunct l111 l131; (* False *)
+  check_111_243   = are_lists_disjunct l111 l243; (* True *)
+  (* emit results *)
+  ev = {_eventname: "AreListsDisjunct";
+        check_1_2: check_1_2;
+        check_1_32: check_1_32;
+        check_2_32: check_2_32;
+        check_32_41: check_32_41;
+        check_1_111: check_1_111;
+        check_111_2: check_111_2;
+        check_32_111: check_32_111;
+        check_111_131: check_111_131;
+        check_111_243: check_111_243
+  };
+  event ev
+end
+
+(* count the number of occurences of a value in a list *)
+transition Count()
+  (* create a few lists for testing *)
+  l111 = create_3el_list one one one;     (* [1,1,1] *)
+  l131 = create_3el_list one three one;   (* [1,3,1] *)
+  l243 = create_3el_list two four three;  (* [2,4,3] *)
+  (* apply count_in_list to some value and the test lists *)
+  check_1_in_empty= count_in_list empty_list one; (* 0 *)
+  check_1_in_243  = count_in_list l243 one; (* 0 *)
+  check_1_in_131  = count_in_list l131 one; (* 2 *)
+  check_1_in_111  = count_in_list l111 one; (* 3 *)
+  (* emit results *)
+  ev = {_eventname: "Count";
+        check_1_in_empty: check_1_in_empty;
+        check_1_in_243: check_1_in_243;
+        check_1_in_131: check_1_in_131;
+        check_1_in_111: check_1_in_111
+  };
+  event ev
+end
+
+transition CheckUniqueness()
+  (* create a few lists for testing *)
+  l1 = Cons {Uint32} one empty_list;      (* [1] *)
+  l123 = create_3el_list one two three;   (* [1,2,3] *)
+  l131 = create_3el_list one three one;   (* [1,3,1] *)
+  l311 = create_3el_list three one one;   (* [3,1,1] *)
+  (* apply is_uniqe to some lists *)
+  chk_empty = is_unique empty_list; (* true *)
+  chk_1     = is_unique l1;         (* true *)
+  chk_123   = is_unique l123;       (* true *)
+  chk_131   = is_unique l131;       (* false *)
+  chk_311   = is_unique l311;       (* false *)
+  (* emit results *)
+  ev = {_eventname: "CheckUniqueness";
+        chk_empty: chk_empty;
+        chk_1: chk_1;
+        chk_123: chk_123;
+        chk_131: chk_131;
+        chk_311: chk_311
+  };
+  event ev
+end
 ```
 
 ## User Defined List Functions
@@ -171,3 +301,5 @@ let listByStr20FilterOut =
 ```
 
 ## Further Reading
+
+[TheDrBee - List.Scilla](https://github.com/TheDrBee/oSCILLAtor/blob/24e03d7f14802f84a1db4c183031d1f916eeac88/contracts/List.scilla)

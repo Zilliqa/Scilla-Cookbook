@@ -1,4 +1,11 @@
-# Utilities
+---
+tags:
+  - library
+  - utilities
+  - Util
+---
+
+# Imports
 
 To use functions from the standard library in a contract, the relevant library file must be imported using the import declaration.
 

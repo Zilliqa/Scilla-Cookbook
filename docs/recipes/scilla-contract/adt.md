@@ -44,6 +44,12 @@ type 'A List =
 
 At the moment, Scilla does not support user-defined polymorphic ADTs. Only the in-built ADTs List, Pair and Option are polymorphic. Users can define concrete ADTs such as MyAdt.
 
+### ADT's in Data Structures
+
+:::warn
+You cannot remote state read a data structure which holds an ADT.
+:::
+
 ### Bool
 
 ```ocaml
