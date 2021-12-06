@@ -18,7 +18,7 @@ Peer-to-peer in nature, these exchanges execute trades between users’ wallets 
 
 Zilswap is the most popular DEX on Zilliqa with the most TVL.
 
-The [ZilSwap DEX Contract](https://viewblock.io/zilliqa/address/zil1hgg7k77vpgpwj3av7q7vv5dl4uvunmqqjzpv2w?tab=code) is deployed at the mainnet address ```zil1hgg7k77vpgpwj3av7q7vv5dl4uvunmqqjzpv2w```
+The [ZilSwap DEX Contract](https://viewblock.io/zilliqa/address/zil1gkwt95a67lnpe774lcmz72y6ay4jh2asmmjw6u?tab=code) is deployed at the mainnet address ```zil1gkwt95a67lnpe774lcmz72y6ay4jh2asmmjw6u```
 
 ## How does it work
 
@@ -63,3 +63,5 @@ transition SwapTokensForExactTokens
 ```
 
 ## Further Reading
+
+[readthedocs - Create a token exchange](https://scilla.readthedocs.io/en/latest/scilla-by-example.html?highlight=list#exchange-specification)

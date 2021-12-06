@@ -38,6 +38,21 @@ contract Example
 field state_bystr : ByStr20 = constant_bystr
 ```
 
+## Address Subtypes
+
+We can infer subtypes of Address such as 'A contract on the network' or 'A user or contract on the network' to give some type safety when trying to use contracts or addresses that might not exist
+
+```ocaml
+  (* any valid bytes of string length 20, not guaranteed to be valid *)
+  ByStr20
+  (* guarantees to be either a contract or a user with some balance or nonce >= 1*)
+  ByStr20 with end
+  (* guarantees to be a contract *)
+  ByStr20 with contract end
+```
+
+Read more on [Address subtyping here.](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=with%20end#address-subtyping)
+
 ## ByStr20 Library Functions
 
 ### equalByStr20

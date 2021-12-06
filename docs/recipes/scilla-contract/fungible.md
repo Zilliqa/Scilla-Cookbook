@@ -98,4 +98,23 @@ The 'operatorable' fungible contract should be viewed skeptically as an ```opera
 transition OperatorSend(from: ByStr20, to: ByStr20, amount: Uint128)
 ```
 
+## Transfering Fungible Tokens
+
+```ocaml
+procedure TransferFundsFromXToY(x: ByStr20, fungible_contract: ByStr20, y: ByStr20, funds: Uint128)
+    send_funds = {
+      _tag: "TransferFrom";
+      _recipient: fungible_contract;
+      _amount: uint128_zero;
+      from: x;
+      to: y;
+      amount: funds
+      };
+    msgs = one_msg send_funds;
+    send msgs;
+end
+```
+
 ## Further Reading
+
+[readthedocs - Fungible Tokens](https://scilla.readthedocs.io/en/latest/scilla-by-example.html?highlight=fungible#fungible-tokens)

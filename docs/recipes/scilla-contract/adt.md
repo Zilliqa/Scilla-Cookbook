@@ -59,18 +59,53 @@ my_bool = True
 ### Option
 
 ```ocaml
-let none_value = None {String}
+let none_value = None {ByStr20}
 
-let some_value = (* setup Option variable *)
-  let ten = Int32 10 in (* setup variable 10 and chain to next line *)
-  Some {Int32} ten (* create Option variable of type Int32 with Some value 10*)
+field staging_owner: Option ByStr20 = none_value
+
+transition Test(optional_staging : Option ByStr20)
+  match new_staging with
+    | Some staging_value =>
+      staging_owner := staging_value
+    | None =>
+  end
+end
 ```
 
 ### List
 
+```ocaml
+field state_list_users : List ByStr20 = Nil {ByStr20}
+transition Test()
+  current_list <- state_list_users;
+  new_user = Cons {ByStr20} _sender current_list;
+  state_list_users := new_user
+end
+```
+
 ### Pair
 
+```ocaml
+field state_user_pairs : Map ByStr20 (Pair ByStr20 Uint128)
+
+transition Test(delegator: ByStr20, user: ByStr20, amount: Uint128)
+  pair_example = Pair {ByStr20 Uint128} _sender user;
+  state_user_pairs[delegator] : pair_example
+end
+
+```
+
 ### Nat
+
+```ocaml
+field state_nat : Nat = Zero
+
+current_nat <- state_nat;
+
+let x =
+  let nat_plus_one  = Succ current_nat
+
+```
 
 ### User-defined
 
