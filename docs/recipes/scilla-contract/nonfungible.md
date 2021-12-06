@@ -76,7 +76,7 @@ transition TransferFrom(to: ByStr20, token_id: Uint256)
 
 The ZRC-6 contract can be found [here](https://github.com/Zilliqa/ZRC/blob/master/reference/zrc6.scilla).
 
-#### ZRC-6 interface 
+#### ZRC-6 interface
 
 ```ocaml
 procedure TransferToken(to: ByStr20, token_id: Uint256)

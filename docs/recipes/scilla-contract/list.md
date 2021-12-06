@@ -315,4 +315,4 @@ let listByStr20FilterOut =
 ## Further Reading
 
 [TheDrBee - List.Scilla](https://github.com/TheDrBee/oSCILLAtor/blob/24e03d7f14802f84a1db4c183031d1f916eeac88/contracts/List.scilla)
-[readthedocs - List ](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=list#list)
+[readthedocs - List](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=list#list)
