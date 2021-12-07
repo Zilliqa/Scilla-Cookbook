@@ -11,6 +11,18 @@ To use functions from the standard library in a contract, the relevant library f
 
 The following code snippet shows how to import the functions from the ListUtils and IntUtils libraries:
 
+## Functions
+
+You can find all the typical functions available to the scilla checker and compiler [here](https://github.com/Zilliqa/scilla-compiler/tree/master/src/stdlib). A typical query is asking about Integer '>=' or '<=' as these are different to the ```builtin lt``` and ```builtin gt```.
+
+We can find all of the wrappers for the Int class in the above link [for the IntUtils](https://github.com/Zilliqa/scilla-compiler/blob/master/src/stdlib/IntUtils.scillib)
+
+```ocaml
+uint128_le
+uint128_ge
+uint128_gt
+```
+
 ```ocaml
 import ListUtils IntUtils (* builtin library function *)
 

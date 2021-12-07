@@ -10,7 +10,7 @@ tags:
 
 ## ZIL
 
-One unit of ZIL as a native token is equal to 1000000000000 QA. (1 ZIL = 10^12 QA)
+One unit of ZIL as a native token is equal to 1000000000000 QA. (1 ZIL = 10^12 QA).
 
 When we deal with ZIL as a unit in scilla, it is represented as an ```Uint128```.
 
@@ -93,6 +93,27 @@ transition Empty() (* withdraw everything *)
 end
 ```
 
-## Accept Token Contract
+## Refund Mechanism
+
+This function checks the ```_amount``` against a passed parameter ```cap```. If the amount sent is less than cap, the procedure does nothing, but in the case where you send more than ```cap```, it can calculate the difference equal to where you send exactly the right amount and returns the excess amount to the user.
+
+```ocaml
+procedure AcceptWithCap (cap : Uint128)
+  sent_more_than_necessary = builtin lt cap _amount;
+  match sent_more_than_necessary with
+  | True =>
+      amount_to_refund = builtin sub _amount cap;
+      accept;
+      msg = { _tag : ""; _recipient: _sender; _amount: amount_to_refund };
+      msgs = one_msg msg;
+      send msgs
+  | False =>
+  end
+end
+```
 
 ## Further Reading
+
+[readthedocs - Money Idioms](https://scilla.readthedocs.io/en/latest/scilla-tips-and-tricks.html?highlight=funds#money-idioms)
+
+[readthedocs - Units](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=funds#mutable-fields)

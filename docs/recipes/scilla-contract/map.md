@@ -92,9 +92,7 @@ transition Example(map_key: ByStr20, nested_key: ByStr20)
   (* sets a new key, value entry in balances for a given map_key, 
      overwrites previous value for nested_key, value if any *)
   token_owners[key][nested_key];  := value;
-
 end
-
 ```
 
 ## Further Reading

@@ -26,6 +26,10 @@ The non fungible contract has a state map called ```token_owners``` which associ
 
 ### ZRC-1
 
+The ZRC-1 contract can be found [here](https://github.com/Zilliqa/ZRC/blob/master/reference/zrc6.scilla)
+
+#### ZRC-1 interface
+
 ```ocaml
 (* @dev:    Add or remove approved minters. Only contract_owner can approve minters. *)
 (* @param:  minter      - Address of the minter to be approved or removed            *)
@@ -68,6 +72,61 @@ transition Transfer(to: ByStr20, token_id: Uint256)
 transition TransferFrom(to: ByStr20, token_id: Uint256)
 ```
 
+### ZRC-6
+
+The ZRC-6 contract can be found [here](https://github.com/Zilliqa/ZRC/blob/master/reference/zrc6.scilla).
+
+#### ZRC-6 interface
+
+```ocaml
+procedure TransferToken(to: ByStr20, token_id: Uint256)
+transition Pause()
+transition Unpause()
+transition SetRoyaltyRecipient(to: ByStr20)
+transition SetRoyaltyFeeBPS(fee_bps: Uint128)
+transition SetBaseURI(uri: String)
+transition Mint(to: ByStr20)
+transition BatchMint(to_list: List ByStr20)
+transition Burn(token_id: Uint256)
+transition BatchBurn(token_id_list: List Uint256)
+transition AddMinter(minter: ByStr20)
+transition RemoveMinter(minter: ByStr20)
+transition SetSpender(spender: ByStr20, token_id: Uint256)
+transition AddOperator(operator: ByStr20)
+transition RemoveOperator(operator: ByStr20)
+transition TransferFrom(to: ByStr20, token_id: Uint256)
+transition BatchTransferFrom(to_token_id_pair_list: List (Pair ByStr20 Uint256))
+transition SetContractOwnershipRecipient(to: ByStr20)
+transition AcceptContractOwnership()
+```
+
+## Transfering Nonfungible Tokens
+
+```ocaml
+type TokenMove = | UserToContract | ContractToUser
+
+procedure MoveNonFungibleTokenFromContractToUser(token_move: TokenMove, recipient_address: ByStr20, nonfungible: ByStr20, token_id: Uint256)
+  match token_move with
+    | ContractToUser =>
+      transfer_to_user = {
+        _tag: "TransferFrom";
+        _recipient: nonfungible;
+        _amount: uint128_zero;
+        to: recipient_address;
+        token_id: token_id
+        };
+      msgs = one_msg transfer_to_user;
+      send msgs;
+      e = {_eventname : "StoreMovedToUserSuccess"; nonfungible : nonfungible; token_id: token_id};  
+      event e
+      
+    | UserToContract =>
+    end
+end
+```
+
 ## Further Reading
 
 [ZRC-1](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-1.md)
+
+[ZRC-6](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-6.md)

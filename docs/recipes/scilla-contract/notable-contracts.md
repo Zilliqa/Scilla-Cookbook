@@ -9,7 +9,7 @@ This page stores notable contracts on the Zillqa network which have scilla logic
 
 ## ZilSwap DEX
 
-[zil1hgg7k77vpgpwj3av7q7vv5dl4uvunmqqjzpv2w](https://viewblock.io/zilliqa/address/zil1hgg7k77vpgpwj3av7q7vv5dl4uvunmqqjzpv2w?tab=code)
+[zil1gkwt95a67lnpe774lcmz72y6ay4jh2asmmjw6u](https://viewblock.io/zilliqa/address/zil1gkwt95a67lnpe774lcmz72y6ay4jh2asmmjw6u?tab=code)
 
 ## Unstoppable Registry
 

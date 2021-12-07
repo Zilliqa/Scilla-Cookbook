@@ -7,7 +7,19 @@ tags:
 
 A list is a data type which can hold several instances of a singular type.
 
-Consider the below definition of creating a List.
+Consider the below definition of creating a List of ByStr20.
+
+```ocaml
+field state_list_users : List ByStr20 = Nil {ByStr20} (* an empty List of ByStr20's*)
+
+transition Test()
+  current_list <- state_list_users; (* read the list *)
+  new_user = Cons {ByStr20} _sender current_list; (* Create a new list element and append to the current list *)
+  state_list_users := new_user (* set the appended list into state *)
+end
+```
+
+## Example List Contract
 
 ```ocaml
 scilla_version 0
@@ -303,3 +315,4 @@ let listByStr20FilterOut =
 ## Further Reading
 
 [TheDrBee - List.Scilla](https://github.com/TheDrBee/oSCILLAtor/blob/24e03d7f14802f84a1db4c183031d1f916eeac88/contracts/List.scilla)
+[readthedocs - List](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=list#list)
