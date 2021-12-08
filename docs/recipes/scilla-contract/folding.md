@@ -76,8 +76,6 @@ let fib = fun (n : Nat) =>
   match res with | Pair x y => x end
 ```
 
-
-
 ## Further Reading
 
 [TheDrBee - Recursion.scilla](https://github.com/TheDrBee/oSCILLAtor/blob/main/contracts/Recursion.scilla)

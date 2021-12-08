@@ -14,7 +14,7 @@ We create a new contract on the IDE using the "add contract" symbol at the top l
 
 One warning is returned from our contract. `No transition in contract IncrementingButton contains an accept statement` This warning means that our contract does not have the `accept` keyword and currently will not accept zil. We expected our contract not to accept zil so this warning is acceptable.
 
-![Docusaurus](/img/tutorials/incrementingbutton/ide-navbar.png)
+![Docusaurus](/img/tutorials/incrementingbutton/IDE-accept.png)
 
 At the top right, we can connect to a simulated environment where we have several accounts and test funds available. We can then select a random account that has been generated in our simulated environment session, on a successful account change the amount of zil should change to an amount.
 
