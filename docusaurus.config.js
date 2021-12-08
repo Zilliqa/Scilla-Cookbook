@@ -31,9 +31,10 @@ const config = {
       }),
     ],
   ],
-
+  
   themeConfig:
     ({
+      image: '/img/site/meta.png',
       navbar: {
         title: 'Community Scilla Cookbook',
         logo: {
