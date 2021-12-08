@@ -55,6 +55,11 @@ const config = {
             position: 'left',
           },
           {
+            href: 'https://ide.zilliqa.com/#/',
+            label: 'Scilla IDE',
+            position: 'left',
+          },
+          {
             href: 'https://github.com/Zilliqa/',
             label: 'GitHub',
             position: 'left',
