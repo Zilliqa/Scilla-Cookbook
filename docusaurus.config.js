@@ -21,7 +21,9 @@ const config = {
       ({
         docs: {
           routeBasePath: '/',
-          sidebarPath: require.resolve('./sidebars.js')
+          sidebarPath: require.resolve('./sidebars.js'),
+          editUrl: 'https://github.com/Zilliqa/Scilla-Cookbook/tree/master',
+
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
