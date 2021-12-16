@@ -14,8 +14,29 @@ Developers may want to deploy contracts through the IDE for testing which requir
 
 ### List
 
-The below example shows how to pass a List ADT as a value.
+```ocaml
+transition Test(input: List Uint256)
+```
 
 ```json
-["value1","value2"]
+["1","2","3"]
 ```
+
+### Pair
+
+```ocaml
+transition Test(input: List (Pair ByStr20 Uint256))
+```
+
+```json
+[{
+  "constructor":"Pair",
+  "argtypes": [
+      "ByStr20",
+      "Uint256"
+    ],
+    "arguments": [
+      "0x0496a854570f27687B6f401d5e209fD14c3F3061",
+      "5"
+    ]
+}]```
