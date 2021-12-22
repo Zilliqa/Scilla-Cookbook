@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocu_scilla=self.webpackChunkdocu_scilla||[]).push([[7592],{1533:function(t){t.exports=JSON.parse('{"name":"Getting started","permalink":"/tags/getting-started","docs":[{"id":"csc-introduction","title":"Community Scilla Cookbook","description":"What is a Cookbook","permalink":"/"}],"allTagsPath":"/tags"}')}}]);

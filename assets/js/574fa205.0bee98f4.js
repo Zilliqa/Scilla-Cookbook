@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocu_scilla=self.webpackChunkdocu_scilla||[]).push([[51],{5115:function(e){e.exports=JSON.parse('{"name":"zrc-2","permalink":"/tags/zrc-2","docs":[{"id":"recipes/scilla-contract/fungible","title":"Fungible Token","description":"What is a fungible token?","permalink":"/recipes/scilla-contract/fungible"}],"allTagsPath":"/tags"}')}}]);

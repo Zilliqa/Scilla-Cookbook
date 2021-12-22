@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocu_scilla=self.webpackChunkdocu_scilla||[]).push([[5257],{1237:function(c){c.exports=JSON.parse('{"name":"accept","permalink":"/tags/accept","docs":[{"id":"recipes/scilla-contract/funds","title":"Funds","description":"ZIL","permalink":"/recipes/scilla-contract/funds"}],"allTagsPath":"/tags"}')}}]);

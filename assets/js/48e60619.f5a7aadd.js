@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocu_scilla=self.webpackChunkdocu_scilla||[]).push([[1333],{7721:function(e){e.exports=JSON.parse('{"name":"Remote","permalink":"/tags/remote","docs":[{"id":"recipes/scilla-contract/remoteread","title":"Remote State Reads (RSR)","description":"What is a RSR","permalink":"/recipes/scilla-contract/remoteread"}],"allTagsPath":"/tags"}')}}]);

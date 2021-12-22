@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocu_scilla=self.webpackChunkdocu_scilla||[]).push([[4432],{1749:function(e){e.exports=JSON.parse('{"name":"dex","permalink":"/tags/dex","docs":[{"id":"recipes/scilla-contract/dex","title":"Decentralised Exchange (DEX)","description":"What is a DEX","permalink":"/recipes/scilla-contract/dex"}],"allTagsPath":"/tags"}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocu_scilla=self.webpackChunkdocu_scilla||[]).push([[9738],{3533:function(n){n.exports=JSON.parse('{"name":"non","permalink":"/tags/non","docs":[{"id":"recipes/scilla-contract/nonfungible","title":"Non-Fungible Token (NFT)","description":"What is a Non-Fungible Token","permalink":"/recipes/scilla-contract/nonfungible"}],"allTagsPath":"/tags"}')}}]);
