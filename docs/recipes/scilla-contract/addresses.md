@@ -26,7 +26,7 @@ let constant_bystr = 0x1111111111111111111111111111111111111111
 
 contract Example
 (
-    immutable_bystr: BNum
+    immutable_bystr: ByStr20
 )
 
 field state_bystr : ByStr20 = constant_bystr
