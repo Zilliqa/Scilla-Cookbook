@@ -8,8 +8,6 @@ tags:
 
 # Metatransactions
 
-## What is a metatransaction?
-
 Meta Transactions are a broad concept borrowed from Ethereum where it is typically used to load authenticated data onto a smart contract. This pattern is needed for many Ethereum projects including the ‘gasless’ relay system whereby one or more nodes accept transactions signed with a hidden private key and then wrap that transaction in a Ethereum transaction.
 
 [ZRC-3](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-3.md) defines the technical specification that another contract with the ability to perform transitions with metatransactions should consume.

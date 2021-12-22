@@ -20,7 +20,7 @@ let user_map : Map ByStr20 Uint128 = Emp ByStr20 Uint128
 
 We want to create some functionality to do something to these entries, our example usecase will be give every user in the Map a singular token everytime a Transition is called.
 
-We cannot use a ```Map``` directly in foralls, but we can use the builtin ```builtin to_list map_name``` to return us a list based on the current state of the map. We can use this to iterate, this will cost gas for the conversion equal to the elements being transformed from Map entry into List entry.
+We cannot use a ```Map``` directly in foralls, but we can use the builtin ```builtin to_list map_name``` to return us a list based on the current state of the map. We can use this to iterate, this will cost gas for the conversion equal to the elements being transformed from Map entry into List entry. When ```RewardEveryoneOneToken``` passes  ```user_map_as_list``` to ```GiveReward``` it passes each element as a ```Pair ByStr20 Uint128``` to which the developer then parses these types out to use them.
 
 ```ocaml
 transition RewardEveryoneOneToken()

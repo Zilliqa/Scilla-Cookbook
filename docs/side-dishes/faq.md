@@ -1,8 +1,11 @@
 ---
-
+tags:
+  - FAQ
 ---
 
 # FAQ
+
+A list of common FAQ's developers might have
 
 ## Why use Scilla over Solidity or other languages?
 

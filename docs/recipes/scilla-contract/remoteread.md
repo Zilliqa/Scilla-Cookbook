@@ -8,8 +8,6 @@ tags:
 
 # Remote State Reads (RSR)
 
-## What is a RSR
-
 A remote state read is the mechanism to read another contract state from any another contract. These remote fetches can be implemented in a number of ways.
 
 ## Address Subtyping

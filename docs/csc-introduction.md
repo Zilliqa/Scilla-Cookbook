@@ -2,6 +2,8 @@
 sidebar_position: 1
 slug: /
 
+description: Learn Scilla smart contract development in byte size pieces.
+
 id: csc-introduction
 tags:
   - Start

@@ -23,11 +23,11 @@ The amount of gas should be expended before erroring.
 
 ```signature```
 
-cryptographic hash of some data generated using a keypair.
+Cryptographic hash of some data generated using a keypair.
 
 ```QA```
 
-1 unit of QA is worth 0.000001 LI and 0.000000000001 ZIL.
+1 Unit of QA is worth 0.000001 LI and 0.000000000001 ZIL.
 
 QA is used when speaking about small values. Default scilla unit that can be represented as a Uint128.
 

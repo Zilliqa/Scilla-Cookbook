@@ -1,9 +1,9 @@
 ---
-
+tags:
+  - Gas
 ---
-# Gas
 
-## What is gas
+# Gas
 
 Gas is required to post a transaction to the network, the amount of gas is deterministic with contract execution complexity. A simpler transaction such as transfer of ZIL funds is less complex than say adding liquidity to a pool, just because of the complexity difference in code. Each read and write will cost more for the network to process your transaction.
 

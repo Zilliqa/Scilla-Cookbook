@@ -1,13 +1,11 @@
 ---
-
+tags:
+  - block
+  - production
+  - finality 
+  - blocks per day
 ---
 # Block Production
-
-## What is a transaction
-
-A transaction is a piece of data, in it's most typical form it's a message to send money from address A to B, can also be as complex as a smart contract interaction consuming or depositing some tokens.
-
-## What is a block
 
 When a transaction occurs, the data is submitted onchain, and the user pays some gas for the privillage to submit and have the chain respect the data they have posted. When it's posted to the network, it is bundled with other transactions that happened in the same period of time and is appended to the head of the blockchain.
 

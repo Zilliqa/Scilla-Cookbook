@@ -8,7 +8,7 @@ tags:
 
 # Natural Numbers
 
-NAT types are just natural numbers. You can start at 0 using,
+NAT types are natural numbers. You can start at 0 using,
 
 ```Zero```
 

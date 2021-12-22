@@ -18,7 +18,7 @@ Consider the below definition of creating a type similar to bool.
 type Example = | True | False
 ```
 
-The bool value can be returned from functions like ```builtin eq``` which leverages the two types of bool to return a value. The value ```is_equal``` is either true or false.
+A bool value can be returned from functions like ```builtin eq``` which leverages the two types of bool to return a value. The value ```is_equal``` is either true or false.
 
 ```ocaml
 is_equal = builtin eq a b

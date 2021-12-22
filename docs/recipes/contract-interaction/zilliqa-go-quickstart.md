@@ -1,4 +1,6 @@
 ---
+tags:
+  - GO SDK
 ---
 
 # Zilliqa-go SDK

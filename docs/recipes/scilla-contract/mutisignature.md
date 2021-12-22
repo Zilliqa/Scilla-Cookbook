@@ -9,8 +9,6 @@ tags:
 
 # Muti-signature contracts
 
-## What is a mutisig?
-
 In blockchain-based applications, activities might need to be authorised by multiple blockchain addresses. For example, a monetary transaction may require authorisation from multiple blockchain addresses.
 
 All the addresses that can authorise an activity might not be reachable at the time of issuing the transaction due to the sporadic or limited availability of some authorities. Also, it may not be possible to decide on all possible approvers in advance. How can a transaction be authorised by a subset (> 1) of approvers?

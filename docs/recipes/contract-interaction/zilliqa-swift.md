@@ -1,5 +1,6 @@
 ---
-
+tags:
+  - Swift SDK
 ---
 
 # Zilliqa-Swift SDK
