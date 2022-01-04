@@ -16,7 +16,8 @@ scilla_version 0
 library BlockNumbers
 
 let constant_bnum = BNum 1337
-let fifty_bnum = BNum 50
+let fifty_uint128 = Uint128 50
+let zero_block = BNum 0
 
 contract BlockNumbers
 (
@@ -29,13 +30,15 @@ field state_block : BNum = some_block_number
 transition BNumMaths()
     block_tx_is_processed_at <- & BLOCKNUMBER;
 
-    fifty_block_in_future = builtin badd block_tx_is_processed_at fifty_bnum; (* BNum *)
+    cast_uint_to_block = builtin badd zero_block zero_uint128 (* BNum(0) + UintX(N) = BNum(N) *)
 
-    fifty_block_in_past = builtin bsub block_tx_is_processed_at fifty_bnum; (* Int256 *)
+    fifty_block_in_future = builtin badd block_tx_is_processed_at fifty_uint128; (* BNum + UintX = BNum *)
 
-    are_blocks_equal = builtin eq  block_tx_is_processed_at fifty_bnum; (* Bool *)
+    fifty_block_in_past = builtin bsub block_tx_is_processed_at fifty_uint128; (* BNum - BNum = Uint256 *)
 
-    is_a_less_than_b = builtin blt block_tx_is_processed_at fifty_bnum (* Bool *)
+    are_blocks_equal = builtin eq  block_tx_is_processed_at cast_uint_to_block; (* BNum == BNum = Bool *)
+
+    is_a_less_than_b = builtin blt block_tx_is_processed_at fifty_uint128 (* BNum < BNum = Bool *)
 end
 ```
 
