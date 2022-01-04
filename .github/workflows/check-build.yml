@@ -8,7 +8,7 @@ on:
 
 jobs:
   test-deploy:
-    name: Test deployment
+    name: Test build before deploy
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -17,7 +17,7 @@ jobs:
           node-version: 14.x
           cache: yarn
       - name: Test build
-        working-directory: website
+        working-directory: docs
         run: |
           rm -rf node_modules && yarn cache clean
           yarn install --frozen-lockfile
