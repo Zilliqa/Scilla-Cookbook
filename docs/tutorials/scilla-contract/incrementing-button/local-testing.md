@@ -18,7 +18,7 @@ One warning is returned from our contract. `No transition in contract Incrementi
 
 At the top right, we can connect to a simulated environment where we have several accounts and test funds available. We can then select a random account that has been generated in our simulated environment session, on a successful account change the amount of zil should change to an amount.
 
-![Docusaurus](/img/tutorials/incrementingbutton/ide-deployparameters.png)
+![Docusaurus](/img/tutorials/incrementingbutton/IDE-deployparameters.png)
 
 Pressing the deploy button we can open the contract constructors and see it's immutable parameters which need defining. `IncrementingButton` has one immutable parameter defined earlier called `contract_owner`. We need to provide this before we can deploy the contract.
 
