@@ -28,7 +28,7 @@ Please ask any questions you have before raising a contribution and then follow 
 
 We abstract the development process into three distinct parts: contract development, blockchain interactions (Web3.0) and front-end implementation. The CSC is not concerned with the front-end implementation, every chef should be able to plate their creation to a front end framework of their choice. These front-end implementations should be omited from recipes defined in the CSC, but images or supporting content that help define the interaction can be submitted.
 
-The CSC is intrested in capturing as many unique recipes in Scilla, Javascript, GO and other supported SDKs that do not duplicate existing text or examples. The CSC is intrested in capturing relevent subject matter to related topics that answer as many developers questions when they get started developing scilla.
+The CSC is interested in capturing as many unique recipes in Scilla, Javascript, GO and other supported SDKs that do not duplicate existing text or examples. The CSC is interested in capturing relevent subject matter to related topics that answer as many developers questions when they get started developing scilla.
 
 ## CSC Terminology
 

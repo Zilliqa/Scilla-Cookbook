@@ -84,7 +84,7 @@ transition Burn(burn_account: ByStr20, amount: Uint128)
 ### Operatable
 
 :::warning
-The 'operatorable' fungible contract should be viewed skeptically as an ```operator``` can aborarily move tokens.
+The 'operatorable' fungible contract should be viewed skeptically as an ```operator``` can arbotarily move tokens.
 :::
 
 ```ocaml
