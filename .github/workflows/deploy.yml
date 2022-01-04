@@ -19,6 +19,7 @@ jobs:
       - name: Build website
         working-directory: website
         run: |
+          rm -rf node_modules && yarn cache clean
           yarn install --frozen-lockfile
           yarn build
 
