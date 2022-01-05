@@ -9,11 +9,9 @@ tags:
 
 # Messages, Callbacks & Contract-to-Contract Interaction
 
-## Contract-to-Contract Interaction
-
 Developers may wish to call another contract to perform a specific action.
 
-### Crosschain calling example using Messages
+## Crosschain calling example using Messages
 
 Let's assume we have a button contract. The button contract allows addresses to interact and press the button. In this example we write a contract that interacts with the button contract called ```CallerContract```
 

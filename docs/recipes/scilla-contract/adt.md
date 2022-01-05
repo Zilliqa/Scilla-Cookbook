@@ -10,9 +10,7 @@ tags:
   - algebraic
 ---
 
-# ADT
-
-## Algebraic Data Types
+# Algebraic Data Types
 
 In functional programming and type theory, an algebraic data type (ADT) is a kind of composite type, formed of two or more other primative types.
 
@@ -149,7 +147,7 @@ end
 
 ## Full ADT examples
 
-### Parcel
+### Store ADT as List (Pair Parcel Uint32)
 
 ```ocaml
 scilla_version 0
@@ -237,7 +235,7 @@ transition AddParcelWithShirtAndBarbell(weightS: Uint32, weightB: Uint32)
 end
 ```
 
-### PlayerAge
+### Store ADT as Map ByStr20 Player
 
 ```ocaml
 scilla_version 0
@@ -245,51 +243,25 @@ scilla_version 0
 (* a map of ByStr20 (address) to a user defined algebraic data type     *)
 (*   the ADT is a Player with an age that either plays tennis or runs   *)
 (************************************************************************)
-library AdtMap
+library ADTMap
 
 type Sport =
   | Tennis
   | Run
 
-type Player = (* Age and preferred Sport *)
-  | Player of Uint32 Sport
+type Player = | Player of Uint32 Sport (* Age and preferred Sport *)
 
 
-contract AdtMap
+contract ADTMap
 ()
 
-(* mutable fields declarations *)
-field players : Map ByStr20 Player = Emp ByStr20 Player (* players[address] = Player *)
+field players : Map ByStr20 Player = Emp ByStr20 Player 
 
 procedure Add(age: Uint32, sport: Sport)
   player = Player age sport;
   players[_sender] := player
 end
 
-(* add sender as a Tennis player *)
-transition AddTennis(age: Uint32)
-  sport = Tennis;
-  Add age sport
-end
-(* add sender as a Soccer player *)
-transition AddRun(age: Uint32)
-  sport = Run;
-  Add age sport
-end
-(* change the age of sender, kepp its sport *)
-transition ChangeAge(new_age: Uint32)
-  player_o <- players[_sender]; (* look up in map *)
-  match player_o with
-  | Some player =>
-    match player with (* get the entries and change age *)
-    | Player age sport =>
-      new_player = Player new_age sport;
-      players[_sender] := new_player
-    end (* player *)
-  | None => (* sender is not in map, don't do anything *)
-  end (* player_o *)
-end
-(* remove the sender from the map *)
 transition Remove()
   delete players[_sender]
 end

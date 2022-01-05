@@ -22,8 +22,8 @@ const config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl: 'https://github.com/Zilliqa/Scilla-Cookbook',
+          editUrl: 'https://github.com/Zilliqa/Scilla-Cookbook/tree/master',
+
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -33,8 +33,22 @@ const config = {
   ],
   
   themeConfig:
-    ({
-      image: '/img/site/meta.png',
+    (
+      {
+      image: 'img/site/meta.jpg?v=1',
+      metadata: 
+      [
+        {name: 'image', content: 'img/site/meta.jpg?v=1'},
+        {name: 'robots', content: 'max-image-preview:large' },
+        {name: 'twitter:card', content: 'summary_large_image'},
+        {name: 'twitter:image', content: 'img/site/meta.jpg?v=1'},
+        {name: 'og:image', content: 'img/site/meta.jpg?v=1'},
+        {name: 'og:url', content: 'https://scillacookbook.org'},
+        {name: 'og:locale', content: 'en_GB'},
+        {name: 'og:type', content: 'image/jpg'},
+        {name: 'og:width', content: '1200'},
+        {name: 'og:height', content: '630'},
+      ],
       navbar: {
         title: 'Community Scilla Cookbook',
         logo: {
@@ -55,6 +69,11 @@ const config = {
           {
             href: 'https://scilla.readthedocs.io',
             label: 'Scilla Docs',
+            position: 'left',
+          },
+          {
+            href: 'https://ide.zilliqa.com/#/',
+            label: 'Scilla IDE',
             position: 'left',
           },
           {

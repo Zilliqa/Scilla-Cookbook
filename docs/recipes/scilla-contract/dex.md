@@ -8,9 +8,7 @@ tags:
 
 # Decentralised Exchange (DEX)
 
-## What is a DEX
-
-Decentralized exchanges (DEXES) typically do not use order books to facilitate trades or set prices. Instead, these platforms employ liquidity pool protocols to determine asset pricing.
+Decentralized exchanges (DEX) typically do not use order books to facilitate trades or set prices. Instead, these platforms employ liquidity pool protocols to determine asset pricing.
 
 Peer-to-peer in nature, these exchanges execute trades between users’ wallets instantly — a process some refer to as a swap. The DEXs in this category are ranked in total value locked (TVL), or the value of assets held in the protocol's smart contracts.
 

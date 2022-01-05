@@ -8,8 +8,6 @@ tags:
 
 # Metatransactions
 
-## What is a metatransaction?
-
 Meta Transactions are a broad concept borrowed from Ethereum where it is typically used to load authenticated data onto a smart contract. This pattern is needed for many Ethereum projects including the ‘gasless’ relay system whereby one or more nodes accept transactions signed with a hidden private key and then wrap that transaction in a Ethereum transaction.
 
 [ZRC-3](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-3.md) defines the technical specification that another contract with the ability to perform transitions with metatransactions should consume.
@@ -43,7 +41,7 @@ This contract is based largely on the recommendations of EIP-965. It accomplishe
 }
 ```
 
-Note that the recipient, amount, contract, fee and nonce values are hashed and signed client-side before submitting the metatransaction to an arbitrary relay which can use this metatransaction as a spend-by-proxy. Both the relay and sender can be confident that parameters are properly validated on-chain, only a valid metatransaction can be spent and it can only be spent once.
+Note that the recipient, amount, contract, fee and nonce values are hashed and signed client-side before submitting the metatransaction to an arbotarily relay which can use this metatransaction as a spend-by-proxy. Both the relay and sender can be confident that parameters are properly validated on-chain, only a valid metatransaction can be spent and it can only be spent once.
 
 This spend function does not replace the normal Transfer transition or the OperatorSend functionality already possible with ZRC2, instead it offers a third method for authorizing these transfers. One in which the holder of a token with spending authority is not presumed to have the Zil onhand to pay for transactions. It also optionally allows for paying transaction fees in tokens.
 

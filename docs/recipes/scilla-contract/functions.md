@@ -138,3 +138,29 @@ let eqByStr20 =
   fun(bs2: ByStr20) =>
     builtin eq bs1 bs2
 ```
+
+## build_pair
+
+Takes two arguments and constructs a Pair object from them.
+
+```ocaml
+let build_pair =
+  fun (input_to_address : ByStr20) =>
+  fun (input_token_uri : String) =>
+    Pair {ByStr20 String} input_to_address input_token_uri
+```
+
+## (Generics) get_option_value
+
+Allows for any generic optional type to be unwrapped using ```tfun 'A``` where ```'A``` is some type.
+
+```ocaml
+let get_option_value =
+  tfun 'A =>
+  fun (default: 'A) =>
+  fun (opt_val: Option 'A) =>
+    match opt_val with
+    | Some v => v
+    | None => default
+    end
+```

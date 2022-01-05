@@ -1,6 +1,8 @@
 ---
-
+tags:
+  - Vanity
 ---
+
 # Vanity Addresses
 
 [frog357's Zilliqa Vanity Address Generator](https://github.com/frog357/zilliqa-vanity/) allows creation of Zilliqa bech32 vanity address keypairs, allow for an address with a substring that the addresses must: start with, end with or contains.

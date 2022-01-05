@@ -8,15 +8,13 @@ tags:
 
 # Option
 
-## Optional Types
-
 Optional values are specified using the type ```Option t```, where ```t``` is some type. The ```Option``` ADT has two constructors:
 
 ```Some``` represents the presence of a value. The Some constructor takes one argument (the value, of type t).
 
 ```None``` represents the absence of a value. The None constructor takes no arguments.
 
-### Example Contract
+## Example Contract
 
 ```ocaml
 scilla_version 0

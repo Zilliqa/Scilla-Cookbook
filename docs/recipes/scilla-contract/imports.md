@@ -7,9 +7,7 @@ tags:
 
 # Imports
 
-To use functions from the standard library in a contract, the relevant library file must be imported using the import declaration.
-
-The following code snippet shows how to import the functions from the ListUtils and IntUtils libraries:
+To use functions from the standard library in a contract, the relevant library file must be imported using the import declaration. The following code snippet shows how to import the functions from the ListUtils and IntUtils libraries:
 
 ## Functions
 

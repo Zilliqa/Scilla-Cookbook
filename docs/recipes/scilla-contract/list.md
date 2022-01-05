@@ -5,9 +5,7 @@ tags:
 
 # List
 
-A list is a data type which can hold several instances of a singular type.
-
-Consider the below definition of creating a List of ByStr20.
+A list is a data type which can hold several instances of a singular type. Consider the below definition of creating a List of ByStr20.
 
 ```ocaml
 field state_list_users : List ByStr20 = Nil {ByStr20} (* an empty List of ByStr20's*)
