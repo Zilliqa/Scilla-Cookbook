@@ -8,9 +8,9 @@ tags:
 
 # Addresses
 
-Addresses on the network can either be a wallet or a contract. Addresses come in two notations Bech32 or Base16. Bech32's start with the prefix ```zil...``` whereas Base16's are prefixed with ```0x...```.
+Addresses on the network can either be a wallet or a contract. Addresses come in two format Bech32 or Base16. Bech32's start with the prefix ```zil1...``` whereas Base16's are prefixed with ```0x...```.
 
-Converting a Bech32 into a Base16 and visa versa can be achieved manually though ```IDE>Tools>AddressConverter``` or programatically using programs like Zilliqa-JS. When we refer to a ByStr20 in Scilla, we refer to the Base16 address.
+Converting a Bech32 into a Base16 and vice versa can be achieved manually though our (Neo-savant IDE)[https://ide.zilliqa.com/]`(Tools>AddressConverter)` or programatically using programs like [Zilliqa-JS](https://github.com/Zilliqa/Zilliqa-JavaScript-Library). When we refer to a ByStr20 address in Scilla, we refer to the Base16 address.
 
 ```text
 Bech32 = zil1zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3h6785s
@@ -29,7 +29,7 @@ contract Example
     immutable_bystr: ByStr20
 )
 
-field state_bystr : ByStr20 = constant_bystr
+field addr_bystr : ByStr20 = constant_bystr
 ```
 
 ## Address Subtypes
