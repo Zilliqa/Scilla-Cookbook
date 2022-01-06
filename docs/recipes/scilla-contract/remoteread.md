@@ -6,7 +6,7 @@ tags:
   - RSR
 ---
 
-# Remote State Reads (RSR)
+# Remote State Reads
 
 A remote state read is the mechanism to read another contract state from any another contract. These remote fetches can be implemented in a number of ways.
 
@@ -28,7 +28,7 @@ To perform a remote fetch inline, the syntax  ```x <- & c.f``` is used.
 
 The type of c must be some contract address type declaring the field f. For instance, if c has the type ByStr20 with contract field paused : Bool end, then the value of the field paused at address c can be fetched using the statement ```x <- & c.paused```.
 
-## RSR Example
+## Example
 
 ```ocaml
 scilla_version 0
@@ -60,7 +60,7 @@ transition ReadValueFromSetGet2(addr: ByStr20)
 end
 ```
 
-## RSR Example - Immutable Parameters
+## Example - Immutable Parameters
 
 Users must declare the remote contract mutable fields for which they are trying to access. If the contract has more mutable fields than the user requires to read, they can be omitted.
 
