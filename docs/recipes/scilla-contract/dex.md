@@ -62,4 +62,4 @@ transition SwapTokensForExactTokens
 
 ## Further Reading
 
-* [readthedocs - Create a token exchange](https://scilla.readthedocs.io/en/latest/scilla-by-example.html?highlight=list#exchange-specification)
+* [Scilla Documentation - Create a token exchange](https://scilla.readthedocs.io/en/latest/scilla-by-example.html?highlight=list#exchange-specification)

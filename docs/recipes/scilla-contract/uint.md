@@ -70,4 +70,4 @@ end
 
 ## Further Reading
 
-* [readthedocs - Integers](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html#integer-types)
+* [Scilla Documentation - Integers](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html#integer-types)
