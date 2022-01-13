@@ -8,7 +8,7 @@ tags:
 
 # Remote State Reads (RSR)
 
-A remote state read is the mechanism to read another contract state from any another contract. These remote fetches can be implemented in a number of ways.
+A remote state read is the mechanism to read another contract mutable parameter state from any another contract. These remote fetches can be implemented in a number of ways.
 
 :::tip
 Remote state reads only allow fetching of mutable fields, not immutable fields.
@@ -26,63 +26,58 @@ Remote state reads only allow fetching of mutable fields, not immutable fields.
 
 To perform a remote fetch inline, the syntax  ```x <- & c.f``` is used.
 
-The type of c must be some contract address type declaring the field f. For instance, if c has the type ByStr20 with contract field paused : Bool end, then the value of the field paused at address c can be fetched using the statement ```x <- & c.paused```.
+The type of c must be some contract address type declaring the field f. For instance, if c has the type ```ByStr20 with contract field paused : Bool end``` then the value of ```field paused``` at address c can be fetched using the statement ```x <- & c.paused```.
 
-## RSR Example
+## RSR Example - Passing a contract with a remote field
 
 ```ocaml
-scilla_version 0
-
-contract RemoteRead
-()
-
-(* read a value from a contract that has a field value of type Uint128  *)
-transition ReadValueFromSetGet(c: ByStr20 with contract field value: Uint128 end)
+transition PassCGetRemoteValue(c: ByStr20 with contract field value: Uint128 end)
   value <- & c.value;
   ev = {_eventname : "ReadValueFromSetGet"; value: value};
   event ev
 end
+```
 
-(* read a value from a contract that has afield value of type Uint128   *)
-(* version #2: do not define the address type as a transition parameter *)
-(*              but only inside the transition: Address type cast       *)
-transition ReadValueFromSetGet2(addr: ByStr20)
-  contract_opt <- &addr as ByStr20 with contract field value: Uint128 end;
+## RSR Example - Fetching a contract with a remote field
+
+```ocaml
+transition FetchRemoteValueFromC(c: ByStr20)
+  contract_opt <- &c as ByStr20 with contract field value: Uint128 end;
   match contract_opt with
   | Some c =>
     value <- &c.value;
-    ev = {_eventname : "ReadValueFromSetGet2"; value: value};
-    event ev
   | None => 
-    ev = {_eventname : "ReadValueFromSetGet2Failure"};
-    event ev
   end
 end
 ```
 
-## RSR Example - Immutable Parameters
+## RSR Example - Fetching multiple remote fields
 
-Users must declare the remote contract mutable fields for which they are trying to access. If the contract has more mutable fields than the user requires to read, they can be omitted.
+Users must declare the remote contract mutable fields for which they are trying to access. If the contract has more mutable fields than the user requires to read, they can be omitted. Maps can also be fetched.
 
 ```ocaml
-(* Immutable parameter defined as 'An address on the network' which has fields value1, value2 *)
-contract RemoteRead2
-(
-  remote_contract_addr: ByStr20 with contract
-    field value1: Uint128,
-    field value2: String
-  end 
-)
+field maybe_remote_value : Option Uint128 = None {Uint128}
 
-(* Remote read the contract at 'remote_contract_addr' and fetch the values into value1, value2 *)
-transition RemoteStateRead()
-  value1 <-& remote_contract_addr.value1;
-  value2 <-& remote_contract_addr.value2;
-  ev = {_eventname : "RemoteStateRead"; value1: value1; value2: value2};
-  event ev
+transition RemoteReadsOfRemoteMap(
+  remote: ByStr20 with contract
+                       field admin : ByStr20 with contract
+                                                  field f : ByStr20 with contract
+                                                                         field g : Map Uint128 Uint128
+                                                                         end
+                                                  end
+                       end)
+  ad <-& remote.admin;
+  this_f <-& ad.f;
+  remote_key = Uint128 0;
+  this_g <-& this_f.g[remote_key];
+  maybe_remote_value := this_g
 end
 ```
 
 ## Further Reading
 
 [Remote Read Implementation](https://github.com/Zilliqa/scilla/pull/1014/files)
+
+[Remote Read Testcase 1](https://github.com/Zilliqa/scilla/blob/ccf60d04f89202c5149461def28f390ad4bc5a7c/tests/contracts/remote_state_reads.scilla)
+
+[Remote Read Testcase 2](https://github.com/Zilliqa/scilla/blob/ccf60d04f89202c5149461def28f390ad4bc5a7c/tests/contracts/remote_state_reads_2.scilla)
