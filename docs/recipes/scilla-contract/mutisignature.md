@@ -116,10 +116,10 @@ There is not a mutisignature contract that currently accepts ZRC-2 tokens
 
 ## Further Reading
 
-[Multisignature](https://research.csiro.au/blockchainpatterns/general-patterns/security-patterns/multiple-authorization/)
+* [Multisignature](https://research.csiro.au/blockchainpatterns/general-patterns/security-patterns/multiple-authorization/)
 
-[ZRC-4 Specification](https://github.com/Zilliqa/ZRC/blob/4e92efd31c5d9a43db8bf5a7d25f7e2916d54c1d/zrcs/zrc-4.md)
+* [ZRC-4 Specification](https://github.com/Zilliqa/ZRC/blob/4e92efd31c5d9a43db8bf5a7d25f7e2916d54c1d/zrcs/zrc-4.md)
 
-[ZRC-4 Interaction](https://github.com/Zilliqa/ZRC/tree/4e92efd31c5d9a43db8bf5a7d25f7e2916d54c1d/example/zrc4)
+* [ZRC-4 Interaction](https://github.com/Zilliqa/ZRC/tree/4e92efd31c5d9a43db8bf5a7d25f7e2916d54c1d/example/zrc4)
 
-[Zilliqa Mutisignature Wallet UI](https://multisig.zilliqa.com/)
+* [Zilliqa Mutisignature Wallet UI](https://multisig.zilliqa.com/)

@@ -125,6 +125,6 @@ end
 
 ## Further Reading
 
-[ZRC-1](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-1.md)
+* [ZRC-1](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-1.md)
 
-[ZRC-6](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-6.md)
+* [ZRC-6](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-6.md)

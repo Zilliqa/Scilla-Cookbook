@@ -115,4 +115,4 @@ end
 
 ## Further Reading
 
-[readthedocs - Fungible Tokens](https://scilla.readthedocs.io/en/latest/scilla-by-example.html?highlight=fungible#fungible-tokens)
+* [readthedocs - Fungible Tokens](https://scilla.readthedocs.io/en/latest/scilla-by-example.html?highlight=fungible#fungible-tokens)

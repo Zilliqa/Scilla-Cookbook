@@ -57,12 +57,12 @@ It may optionally report a minimum fee, but it cannot charge a fee that the toke
 
 ## Further Reading
 
-[Medium - ZRC3’s Grand Rewrite](https://medium.com/builders-of-zilliqa/zrc3s-grand-rewrite-22558797ea0)
+* [Medium - ZRC3’s Grand Rewrite](https://medium.com/builders-of-zilliqa/zrc3s-grand-rewrite-22558797ea0)
 
-[ZRC-3 Specification](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-3.md)
+* [ZRC-3 Specification](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-3.md)
 
-[ZRC-3 - Contract](https://github.com/Zilliqa/ZRC/blob/master/reference/MetaFungibleToken.scilla)
+* [ZRC-3 - Contract](https://github.com/Zilliqa/ZRC/blob/master/reference/MetaFungibleToken.scilla)
 
-[ZRC3 - Interaction](https://github.com/Zilliqa/ZRC/tree/master/example/zrc3)
+* [ZRC3 - Interaction](https://github.com/Zilliqa/ZRC/tree/master/example/zrc3)
 
-[relay.js "bouncer proxy" - Docker Interaction](https://github.com/starling-foundries/relay.js)
+* [relay.js "bouncer proxy" - Docker Interaction](https://github.com/starling-foundries/relay.js)

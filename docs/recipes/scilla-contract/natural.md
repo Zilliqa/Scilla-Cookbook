@@ -65,8 +65,8 @@ end
 
 ## Further Reading
 
-[Haskell Peano Numbers](https://wiki.haskell.org/Peano_numbers)
+* [Haskell Peano Numbers](https://wiki.haskell.org/Peano_numbers)
 
-[NatType.scilla](https://github.com/TheDrBee/oSCILLAtor/blob/079f2400cfa1e6fdc7a7b0449bd65406186a1f3e/contracts/NatType.scilla)
+* [NatType.scilla](https://github.com/TheDrBee/oSCILLAtor/blob/079f2400cfa1e6fdc7a7b0449bd65406186a1f3e/contracts/NatType.scilla)
 
-[readthedocs - Nat](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=adt#nat)
+* [readthedocs - Nat](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=adt#nat)

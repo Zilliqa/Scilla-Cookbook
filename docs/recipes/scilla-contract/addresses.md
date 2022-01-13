@@ -49,8 +49,8 @@ Read more on [Address subtyping here.](https://scilla.readthedocs.io/en/latest/s
 
 ## Further Reading
 
-[readthedocs - Addresses](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=bystr20#addresses)
+* [readthedocs - Addresses](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=bystr20#addresses)
 
-[auction.scilla](https://github.com/Zilliqa/scilla/blob/master/tests/contracts/auction.scilla)
+* [auction.scilla](https://github.com/Zilliqa/scilla/blob/master/tests/contracts/auction.scilla)
 
-[unstoppabledomains_registry.scilla](https://github.com/Zilliqa/zli/blob/c35fbac35edb5c6987b8a5881490a7cacb4cb1be/testsuite/contracts/UnstoppableDomains/Registry.scilla)
+* [unstoppabledomains_registry.scilla](https://github.com/Zilliqa/zli/blob/c35fbac35edb5c6987b8a5881490a7cacb4cb1be/testsuite/contracts/UnstoppableDomains/Registry.scilla)

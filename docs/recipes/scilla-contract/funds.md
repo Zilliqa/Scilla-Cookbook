@@ -115,6 +115,6 @@ end
 
 ## Further Reading
 
-[readthedocs - Money Idioms](https://scilla.readthedocs.io/en/latest/scilla-tips-and-tricks.html?highlight=funds#money-idioms)
+* [readthedocs - Money Idioms](https://scilla.readthedocs.io/en/latest/scilla-tips-and-tricks.html?highlight=funds#money-idioms)
 
-[readthedocs - Units](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=funds#mutable-fields)
+* [readthedocs - Units](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=funds#mutable-fields)

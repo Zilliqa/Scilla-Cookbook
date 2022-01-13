@@ -78,4 +78,4 @@ let fib = fun (n : Nat) =>
 
 ## Further Reading
 
-[TheDrBee - Recursion.scilla](https://github.com/TheDrBee/oSCILLAtor/blob/main/contracts/Recursion.scilla)
+* [TheDrBee - Recursion.scilla](https://github.com/TheDrBee/oSCILLAtor/blob/main/contracts/Recursion.scilla)

@@ -35,6 +35,6 @@ end
 
 ## Further Reading
 
-[Bool](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=bool#boolean)
+* [Bool](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=bool#boolean)
 
-[BoolUtils](https://scilla.readthedocs.io/en/latest/stdlib.html?highlight=bool#boolutils)
+* [BoolUtils](https://scilla.readthedocs.io/en/latest/stdlib.html?highlight=bool#boolutils)

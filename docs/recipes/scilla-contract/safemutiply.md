@@ -86,4 +86,4 @@ Test this out on isolated environment ```0xd3360fe70a19dc2dd5cb7ad4164db455ddc2a
 
 ## Further Reading
 
-[SSN Staking Contract](https://github.com/Zilliqa/staking-contract/blob/82fad745a04eedefb1a0cd16e5316626c3736c13/contracts/ssnlist.scilla)
+* [SSN Staking Contract](https://github.com/Zilliqa/staking-contract/blob/82fad745a04eedefb1a0cd16e5316626c3736c13/contracts/ssnlist.scilla)

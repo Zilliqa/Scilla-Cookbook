@@ -76,8 +76,8 @@ end
 
 ## Further Reading
 
-[Remote Read Implementation](https://github.com/Zilliqa/scilla/pull/1014/files)
+* [Remote Read Implementation](https://github.com/Zilliqa/scilla/pull/1014/files)
 
-[Remote Read Testcase 1](https://github.com/Zilliqa/scilla/blob/ccf60d04f89202c5149461def28f390ad4bc5a7c/tests/contracts/remote_state_reads.scilla)
+* [Remote Read Testcase 1](https://github.com/Zilliqa/scilla/blob/ccf60d04f89202c5149461def28f390ad4bc5a7c/tests/contracts/remote_state_reads.scilla)
 
-[Remote Read Testcase 2](https://github.com/Zilliqa/scilla/blob/ccf60d04f89202c5149461def28f390ad4bc5a7c/tests/contracts/remote_state_reads_2.scilla)
+* [Remote Read Testcase 2](https://github.com/Zilliqa/scilla/blob/ccf60d04f89202c5149461def28f390ad4bc5a7c/tests/contracts/remote_state_reads_2.scilla)
