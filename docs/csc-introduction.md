@@ -16,21 +16,21 @@ tags:
 
 A programmers cookbook contains snippets of code to explain a concept to the reader. In our case, this is a Scilla and Scilla interactivity cookbook. The reader will find Scilla, Javascript and other snippets with a high level description.
 
-The Community Scilla Cookbook (CSC) is maintained by the community and is a reference for various scilla related documents, contracts, howto's, tips and tricks. If you have found this documentation useful, consider contributing your knowledge.
+The Community Scilla Cookbook is maintained by the community and is a reference for various scilla related documents, contracts, howto's, tips and tricks. If you have found this documentation useful, consider contributing your knowledge.
 
-## How can I contribute to the CSC
+## How can I contribute to the Community Scilla Cookbook
 
 Join the Scilla development community on [Discord](https://discord.gg/nKznfCaZxy) and [Telegram](https://t.me/ZilliqaDevs) and get started discussing Zilliqa smart contract development!
 
 Please ask any questions you have before raising a contribution and then follow the contribution section on the Github readme.
 
-## What can I expect from the CSC
+## What can I expect from the Community Scilla Cookbook
 
-We abstract the development process into three distinct parts: contract development, blockchain interactions (Web3.0) and front-end implementation. The CSC is not concerned with the front-end implementation, every chef should be able to plate their creation to a front end framework of their choice. These front-end implementations should be omited from recipes defined in the CSC, but images or supporting content that help define the interaction can be submitted.
+We abstract the development process into three distinct parts: contract development, blockchain interactions (Web3.0) and front-end implementation. The Community Scilla Cookbook is not concerned with the front-end implementation, every chef should be able to plate their creation to a front end framework of their choice. These front-end implementations should be omited from recipes defined in the Community Scilla Cookbook, but images or supporting content that help define the interaction can be submitted.
 
-The CSC is interested in capturing as many unique recipes in Scilla, Javascript, GO and other supported SDKs that do not duplicate existing text or examples. The CSC is interested in capturing relevent subject matter to related topics that answer as many developers questions when they get started developing scilla.
+The Community Scilla Cookbook is interested in capturing as many unique recipes in Scilla, Javascript, GO and other supported SDKs that do not duplicate existing text or examples. The Community Scilla Cookbook is interested in capturing relevent subject matter to related topics that answer as many developers questions when they get started developing scilla.
 
-## CSC Terminology
+## Community Scilla Cookbook Terminology
 
 ### Recipe
 
@@ -84,7 +84,7 @@ recipes
 
 If you find yourself wanting to contribute scilla specific snippets about a specific contract type or a specific chain interaction, it belongs in a recipe page.
 
-Recipe pages should contain all the relevent infomation without duplicating text from elsewhere in the CSC. Pages should be as atomic and singular as possible. Adding more infomation to the parent page is always encoraged. Write as structured as possible leaving no ambiguity to the reader. Reference standard recipe pages when possible.
+Recipe pages should contain all the relevent infomation without duplicating text from elsewhere in the Community Scilla Cookbook. Pages should be as atomic and singular as possible. Adding more infomation to the parent page is always encoraged. Write as structured as possible leaving no ambiguity to the reader. Reference standard recipe pages when possible.
 
 ### Side-dishes
 

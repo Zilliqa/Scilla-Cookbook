@@ -9,7 +9,7 @@ tags:
 
 # BNum
 
-Block Numbers (BNum) are a type used for tracking the current block number. Blockchain's don't have any concept of dates or times without external oracles. Blocks can be used as a primitive way to determine how much time has passed.
+Block Numbers (BNum) are a type used for tracking the current block number. Blockchain do not have any concept of dates or times without external oracles. Blocks can be used as a primitive way to determine how much time has passed.
 
 ```ocaml
 scilla_version 0
@@ -44,6 +44,6 @@ end
 
 ## Further Reading
 
-[readthedocs - BNum](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=block#block-numbers)
+- [Scilla documentation - BNum](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=block#block-numbers)
 
-[auction.scilla](https://github.com/Zilliqa/scilla/blob/master/tests/contracts/auction.scilla)
+- [auction.scilla](https://github.com/Zilliqa/scilla/blob/master/tests/contracts/auction.scilla)
