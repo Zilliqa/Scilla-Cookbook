@@ -12,7 +12,7 @@ This could be for a number of issues. Firstly, read and understand the error.
 
 Lets take the below example where a user is trying to interface with Zilswap Dex.
 
-![Docusaurus](/img/side-dishes/troubleshooting/troubleshooting-1.png)
+![Docusaurus](/img/side-knowledge/troubleshooting/troubleshooting-1.png)
 
 Firstly, we can see the transition with the passed variables variables, and below that we can see the exception stack trace.
 
@@ -44,4 +44,34 @@ We have traced the error back to this particular logical block.
 
 We can further extrapolate on the intermeditely proceding code that this logical block is dealing with swapping user tokens against the liquidity pool - this error is returned when either the price moves and the amount of slippage determines that the trade calculation would not have enough tokens to procede and therefore throws this error.
 
+## Typical Errors
+
+A non exausted list of errors and some tips for working a resolution.
+
+### Failed to parse json
+
+Input passed wasn't in the expected shape, print the request and parameters and check what's being passed and what types are present.
+
+### No parameter found matching message entry xxx
+
+A transition or procedure is expecting a parameter which is missing, is your call passing this data in the expected order? This error can also be thrown on callbacks.
+
+### "JSON_OUTPUT_CORRUPTED","CHECKER_FAILED"
+
+Check your initalisation parameters are valid.
+
+### To Addr checksum wrong
+
+Base16 addresses use uppercase and lowercase letters to be used as a checksum, the address still works as a public key in all lowercase or uppercase but then the checksum is invalid - try making the string lowercase.
+
+### Ran out of gas after evaluating statement
+
+Increase your gas limit.
+
+### xxx type not allowed in JSON file
+
+Check the types in your request to whats on the contract.
+
 ## Further Reading
+
+[Zilswap Dex Contract - L165](https://viewblock.io/zilliqa/address/zil1gkwt95a67lnpe774lcmz72y6ay4jh2asmmjw6u?tab=code)

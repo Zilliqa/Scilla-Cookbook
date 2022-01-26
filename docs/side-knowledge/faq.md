@@ -5,7 +5,7 @@ tags:
 
 # FAQ
 
-A list of common FAQ's developers might have
+A list of common FAQ's developers might have.
 
 ## Why use Scilla over Solidity or other languages?
 
@@ -23,6 +23,12 @@ Moreover, Turing complete languages are hard to reason about and hence prone to 
 Unlike Bitcoin, the mining process in Zilliqa is not directly based on PoW. Every Zilliqa node first does a PoW at the start of what is called a DS epoch. Once, a valid PoW solution is submitted to the network, each node will then have to participate in the pBFT consensus protocol. Consider the consensus protocol as a simple voting. If a super-majority of nodes vote for it, then the block will be considered valid and can be committed to the blockchain. Once a node has done PoW, it can vote for a certain number of blocks. Every block that gets committed to the blockchain will yield some reward.
 
 The difference with Bitcoin is that in Bitcoin nodes do a PoW for every new block. For Zilliqa, a node will do a PoW for every 100 blocks. This also means that the energy footprint associated with PoW in Zilliqa is considerabily lower.
+
+## How does Zilliqa Core protocol work?
+
+Please see the [Core Protocol Design](https://dev.zilliqa.com/docs/contributors/core-node-operation/) documentation.
+
+## Further Reading
 
 [PDF Docs](https://scilla.readthedocs.io/_/downloads/en/latest/pdf/)
 

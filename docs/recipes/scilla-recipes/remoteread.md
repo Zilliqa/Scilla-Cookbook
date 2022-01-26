@@ -20,7 +20,7 @@ Remote state reads only allow fetching of mutable fields, not immutable fields.
 - balance greater than 0
 - nonce of address greater than 0
 
-```ByStr20 with contract end```: Refers to an contract address
+```ByStr20 with contract end```: Refers to a contract address
 
 ```ByStr20 with contract field f1 : t1, field f2 : t2, ... end```: Refers to the address of a contract containing the mutable fields f1 of type t1, f2 of type t2, and so on. The contract in question may define more fields than the ones specified in the type, but the fields specified in the type must be defined in the contract.
 
@@ -82,6 +82,39 @@ transition RemoteStateRead()
   value2 <-& remote_contract_addr.value2;
   ev = {_eventname : "RemoteStateRead"; value1: value1; value2: value2};
   event ev
+end
+```
+
+### Remote State Read - Migration of Map
+
+This is an example how how migrate a map from contract A to contract B.
+Because this implementation contains no batching functionaltiy, if the map becomes too large, the read and write operations will exceed the maximum amount of gas allowed for a transaction to consume, rendering this function effectively broken.
+
+:::tip
+Can you improve the example to then batch on a selection of passed keys?
+:::
+
+```ocaml
+(* A : Old contract, has state read by contract(b) *)
+transition ProxyReadFromMap(old_contract: ByStr20)
+  msg_to_new_contract = { 
+    _tag: "ReadFromMap"; 
+    _recipient: new_contract;
+    _amount: zero;
+    old_contract: old_contract 
+  };
+  msgs = one_msg msg_to_new_contract;
+  send msgs
+end
+
+(* B : New contract, call this first with the old contract(a) *)
+transition ReadFromMap (
+  old_contract: ByStr20 with contract 
+    field map_a: Map ByStr20 Uint128
+  end
+)
+  temp_new_a <- & old_contract.map_a;
+  new_map_a := temp_new_a
 end
 ```
 

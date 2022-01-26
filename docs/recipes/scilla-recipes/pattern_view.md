@@ -9,9 +9,9 @@ tags:
 
 The viewer pattern is a standardised way of implementing functions that return a value without using callbacks.
 
-In the first contract the transition ```Function_with_return_value``` is a general function, which might perform state updates as well as returning a value. The transition ```View_function``` is a view function which returns a value, but which doesn't perform state updates.
+Contract A is the calling contract. User calls ```Call_and_read_return_value``` which does two things. Firstly, it calls a transition on contract B called ```View_function``` which then sets some state. Secondly, control is passed back to contract A, and then calls a transition on itself called ```Read_Return_value``` which then can access the state field amended on contract B to use for onwards processing.
 
-In the second contract the transition ```Call_and_read_return_value``` calls the view function (it could have been the non-view function instead - the pattern is the same from the calling contract's perspective), and also calls a transition on itself. The call to self is executed after the view function is called, so the return value is available to be remote read once the call to self is executed.
+![Docusaurus](/img/recipes/patterns/viewer-diagram.png)
 
 ```ocaml
 scilla_version 0

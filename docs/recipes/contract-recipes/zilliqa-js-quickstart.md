@@ -1,19 +1,34 @@
 ---
 sidebar_position: 1
+tags:
+  - zilliqa-js
+  - interaction
+  - state
+  - deploy
+  - event
+  - listener
+  - query
+  - transaction
+  - batch
+  - sign
 ---
 
 # Zilliqa-JS Quickstart
 
 ## Getting started
 
-You will need Node and NPM installed on your developer machine for this guide.
+You will need Node and NPM installed on your machine for this guide.
 
 Read the [repo readme](https://github.com/Zilliqa/Zilliqa-JavaScript-Library) to get started with ```npm installing``` zilliqa-js to your local repo.
 
-Create a burner testing wallet and fund it with tokens from the faucet.
+Create a burner testing wallet and fund it with tokens from the [faucet](https://dev-wallet.zilliqa.com/faucet?network=testnet).
 
 :::danger
-Do not publish your test wallet private key as a build artifact, your funds could be stolen
+Do not publish your private key as a git artifact, the wallet is at risk.
+:::
+
+:::tip
+Use a .env file and add it to your .gitignore
 :::
 
 ## HelloWorld Interaction Example
@@ -186,6 +201,22 @@ The state of the contract is:
 }
 ```
 
+## Address Interaction
+
+```js
+const { toBech32Address, toChecksumAddress } = require('@zilliqa-js/crypto');
+
+// not checksummed address (will not be accepted by blockchain)
+const address = '573EC96638C8BB1C386394602E1460634F02ADDA';
+
+// checksummed ByStr20
+const checksummedAddresses = toChecksumAddress(address);
+// returns '0x573EC96638C8bB1c386394602E1460634F02aDdA'
+
+const bech32_address = toBech32Address(address);
+// returns zil12ulvje3ceza3cwrrj3szu9rqvd8s9tw69c978p
+```
+
 ## Example Interaction Scripts
 
 ```js
@@ -244,58 +275,4 @@ walletSign.js
 
 ### Zilpay Repositories
 
-[https://github.com/zilpay]
-
-## Frontend Zilliqa-JS Examples
-
-### Zillet fullstack
-
-[This example](https://github.com/zillet/zillet) is the zillet web wallet.
-
-Zillet is built using VueJS, NuxtJS and TailwindCSS.
-
-```bash
-npm install
-npm run build
-```
-
-### Zilswap frontend
-
-[This example](https://github.com/Switcheo/zilswap-webapp) is the frontend code for Zilswaps web application
-
-The ZilSwap webapp is built using React, Typescript and CSS.
-
-```bash
-yarn install
-yarn start
-```
-
-### Rent On Zilliqa Fullstack
-
-[This example](https://github.com/Zilliqa/Zilliqa-JavaScript-Library#installation) is an application on the Zilliqa Blockchain for listing and renting house
-
-```bash
-git clone Quinence/zilliqa-fullstack-app-rentOnZilliqa .
-cd zilliqa-fullstack-app-rentOnZilliqa
-yarn install
-yarn start
-```
-
-### Webpacked bundled HTML
-
-[This example](https://github.com/Zilliqa/Zilliqa-JavaScript-Library-Examples/tree/master/webpack/react) will demonstrate how to use the webpack variant of ZilliqaJS in a React project. This react project is created using create-react-app. The webpack variant comes in a zilliqa.min.js file and is meant for users who wishes to use ZilliqaJS functions in traditional HTML. Users need to build the webpack variant and import the js file in the HTML.
-
-:::danger
-If you are using a frontend framework such as React, Vue, AngularJS, etc, we strongly recommend you to use the [node version instead](https://github.com/Zilliqa/Zilliqa-JavaScript-Library#installation) of the webpack variant as the schematic is easier to work with. If you are still interested in using the webpack variant, continue below.
-:::
-
-```bash
-git clone Zilliqa/Zilliqa-JavaScript-Library .
-cd Zilliqa-JavaScript-Library
-yarn install
-yarn build:web
-cp Zilliqa-JavaScript-Library/dist/zilliqa.min.js examples/webpack/react/public
-cd examples/webpack/react
-yarn
-yarn start
-```
+[Zilpay Browser Extension](https://github.com/zilpay/zil-pay)

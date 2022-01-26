@@ -16,6 +16,6 @@ There is a lot of useful scilla infomation within the test structures such as [t
 
 ## Further reading
 
-[gold scilla test scillibs](https://github.com/Zilliqa/scilla/tree/master/tests/checker/good)
+[.gold scilla test scillibs](https://github.com/Zilliqa/scilla/tree/master/tests/checker/good)
 
-[gold expected scillibs test output](https://github.com/Zilliqa/scilla/tree/master/tests/checker/good/gold)
+[.gold expected scillibs test output](https://github.com/Zilliqa/scilla/tree/master/tests/checker/good/gold)

@@ -12,6 +12,8 @@ They are only virtually upgradeable, because existing contracts still cannot be 
 
 The proxy pattern is easily understood with an example of minting NFTs. An NFT contract requires an 'Minter' to handle the responsibility of being the trusted entity to Mint. In a dapp, if the caller tried to call Mint, they would be returned a 'NotMinter' error. We can get around this by creating a new contract which will be the 'Minter' and will contain logic about what conditions to mint an NFT.
 
+![Docusaurus](/img/recipes/patterns/proxy-diagram.png)
+
 ```ocaml
 (* configured with 'NFT_Proxy' as a minter before calls are made *)
 contract NonfungibleToken()
