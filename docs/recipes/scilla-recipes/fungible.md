@@ -96,7 +96,7 @@ The 'operatorable' fungible contract should be viewed skeptically as an ```opera
 transition OperatorSend(from: ByStr20, to: ByStr20, amount: Uint128)
 ```
 
-## Transfering Fungible Tokens
+### Transfering Fungible Tokens
 
 ```ocaml
 procedure TransferFundsFromXToY(x: ByStr20, fungible_contract: ByStr20, y: ByStr20, funds: Uint128)
@@ -112,6 +112,26 @@ procedure TransferFundsFromXToY(x: ByStr20, fungible_contract: ByStr20, y: ByStr
     send msgs;
 end
 ```
+
+## Decimal Example
+
+Lets say we make a token with 2 decimals with a total supply of 1000. There are 100 sub-units (max of two decimals) to 1 full token. The total sub-unit supply of would be 1000*100=100000.
+
+| Amount to send | Fungible value |
+|----------------|----------------|
+| 0.01           | 1              |
+| 0.1            | 10             |
+| 1              | 100            |
+| 10             | 1000           |
+
+Lets take an example where we have 12 decimals with a supply of 1000. there are 1000000000000 sub-units (max of 12 decimals) to 1 full token. the total sub-unit supply would be 1000*1000000000000=100000000000000
+
+| Amount to send | Fungible value |
+|----------------|----------------|
+| 0.000000000001 | 1              |
+| 0.000000001    | 1000           |
+| 0.000001       | 1000000        |
+| 1              | 1000000000000  |
 
 ## Further Reading
 
