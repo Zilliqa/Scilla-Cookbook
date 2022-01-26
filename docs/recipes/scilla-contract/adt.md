@@ -21,7 +21,7 @@ type MyAdt =
   | MyConstructor3
 ```
 
-An ADT is defined using one or more constructors (not to be confused with constructors from object-oriented languages). A value of type MyAdt is constructed using exactly one of these constructors. In this example, a MyAdt value constructed using MyConstructor1 will contain a tuple comprised of an Int32 value and a String value. A MyAdt value constructed using MyConstructor3 on the other hand will not contain any further values inside it.
+An ADT is defined using one or more constructors (not to be confused with constructors from object-oriented languages). A value of type MyAdt is constructed using exactly one of these constructors. In this example, a `MyAdt` value constructed using `MyConstructor1` will contain a tuple comprised of an Int32 value and a String value. A MyAdt value constructed using MyConstructor3 on the other hand will not contain any further values inside it.
 
 The example we saw previously defines an ADT whose composite types are fixed. A polymorphic ADT allows using type variables in place of concrete constituent types, for substitution later. Let's see an example.
 
