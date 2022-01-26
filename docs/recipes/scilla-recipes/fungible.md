@@ -7,7 +7,7 @@ tags:
   - zrc-2
 ---
 
-# Fungible Token
+# Fungible token
 
 Fungible Tokens are an open standard for creating currencies. Fungibility is the property of goods or commodities whose individual units are essentially interchangeable, and each of its parts is indistinguishable from another part. An example is 1 ZIL can be traded for an equal value of 1 ZIL.
 
@@ -133,6 +133,6 @@ Lets take an example where we have 12 decimals with a supply of 1000. there are 
 | 0.000001       | 1000000        |
 | 1              | 1000000000000  |
 
-## Further Reading
+## Further reading
 
 [readthedocs - Fungible Tokens](https://scilla.readthedocs.io/en/latest/scilla-by-example.html?highlight=fungible#fungible-tokens)

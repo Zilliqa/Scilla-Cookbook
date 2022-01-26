@@ -6,7 +6,7 @@ tags:
   - swap
 ---
 
-# Decentralised Exchange (DEX)
+# Decentralised exchange
 
 Decentralized exchanges (DEX) typically do not use order books to facilitate trades or set prices. Instead, these platforms employ liquidity pool protocols to determine asset pricing.
 
@@ -60,6 +60,6 @@ transition SwapExactTokensForTokens
 transition SwapTokensForExactTokens
 ```
 
-## Further Reading
+## Further reading
 
 [readthedocs - Create a token exchange](https://scilla.readthedocs.io/en/latest/scilla-by-example.html?highlight=list#exchange-specification)

@@ -65,7 +65,7 @@ transition OwnerResetButton()
 end
 ```
 
-## IncrementingButton So far
+## IncrementingButton so far
 
 ```ocaml
 scilla_version 0

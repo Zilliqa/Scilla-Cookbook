@@ -32,7 +32,7 @@ contract Example
 field addr_bystr : ByStr20 = constant_bystr
 ```
 
-## Address Subtypes
+## Address subtypes
 
 We can infer subtypes of Address such as 'A contract on the network' or 'A user or contract on the network' to give some type safety when trying to use contracts or addresses that might not exist
 
@@ -47,7 +47,7 @@ We can infer subtypes of Address such as 'A contract on the network' or 'A user 
 
 Read more on [Address subtyping here.](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=with%20end#address-subtyping)
 
-## Further Reading
+## Further reading
 
 [readthedocs - Addresses](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=bystr20#addresses)
 

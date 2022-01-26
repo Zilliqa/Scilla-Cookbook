@@ -4,7 +4,7 @@ tags:
   - pattern
 ---
 
-# Pattern (Proxy)
+# Pattern (proxy)
 
 Proxy patterns allows developers to adapt to a changing environment and to react to bugs and other errors. To overcome the limitations introduced by the immutability of contract code, a contract can be split up into modules, which are then virtually upgradeable.
 
@@ -54,4 +54,4 @@ end
 
 Consider if we wanted to deploy some new proxy logic to effect our NFT minting, we could easily deploy a new contract and upgrade the NonFungibleToken delegated Minter to point at our new proxy. We have managed to upgrade some immutable logic by using the proxy pattern.
 
-## Further Reading
+## Further reading

@@ -13,7 +13,7 @@ tags:
   - sign
 ---
 
-# Zilliqa-JS Quickstart
+# Zilliqa-JS quickstart
 
 ## Getting started
 
@@ -269,9 +269,9 @@ walletSign.js
 
 [Zilliqa-JS Example Interaction](https://github.com/Zilliqa/Zilliqa-JavaScript-Library-Examples/tree/master/node)
 
-### TheDrBee Contract Interactions
+### TheDrBee contract Interactions
 
-[Zilliqa-JS Contract Interaction](https://github.com/TheDrBee/oSCILLAtor/tree/main/js)
+[Zilliqa-JS contract Interaction](https://github.com/TheDrBee/oSCILLAtor/tree/main/js)
 
 ### Zilpay Repositories
 

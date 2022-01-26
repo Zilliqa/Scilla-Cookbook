@@ -22,7 +22,7 @@ It can also be seen as a way to defer the processing of transactions or even to 
 
 [The ZRC-3 contract](https://github.com/Zilliqa/ZRC/blob/master/reference/MetaFungibleToken.scilla) adds a metatransfer transition to the existing ZRC-2 interface.
 
-## Docker Interaction
+## Docker interaction
 
 [relay.js](https://github.com/starling-foundries/relay.js) is a repository containing the cheque relay to forward metatransactions to zilliqa network (sometimes called a bouncer proxy).
 
@@ -55,7 +55,7 @@ The relayer provides a public endpoint for recieving metatransactions, chequeing
 
 It may optionally report a minimum fee, but it cannot charge a fee that the token owner did not approve in the signed metatransaction. The anticipated malevolent behavior - a relayer censoring transactions - is mitigated by the possibility for multiple relayers.
 
-## Further Reading
+## Further reading
 
 [Medium - ZRC3’s Grand Rewrite](https://medium.com/builders-of-zilliqa/zrc3s-grand-rewrite-22558797ea0)
 

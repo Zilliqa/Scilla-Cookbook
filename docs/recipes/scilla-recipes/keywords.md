@@ -3,7 +3,7 @@ tags:
   - keywords
 ---
 
-# Glossary of Keywords & Conventions
+# Glossary of keywords & conventions
 
 This page is responsible for some of the most common development and blockchain terms and the conventions to follow onchain or with interactions.
 
@@ -88,4 +88,4 @@ transition AddFunds ()
 end
 ```
 
-## Further Reading
+## Further reading

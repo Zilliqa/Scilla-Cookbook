@@ -6,7 +6,7 @@ tags:
   - type
 ---
 
-# IDE Interaction
+# IDE interaction parameters
 
 Developers may want to deploy contracts through the IDE for testing which require complex types or interaction. This page specifies the untypical type interactions developers may have with the IDE.
 

@@ -35,7 +35,7 @@ Smart contracts can be deployed to the following environments
 
 For our example we will use the simulated environment because it's the fastest for development without setting up local infastructure.
 
-### Deploy to Simulated-Environment
+### Deploy to simulated-environment
 
 :::tip
 Simulated environment creates burner wallets when used.
@@ -81,7 +81,7 @@ So if we switch wallets to an address who isn't the contract owner, and attempt 
 
 ![Docusaurus](/img/tutorials/incrementingbutton/IDE-success.png)
 
-And the state of our Button Contract changes, the current_clicker mutable state changes, and the counter is incremented by one.
+And the state of our button contract changes, the current_clicker mutable state changes, and the counter is incremented by one.
 
 ![Docusaurus](/img/tutorials/incrementingbutton/explorer-state-1.png)
 

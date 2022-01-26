@@ -33,7 +33,7 @@ match is_equal with
 end
 ```
 
-## Further Reading
+## Further reading
 
 [Bool](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=bool#boolean)
 

@@ -1,9 +1,9 @@
 ---
 sidebar_position: 3
 ---
-# Version Headers
+# Version headers
 
-## Scilla Version
+## Scilla version
 
 Our previous contract had no defined scilla version and therefore wouldn't be valid if we tried to compile it.
 
@@ -23,7 +23,7 @@ contract IncrementingButton
 )
 ```
 
-## User Defined Libraries
+## User defined libraries
 
 Our previous contract had no user library defined and therefore wouldn't be valid if we tried to compile it.
 
@@ -56,7 +56,7 @@ contract IncrementingButton
 ```IncrementingButton``` now succesfully compiles!
 :::
 
-## Builtin Internal Libaries
+## Builtin internal libaries
 
 The Scilla standard library contains five libraries: ```BoolUtils.scilla```, ```IntUtils.scilla```, ```ListUtils.scilla```, ```NatUtils.scilla``` and ```PairUtils.scilla.``` As the names suggests these contracts implement utility operations for the Bool, Int, List, Nat and Pair types, respectively.
 

@@ -114,7 +114,7 @@ There is not a mutisignature contract that currently accepts ZRC-2 tokens
 
 - Once the two signatures are obtained, you can use account B to execute the transaction. Execution is the final step in the transfer process and it will transfer 5 ZILs to C.
 
-## Further Reading
+## Further reading
 
 [Multisignature](https://research.csiro.au/blockchainpatterns/general-patterns/security-patterns/multiple-authorization/)
 

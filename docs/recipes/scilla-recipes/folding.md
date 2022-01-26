@@ -8,7 +8,7 @@ tags:
 
 # Recursion
 
-Recursion in Scilla takes some collection type with a begining and end like a Natural number or the entries of a finite List and can process some logic based on that.
+Recursion in Scilla takes some collection type with a beginning and end like a Natural number or the entries of a finite List and can process some logic based on that.
 
 ## forall List entries, call procedure
 
@@ -76,6 +76,6 @@ let fib = fun (n : Nat) =>
   match res with | Pair x y => x end
 ```
 
-## Further Reading
+## Further reading
 
 [TheDrBee - Recursion.scilla](https://github.com/TheDrBee/oSCILLAtor/blob/main/contracts/Recursion.scilla)

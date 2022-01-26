@@ -44,6 +44,6 @@ transition BatchMint(to: ByStr20, token_uris_list: List String)
   forall input_list Minting;
 ```
 
-## Further Reading
+## Further reading
 
 [readtehdocs - Pair](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=pair#pair)

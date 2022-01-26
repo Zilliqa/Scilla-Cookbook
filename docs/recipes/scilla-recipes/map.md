@@ -54,15 +54,15 @@ end
 
 ```
 
-## Map Counters
+## Map counters
 
 If you need to track the how many items are in a large map, please read this article about [map size performance](https://scilla.readthedocs.io/en/latest/scilla-tips-and-tricks.html#field-map-size) on how to consume the size more efficiently using a counter which doesn't require a read of the whole map.
 
-## Map Size
+## Map size
 
 Maps should not be considered as a way of storing large objects onchain, this will negatively affect your gas consumation when dealing with large collections of these items. It's recommended to keep maps as small as possible as gas will increase linearly with the amount of items.
 
-## Nested Maps
+## Nested maps
 
 Take the below example of [Zilswap DEX](dex) contract, where they store a balance for a particilar liquidity pool.
 
@@ -95,4 +95,4 @@ transition Example(map_key: ByStr20, nested_key: ByStr20)
 end
 ```
 
-## Further Reading
+## Further reading

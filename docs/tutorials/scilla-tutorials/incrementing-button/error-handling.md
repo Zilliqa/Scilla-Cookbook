@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# Error Handling
+# Error handling
 
 In the below example we implement the ability to raise basic errors and stop execution.
 

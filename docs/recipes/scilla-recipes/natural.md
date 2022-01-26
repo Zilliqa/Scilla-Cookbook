@@ -6,7 +6,7 @@ tags:
 
 ---
 
-# Natural Numbers
+# Natural numbers
 
 NAT types are natural numbers. You can start at 0 using,
 
@@ -63,7 +63,7 @@ transition DecreaseFlooredAtZeo()
 end
 ```
 
-## Further Reading
+## Further reading
 
 [Haskell Peano Numbers](https://wiki.haskell.org/Peano_numbers)
 

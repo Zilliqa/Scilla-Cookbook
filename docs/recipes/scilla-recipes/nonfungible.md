@@ -8,7 +8,7 @@ tags:
   - zrc-1
 ---
 
-# Non-Fungible Token (NFT)
+# Non-fungible token
 
 A [Fungible token](fungible) is unit of currency that can be readily interchanged, it has properties like fiat where 1 unit of currency is equal to 1 unit of the same currency.
 
@@ -20,7 +20,7 @@ Non-fungible tokens have associated with it some unique properties like some par
 
 The non fungible contract has a state map called ```token_owners``` which associates an incrementing ```token_id``` to an address. The token has a concept of a ```token_uri``` which it associates with the ```token_id``` this is typically a JSON asset on the internet, ipfs, arweave and could hold any particular file. Only the ```contract_owner``` is able to mint, however the contract has a concept of being a "minter" which will allow any particular address the permission to Mint tokens on the ```contract_owner``` behalf and is a revokable permission.
 
-## Types of Non fungible contracts
+## Types of non fungible contracts
 
 ### ZRC-1
 
@@ -123,7 +123,7 @@ procedure MoveNonFungibleTokenFromContractToUser(token_move: TokenMove, recipien
 end
 ```
 
-## Further Reading
+## Further reading
 
 [ZRC-1](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-1.md)
 
