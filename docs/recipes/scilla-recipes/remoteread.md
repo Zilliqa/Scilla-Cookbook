@@ -20,7 +20,7 @@ Remote state reads only allow fetching of mutable fields, not immutable fields.
 - balance greater than 0
 - nonce of address greater than 0
 
-```ByStr20 with contract end```: Refers to an contract address
+```ByStr20 with contract end```: Refers to a contract address
 
 ```ByStr20 with contract field f1 : t1, field f2 : t2, ... end```: Refers to the address of a contract containing the mutable fields f1 of type t1, f2 of type t2, and so on. The contract in question may define more fields than the ones specified in the type, but the fields specified in the type must be defined in the contract.
 
