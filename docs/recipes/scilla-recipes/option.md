@@ -62,4 +62,4 @@ end
 
 ## Further reading
 
-[readthedocs - Option](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=option#option)
+[Scilla Documentation - Option](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=option#option)

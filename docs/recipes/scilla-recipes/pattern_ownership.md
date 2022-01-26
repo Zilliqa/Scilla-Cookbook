@@ -120,6 +120,6 @@ end
 
 ## Further reading
 
-[readthedocs - Ownership](https://scilla.readthedocs.io/en/latest/scilla-tips-and-tricks.html?highlight=ownership#transfer-contract-ownership-1)
+[Scilla Documentation - Ownership](https://scilla.readthedocs.io/en/latest/scilla-tips-and-tricks.html?highlight=ownership#transfer-contract-ownership-1)
 
 [Ownership.Scilla](https://github.com/TheDrBee/oSCILLAtor/blob/079f2400cfa1e6fdc7a7b0449bd65406186a1f3e/contracts/Ownership.scilla)

@@ -135,4 +135,4 @@ Lets take an example where we have 12 decimals with a supply of 1000. there are 
 
 ## Further reading
 
-[readthedocs - Fungible Tokens](https://scilla.readthedocs.io/en/latest/scilla-by-example.html?highlight=fungible#fungible-tokens)
+[Scilla Documentation - Fungible Tokens](https://scilla.readthedocs.io/en/latest/scilla-by-example.html?highlight=fungible#fungible-tokens)

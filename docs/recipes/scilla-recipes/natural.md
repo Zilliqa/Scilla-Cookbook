@@ -69,4 +69,4 @@ end
 
 [NatType.scilla](https://github.com/TheDrBee/oSCILLAtor/blob/079f2400cfa1e6fdc7a7b0449bd65406186a1f3e/contracts/NatType.scilla)
 
-[readthedocs - Nat](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=adt#nat)
+[Scilla Documentation - Nat](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=adt#nat)

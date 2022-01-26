@@ -2,9 +2,10 @@
 tags:
   - int
   - uint
+  - integers
 ---
 
-# U/int
+# Integer
 
 Scilla defines signed and unsigned integer types of 32, 64, 128, and 256 bits.
 
@@ -70,4 +71,4 @@ end
 
 ## Further reading
 
-[readthedocs - Integers](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html#integer-types)
+[Scilla Documentation - Integers](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html#integer-types)

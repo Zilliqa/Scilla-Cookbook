@@ -49,7 +49,7 @@ Read more on [Address subtyping here.](https://scilla.readthedocs.io/en/latest/s
 
 ## Further reading
 
-[readthedocs - Addresses](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=bystr20#addresses)
+[Scilla Documentation - Addresses](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=bystr20#addresses)
 
 [auction.scilla](https://github.com/Zilliqa/scilla/blob/master/tests/contracts/auction.scilla)
 
