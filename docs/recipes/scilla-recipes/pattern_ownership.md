@@ -3,7 +3,7 @@ tags:
   - ownership
 ---
 
-# Pattern (Ownership)
+# Pattern (ownership)
 
 If your contract has an owner it typically means that address has admin powers meaning they have the privilage to adding/remove critical data or pause/unpause the contract.
 
