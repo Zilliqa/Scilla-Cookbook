@@ -13,6 +13,7 @@ Developers may choose to intergrate with a Name Service which maps a users Zilli
 ## Example domain call
 
 This test function queries the unstoppable domain contract state for a user domain.
+
 | Test domains     | Expected result             |
 |------------------|-----------------------------|
 | brad.zil         | resolves without any errors |
