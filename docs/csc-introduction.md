@@ -26,125 +26,14 @@ Please ask any questions you have before raising a contribution and then follow 
 
 ## What can I expect from the Community Scilla Cookbook
 
-We abstract the development process into three distinct parts: contract development, blockchain interactions (Web3.0) and front-end implementation. The Community Scilla Cookbook is not concerned with the front-end implementation, every chef should be able to plate their creation to a front end framework of their choice. These front-end implementations should be omited from recipes defined in the Community Scilla Cookbook, but images or supporting content that help define the interaction can be submitted.
+We abstract the development process into three distinct parts: contract development, blockchain interactions (Web3.0) and front-end implementation.
 
-The Community Scilla Cookbook is interested in capturing as many unique recipes in Scilla, Javascript, GO and other supported SDKs that do not duplicate existing text or examples. The Community Scilla Cookbook is interested in capturing relevent subject matter to related topics that answer as many developers questions when they get started developing scilla.
+The Community Scilla Cookbook is interested in capturing as many unique recipes in Scilla, Javascript, GO and other supported SDKs that do not duplicate existing text or examples. The Community Scilla Cookbook is interested in capturing relevent subject matter to related topics that answer many of the typical questions a Scilla developer will have.
 
 ## Community Scilla Cookbook Terminology
 
-### Recipe
-
-```text
-A feature, concept, interaction at either the contract level or blockchain interaction level.
-```
-
-#### Examples of a recipe or it's content subject
-
-```text
-How to accept zil in a contract?
-How do define an ADT?
-What is a ByStr20?
-What is an Ox address?
-How to define a ByStr20 Option?
-How to define a BNum Option?
-How to provide ADT as transition arguments in zilliqa-js?
-How to generate a wallet keypair?
-How to pass a ByStr20 option in zilliqa-js?
-How to pass a BNum option in zilliqa-js?
-```
-
-#### Examples of recipe pages structure
-
-```text
-recipes
-
-  * scilla contract
-    * ADT
-      * defining adts
-    * ByStr20
-      * 0x addresses
-    * Option
-      * ByStr20
-      * BNum
-    * keywords
-      * accept
-
-  * blockchain interaction
-    * zilliqa-js
-      * adt
-        * define adt as transition parameters
-      * option
-        * ByStr20
-        * BNum
-    * laksaj
-      * generate-address
-```
-
-#### What infomation should recipe pages have?
-
-If you find yourself wanting to contribute scilla specific snippets about a specific contract type or a specific chain interaction, it belongs in a recipe page.
-
-Recipe pages should contain all the relevent infomation without duplicating text from elsewhere in the Community Scilla Cookbook. Pages should be as atomic and singular as possible. Adding more infomation to the parent page is always encoraged. Write as structured as possible leaving no ambiguity to the reader. Reference standard recipe pages when possible.
-
-### Side-dishes
-
-```text
-A subject otherwise unrelated to scilla or chain interaction but is still useful infomation
-for the wider developer community.
-```
-
-#### Examples of a side-dish or it's content subject
-
-```text
-Why contract ownership matters?
-How does a Merkle tree work?
-How does gas work?
-Why does my transaction fail?
-How many blocks are processed per day?
-```
-
-#### What infomation should side-dish pages have?
-
-If you find yourself wanting to contribute general knowledge that doesn't belong specifically to scilla or chain interaction, it probably belongs on a side-dish page.
-
-A side-dish can encompose topics and subjects as a catch all where the infomation is useful, but doesn't fall into a specific recipe or tutorial. These are flatly defined with no subfolder, and as such should try an encompass thoughts for both contract and interaction specific knowledge.
-
-#### Examples of side-dish pages structure
-
-```text
-side-dishes
-  * contract ownership
-  * merkle trees
-  * gas interaction
-  * commonly thrown errors
-  * block generation
-```
-
-### Tutorials
-
-```text
-Curated walkthrough guides detailing concepts at the beginner level.
-Digestable content with an overarching goal or idea that is being conveyed.
-```
-
-#### Examples of a tutorial or it's content subject
-
-```text
-Beginner how to make a scilla contract?
-Beginner how to hook my website up with zilpay
-```
-
-#### Examples of tutorial pages structure
-
-```text
-tutorials
-  * scilla contract
-    * my first contract
-
-  * blockchain interaction
-    * my first javascript interaction
-```
-
-#### What infomation should tutorial pages have?
-
-Tutorial pages should be informative with details around the topic being discussed, write as structured as possible leaving no ambiguity to the reader. Reference standard recipe pages when possible.
+| Section        | Topics |
+|----------------|--------------------------------------------------------------------------------------------------|
+| Recipes        | Building blocks of smart contract development and contract interaction with code snippets.       |
+| Side Knowledge | Related blockchain infomation for developers.                                                    |
+| Tutorials      | Step-by-step walkthroughs of the basics of contract development and contract interaction         |

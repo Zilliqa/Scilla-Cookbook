@@ -3,7 +3,7 @@ tags:
   - GO SDK
 ---
 
-# Zilliqa-go SDK
+# Zilliqa-Go SDK
 
 The [gozilliqa-sdk](https://github.com/Zilliqa/gozilliqa-sdk) version of zilliqa blockchain library.
 
