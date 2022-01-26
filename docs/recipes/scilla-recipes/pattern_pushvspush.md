@@ -6,7 +6,7 @@ tags:
   - merkel tree
 ---
 
-# Pattern (Push vs Pull)
+# Pattern (push vs pull)
 
 Let's consider the scenario where we have some funds in a contract or a wallet and we are trying to distribute these to multiple addresses. You could choose to send these manually, one-by-one or you could choose to automate batch sending these. In either case the token owner is sending ```n``` transactions to addresses.
 
@@ -24,7 +24,7 @@ A Merkel Tree is a data structure that takes a set of data. In our case this is 
 
 Given that you have the data and can present an API to a user which for a given address and an epoch period can firstly tell you if you was present, and secondly generate a set of proofs for that address - a Merkel tree contract can be created. The developer would send 1 transaction with the master (root) to the contract instead of N - which is a vast improvement! The user sends the proofs to the contract which validates they are present and the proof plus their node equally matched the root hash.
 
-## Further Reading
+## Further reading
 
 [Token distributors in Scilla](https://medium.com/builders-of-zilliqa/token-distributors-in-scilla-b37241f7466a)
 

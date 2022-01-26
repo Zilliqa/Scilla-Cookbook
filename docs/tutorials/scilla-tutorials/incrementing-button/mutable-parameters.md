@@ -1,9 +1,9 @@
 ---
 sidebar_position: 4
 ---
-# State and Constants
+# State and constants
 
-## Mutable State
+## Mutable state
 
 Mutable fields in a contract are declared through the keyword ```field```.
 
@@ -15,7 +15,7 @@ Mutable fields hold the state of our contract. Unlike immutable fields, they are
 Think about the state you want to track. Does this change or is it a static value? What about in the future? Make anything that might change a mutable parameter.
 :::
 
-## Global Constants
+## Global constants
 
 We can take advantage of defining a global definition of a constant through the keyword ```let```. The value defined cannot be changed throughout the life of the contract.
 
@@ -26,7 +26,7 @@ Need to define a single instance of a type more than once in code? Global consta
 
 ## IncrementingButton
 
-Back to our example ```IncrementingButton```. Lets define two immutable state variables, the first will track the changing instance of who the current owner of the contract is, and the second will be the counter that counts the amount of times this has changed. We need to define a constant value to what this counter is starting at also.
+Back to our example ```IncrementingButton```. let's define two immutable state variables, the first will track the changing instance of who the current owner of the contract is, and the second will be the counter that counts the amount of times this has changed. We need to define a constant value to what this counter is starting at also.
 
 ```current_clicker``` is a mutable field of type ByStr20. It will store the current clicker. When the contract is deployed, it takes whatever the initalisation parameter value of ```contract_owner``` is and copies it into ```current_owner``` when the contract is initalised.
 

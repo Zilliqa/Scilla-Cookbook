@@ -30,7 +30,7 @@ We abstract the development process into three distinct parts: contract developm
 
 The Community Scilla Cookbook is interested in capturing as many unique recipes in Scilla, Javascript, GO and other supported SDKs that do not duplicate existing text or examples. The Community Scilla Cookbook is interested in capturing relevent subject matter to related topics that answer many of the typical questions a Scilla developer will have.
 
-## Community Scilla Cookbook Terminology
+## Community Scilla Cookbook terminology
 
 | Section        | Topics |
 |----------------|--------------------------------------------------------------------------------------------------|

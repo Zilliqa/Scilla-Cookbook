@@ -8,7 +8,7 @@ tags:
   - percentage
 ---
 
-# Safe Mutiplication
+# Safe mutiplication
 
 When your are working with numbers in any programming language you are subject to overflows. An overflow happens when the value of number is bigger than the maximum possible value offered by the machine.
 
@@ -16,7 +16,7 @@ For example if you’re using an unsigned integer in Scilla. The possible values
 
 If developers want to mutiple two ```Uint128``` together, they should firstly upcast their current values into ```Uint256``` so it doesn't overflow, and then perform the mutiplication, finally downcasting the value to a ```Uint128``` after performing the division.
 
-## Safe Percentage
+## Safe percentage
 
 If you are working with trying to find the percentage value of a users share of a pool and then reward them based on that percentage, then consider using safe ```muldiv```.
 
@@ -84,6 +84,6 @@ user_share_of_rewards = muldiv user_share total_amount_rewards sum_of_all_shares
 
 Test this out on isolated environment ```0xd3360fe70a19dc2dd5cb7ad4164db455ddc2a68c```
 
-## Further Reading
+## Further reading
 
 [SSN Staking Contract](https://github.com/Zilliqa/staking-contract/blob/82fad745a04eedefb1a0cd16e5316626c3736c13/contracts/ssnlist.scilla)

@@ -242,4 +242,4 @@ intX_to_nat : IntX -> Nat: Convert an IntX integer to its equivalent Peano numbe
 The integer must be non-negative, and must be small enough to fit into a Uint32. If it is not, then an underflow or overflow error will occur.
 ```
 
-## Further Reading
+## Further reading

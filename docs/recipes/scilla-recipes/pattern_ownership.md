@@ -9,7 +9,7 @@ If your contract has an owner it typically means that address has admin powers m
 
 It's important to keep your address keys safe, but if for any reason a ```contract_owner``` needs changing, there needs to be transitions pre-baked into your contract to handle this case.
 
-## Transfering Ownership
+## Transfering ownership
 
 Note the below example. The ```owner``` field is initally set to ```owner_at_deployment```, but can then be changed at a later date. You should consider an ownership pattern when writing contracts.
 
@@ -118,8 +118,8 @@ end
 
 ```
 
-## Further Reading
+## Further reading
 
-[readthedocs - Ownership](https://scilla.readthedocs.io/en/latest/scilla-tips-and-tricks.html?highlight=ownership#transfer-contract-ownership-1)
+[Scilla Documentation - Ownership](https://scilla.readthedocs.io/en/latest/scilla-tips-and-tricks.html?highlight=ownership#transfer-contract-ownership-1)
 
 [Ownership.Scilla](https://github.com/TheDrBee/oSCILLAtor/blob/079f2400cfa1e6fdc7a7b0449bd65406186a1f3e/contracts/Ownership.scilla)

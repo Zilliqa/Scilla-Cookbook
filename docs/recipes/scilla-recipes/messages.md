@@ -7,11 +7,11 @@ tags:
   - msgs
 ---
 
-# Messages, Callbacks & Contract-to-Contract Interaction
+# Messages, callbacks & contract-to-contract interaction
 
 Developers may wish to call another contract to perform a specific action.
 
-## Crosschain calling example using Messages
+## Crosschain calling example using messages
 
 Let's assume we have a button contract. The button contract allows addresses to interact and press the button. In this example we write a contract that interacts with the button contract called ```CallerContract```
 
@@ -150,7 +150,7 @@ You will recieve a transaction error if your contract does not implement a callb
 
 ![Example banner](./img/../../../../static/img/recipes/messages/flow-diagram.png)
 
-## Further Reading
+## Further reading
 
 [Callee.scilla](https://github.com/TheDrBee/oSCILLAtor/blob/079f2400cfa1e6fdc7a7b0449bd65406186a1f3e/contracts/Callee.scilla)
 

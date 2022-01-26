@@ -3,7 +3,7 @@ tags:
   - notable 
   - contracts
 ---
-# Notable Contracts
+# Notable contracts
 
 This page stores notable contracts on the Zillqa network which have scilla logic which can be used as reference material.
 

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
 ---
-# Contract State
+# contract State
 
 Review the javascript that defines [queryState.js](https://github.com/Zilliqa/Zilliqa-JavaScript-Library-Examples/blob/master/node/queryState.js)
 

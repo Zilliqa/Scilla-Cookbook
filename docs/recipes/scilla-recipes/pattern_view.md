@@ -5,7 +5,7 @@ tags:
   - pattern
 ---
 
-# Pattern (Viewer)
+# Pattern (viewer)
 
 The viewer pattern is a standardised way of implementing functions that return a value without using callbacks.
 

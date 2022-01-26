@@ -5,7 +5,7 @@ sidebar_position: 2
 
 Review the javascript that defines [deployContract.js](https://github.com/Zilliqa/Zilliqa-JavaScript-Library-Examples/blob/master/node/deployContract.js)
 
-## Deploy Button Contract
+## Deploy button Contract
 
 Using the deployContract.js file defined in Zilliqa-JS we have the ability to deploy a contract to a network. We provide a private key of the address which is deploying, the previous network configuration to estabilish a connection, in our case this is testnet, but could be mainnet or isolated enviroment.
 
@@ -194,7 +194,7 @@ async function DeployButtonContract() {
 
 ## Setup Program Starting Point
 
-With our objectives defined we can begin to write how our program will achieve the functionality required. We have the first part complete, so lets write where our program will enter from and begin to test the deployment of DeployButtonContract contract to testnet.
+With our objectives defined we can begin to write how our program will achieve the functionality required. We have the first part complete, so let's write where our program will enter from and begin to test the deployment of DeployButtonContract contract to testnet.
 
 ```js
 // Application Definition

@@ -4,7 +4,7 @@ tags:
   - test
 ---
 
-# Scilla Test Suite
+# Scilla test suite
 
 Please read the [Scilla Testing readme](https://github.com/Zilliqa/scilla/tree/ccf60d04f89202c5149461def28f390ad4bc5a7c#running-the-testsuite) on how to run the test suite.
 

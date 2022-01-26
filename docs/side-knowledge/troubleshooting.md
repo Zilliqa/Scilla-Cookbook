@@ -4,7 +4,7 @@ tags:
   - transaction
 ---
 
-# Transaction Errors and Troubleshooting
+# Transaction errors and troubleshooting
 
 ## Why does my transaction error?
 
@@ -72,6 +72,6 @@ Increase your gas limit.
 
 Check the types in your request to whats on the contract.
 
-## Further Reading
+## Further reading
 
-[Zilswap Dex Contract - L165](https://viewblock.io/zilliqa/address/zil1gkwt95a67lnpe774lcmz72y6ay4jh2asmmjw6u?tab=code)
+[Zilswap Dex contract - L165](https://viewblock.io/zilliqa/address/zil1gkwt95a67lnpe774lcmz72y6ay4jh2asmmjw6u?tab=code)

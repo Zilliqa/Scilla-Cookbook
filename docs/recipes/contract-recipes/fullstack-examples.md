@@ -7,7 +7,7 @@ tags:
   - example
 ---
 
-# Full-Stack Examples
+# Full-stack examples
 
 [Zillet wallet fullstack - zillet](https://github.com/zillet/zillet)
 
@@ -15,7 +15,7 @@ tags:
 
 [DragonZil fullstack - dragon-zil](https://github.com/DeepDragons/dragon-zil)
 
-[Example Contract fullstack](https://github.com/zilpay/zilliqa-dApps)
+[Example contract fullstack](https://github.com/zilpay/zilliqa-dApps)
 
 [Zilliqa multisig fullstack - zilliqa](https://github.com/Zilliqa/zilliqa-multisig-wallet)
 

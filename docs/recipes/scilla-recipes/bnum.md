@@ -42,8 +42,8 @@ transition BNumMaths()
 end
 ```
 
-## Further Reading
+## Further reading
 
-- [Scilla documentation - BNum](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=block#block-numbers)
+[Scilla documentation - BNum](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=block#block-numbers)
 
-- [auction.scilla](https://github.com/Zilliqa/scilla/blob/master/tests/contracts/auction.scilla)
+[auction.scilla](https://github.com/Zilliqa/scilla/blob/master/tests/contracts/auction.scilla)

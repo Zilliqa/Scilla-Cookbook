@@ -24,16 +24,18 @@ Unlike Bitcoin, the mining process in Zilliqa is not directly based on PoW. Ever
 
 The difference with Bitcoin is that in Bitcoin nodes do a PoW for every new block. For Zilliqa, a node will do a PoW for every 100 blocks. This also means that the energy footprint associated with PoW in Zilliqa is considerabily lower.
 
-## How does Zilliqa Core protocol work?
+## How does Zilliqa core protocol work?
 
-Please see the [Core Protocol Design](https://dev.zilliqa.com/docs/contributors/core-node-operation/) documentation.
+Please see the [core protocol design](https://dev.zilliqa.com/docs/contributors/core-node-operation/) documentation.
 
-## Further Reading
+## Further reading
 
-[PDF Docs](https://scilla.readthedocs.io/_/downloads/en/latest/pdf/)
+[PDF scilla Docs](https://scilla.readthedocs.io/_/downloads/en/latest/pdf/)
 
-[Dev FAQ](https://docs.zilliqa.com/techfaq.pdf)
+[Developer FAQ](https://docs.zilliqa.com/techfaq.pdf)
 
 [Technical FAQ](https://docs.zilliqa.com/techfaq.pdf)
 
 [Scilla Design Story](https://blog.zilliqa.com/scilla-design-story-piece-by-piece-part-1-why-do-we-need-a-new-language-27d5f14ae661)
+
+[Core protocol design](https://dev.zilliqa.com/docs/contributors/core-node-operation/)
