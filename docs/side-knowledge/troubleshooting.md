@@ -12,7 +12,7 @@ This could be for a number of issues. Firstly, read and understand the error.
 
 Lets take the below example where a user is trying to interface with Zilswap Dex.
 
-![Docusaurus](/img/side-dishes/troubleshooting/troubleshooting-1.png)
+![Docusaurus](/img/side-knowledge/troubleshooting/troubleshooting-1.png)
 
 Firstly, we can see the transition with the passed variables variables, and below that we can see the exception stack trace.
 
