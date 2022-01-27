@@ -59,3 +59,9 @@ Deploy the /build/ directory to the branch /gh-pages/
 ```bash
 GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
 ```
+
+## How to run markdown-spellcheck 
+
+<!-- Check markdown spelling mistakes and add exceptions to the dictionary by running -->
+
+```\mdspell "docs/**/*.md"```
