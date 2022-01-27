@@ -28,7 +28,13 @@ The non fungible contract has a state map called ```token_owners``` which associ
 
 ### ZRC-1
 
-The ZRC-1 contract can be found [here](https://github.com/Zilliqa/ZRC/blob/master/reference/zrc6.scilla)
+:::tip
+Depreciated. Consider using ZRC-6.
+:::
+
+The ZRC-1 contract can be found [here](https://github.com/Zilliqa/ZRC/blob/master/reference/zrc1.scilla)
+
+The ZRC-1 specification can be found [here](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-1.md)
 
 #### ZRC-1 interface
 
@@ -77,6 +83,8 @@ transition TransferFrom(to: ByStr20, token_id: Uint256)
 ### ZRC-6
 
 The ZRC-6 contract can be found [here](https://github.com/Zilliqa/ZRC/blob/master/reference/zrc6.scilla).
+
+The ZRC-6 specification can be found [here](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-6.md).
 
 #### ZRC-6 interface
 
@@ -129,10 +137,13 @@ end
 
 ### ZRC-7
 
+The ZRC-7 specification can be found [here](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-7.md).
+
+Since ZRC-7 is a metadata standard, there is no related Scilla contract.
 
 #### ZRC-7 token_uri example
 
-Here's an example response, when querying a ZRC-6 non fungible contract for it's URI data, either at ```base_uri/token_id``` or ```token_uri```. The image is found as a URL on the JSON itself.
+When querying a ZRC-6 non fungible contract for it's URI data, either at ```<base_uri><token_id>``` (where base_uri ends with a '/') or ```token_uri```. The image is found as a URL on the JSON itself. The below is an example of the data returned when querying either ```<base_uri><token_id>``` or ```token_uri```.
 
 ```js
 {
@@ -163,7 +174,7 @@ Here's an example response, when querying a ZRC-6 non fungible contract for it's
 
 #### ZRC-7 external_url example
 
-Projects can take advantage of the external_url field to store project specific information
+Projects can take advantage of the external_url field to store project specific information which is written once for a contract to prevent duplication on token metadata.
 
 ```js
 {
@@ -176,8 +187,8 @@ Projects can take advantage of the external_url field to store project specific 
 
 ## Further reading
 
-[ZRC-1](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-1.md)
+[ZRC-1 specification](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-1.md)
 
-[ZRC-6](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-6.md)
+[ZRC-6 specification](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-6.md)
 
-[ZRC-7](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-7.md)
+[ZRC-7 specification](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-7.md)
