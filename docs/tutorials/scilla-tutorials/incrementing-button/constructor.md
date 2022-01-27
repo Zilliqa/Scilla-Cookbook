@@ -22,7 +22,7 @@ contract IncrementingButton()
 
 We will improve our contract by providing an immutable variable called ```contract_owner```
 
-Each immutable parameter is declared in the following pattern ```vname: vtype``` where ```vname``` is the parameter name and ```vtype``` is the parameter type. Mutiple parameters are delimited with a  ```,```.
+Each immutable parameter is declared in the following pattern ```vname: vtype``` where ```vname``` is the parameter name and ```vtype``` is the parameter type. Multiple parameters are delimited with a  ```,```.
 
 ```contract_owner``` defines the owner of the contract. There will be transitions defined later that only the ```contract_owner``` can access.
 
@@ -33,6 +33,6 @@ contract IncrementingButton
 )
 ```
 
-These initalisation parameters can be viewed publically from the ```state``` of the contract.
+These initialisation parameters can be viewed publicly from the ```state``` of the contract.
 
 We are still missing required fields that stop our contract being compiled correctly. See the next topic about Scilla Versions.

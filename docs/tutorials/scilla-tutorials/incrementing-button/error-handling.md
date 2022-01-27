@@ -13,7 +13,7 @@ Secondly, a library function called ```make_error``` is defined. The function ta
 Lastly, we define a procedure ```ThrowError``` which takes an instance of a variable with type ```Error```. It then calls the library function and returns the error. The keyword ```throw``` stops the execution of the smart contract with the specific error passed.
 
 :::tip
-Throwing errors with descriptive names helps users of your smart contracts debug whats wrong.
+Throwing errors with descriptive names helps users of your smart contracts debug what's wrong.
 :::
 
 ```ocaml {8,9,10,12,13,14,15,16,17,18,19,20,33,34,35,36}
@@ -95,4 +95,4 @@ end
 
 ```
 
-In the next section, we will create logic that users can interact with to press the button, we will be concerend with the functionality and security of our button, combining the atomic logical blocks we have built with procedures.
+In the next section, we will create logic that users can interact with to press the button, we will be concerned with the functionality and security of our button, combining the atomic logical blocks we have built with procedures.

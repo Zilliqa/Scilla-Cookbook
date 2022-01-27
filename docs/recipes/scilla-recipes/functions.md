@@ -12,7 +12,7 @@ Functions in Scilla are abstracted a level away from Transitions and Procedures.
 
 Let's examine how a function is written and how it's returned.
 
-The below function takes a singular argument of an Optional Uint128, the function has to return the same type, so in the case of no match (None), we will return uint128 representation of zero, in the case where we have Some, we'll return the uint128 representation of that value.
+The below function takes a singular argument of an Optional Uint128, the function has to return the same type, so in the case of no match (None), we will return Uint128 representation of zero, in the case where we have Some, we'll return the Uint128 representation of that value.
 
 ```ocaml
 let get_val_from_maybe_uint128 =     (* Name of the function *)

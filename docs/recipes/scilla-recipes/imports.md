@@ -11,7 +11,7 @@ To use functions from the standard library in a contract, the relevant library f
 
 ## Functions
 
-You can find all the typical functions available to the scilla checker and compiler [here](https://github.com/Zilliqa/scilla-compiler/tree/master/src/stdlib). A typical query is asking about Integer '>=' or '<=' as these are different to the ```builtin lt``` and ```builtin gt```.
+You can find all the typical functions available to the Scilla checker and compiler [here](https://github.com/Zilliqa/scilla-compiler/tree/master/src/stdlib). A typical query is asking about Integer '>=' or '<=' as these are different to the ```builtin lt``` and ```builtin gt```.
 
 We can find all of the wrappers for the Int class in the above link [for the IntUtils](https://github.com/Zilliqa/scilla-compiler/blob/master/src/stdlib/IntUtils.scillib)
 

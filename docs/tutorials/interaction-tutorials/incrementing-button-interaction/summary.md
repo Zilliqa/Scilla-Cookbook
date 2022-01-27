@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Summary
 
-We've met all the objectives set out in 300 lines of easy to read and understand javascript and now have a form of primative automation.
+We've met all the objectives set out in 300 lines of easy to read and understand Javascript and now have a form of primitive automation.
 
 - [x] Use Zilliqa-JS to deploy a contract.
 - [x] Use Zilliqa-JS to interact with and press the button.

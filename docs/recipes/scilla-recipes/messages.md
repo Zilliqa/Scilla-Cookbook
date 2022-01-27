@@ -27,11 +27,11 @@ end
 
 ### Messages
 
-Our contract so far defines a transition called ProxyPressButton, that takes a ByStr20 as an argument. When this transition is called, a Message call object is created called ```button_contract_call```. A call object takes three manditory arguments called ```_tag```, ```_recipient``` and ```_amount```. These relate to the transition name, contract address and ZIL amount in QA respectively.
+Our contract so far defines a transition called ProxyPressButton, that takes a ByStr20 as an argument. When this transition is called, a Message call object is created called ```button_contract_call```. A call object takes three mandatory arguments called ```_tag```, ```_recipient``` and ```_amount```. These relate to the transition name, contract address and ZIL amount in QA respectively.
 
 In our case the _tag will be ```PressTheButton```, the_recipient will be the variable we pass ```button_contract_address``` and the _amount we are sending is ```Uint128 0```.
 
-When the button contract recieves the transition call from the proxy it can inspect the address using```_sender```, this will be populated with the proxys address. The contract also has access to the caller who initited the chain from the proxy using ```_origin```.
+When the button contract receives the transition call from the proxy it can inspect the address using```_sender```, this will be populated with the proxies address. The contract also has access to the caller who initiated the chain from the proxy using ```_origin```.
 
 ```ocaml {12,13,14}
 contract Proxy()
@@ -83,9 +83,9 @@ transition ProxyPressButton(example_contract_address: ByStr20)
 end
 ```
 
-### Calling mutiple contracts with one call
+### Calling multiple contracts with one call
 
-We can send mutiple contract calls by chaining mutiple Message types together, creating a Constructor for the Message type and rolling the values ```msg1``` and ```msg2``` into ```two_msgs```.
+We can send multiple contract calls by chaining multiple Message types together, creating a Constructor for the Message type and rolling the values ```msg1``` and ```msg2``` into ```two_msgs```.
 
 In the below example, the Mint transition is calling ```RecipientAcceptMint``` on the recipient address and it is calling back to the sender of the transaction with a callback ```MintSuccessCallBack```.
 
@@ -121,7 +121,7 @@ end
 
 It's typical to provide Callbacks when transitions execute successfully so the proxy callers can update their interactive contracts if possible.
 
-Take the below example where ```Mint``` creates two messages ```msg_to_recipient``` and ```msg_to_sender```. The manditory tags ```_tag```, ```_recipient``` and ```_amount``` are aligned seperately for easier reading.
+Take the below example where ```Mint``` creates two messages ```msg_to_recipient``` and ```msg_to_sender```. The mandatory tags ```_tag```, ```_recipient``` and ```_amount``` are aligned separately for easier reading.
 
 ```msg_to_recipient``` calls the transition ```RecipientAcceptMint``` for the ```recipient``` with ```uint128_zero``` QA.
 
@@ -145,7 +145,7 @@ The second example shows the typical proxy interface where a user calls a proxy,
 The third example shows the case where a contract is the recipient of a Mint. The consuming contract will have to implement the ```RecipientAcceptMint``` stub
 
 :::note
-You will recieve a transaction error if your contract does not implement a callback stub as the chain of execution fails to find the _tag name on your contract.
+You will receive a transaction error if your contract does not implement a callback stub as the chain of execution fails to find the _tag name on your contract.
 :::
 
 ![Example banner](./img/../../../../static/img/recipes/messages/flow-diagram.png)

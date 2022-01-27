@@ -22,12 +22,12 @@ Effectively we are creating an automation layer where we can dynamically deploy 
 
 Open a new Visual Studio Code (VSC) window and create a new project.
 
-Open a terminal window and initalise npm with ```npm init``` and either press enter to skip and insert default values, or type the values, a file called ```package.json``` is created which will store our dependencies.
+Open a terminal window and initialise npm with ```npm init``` and either press enter to skip and insert default values, or type the values, a file called ```package.json``` is created which will store our dependencies.
 
 Now npm is setup, we can install the latest Zilliqa-JS, in the terminal type ```npm install @zilliqa-js/zilliqa --save```.
 
 :::tip
-This is the recommended way for frontend and backend javascript frameworks to interact with the blockchain.
+This is the recommended way for frontend and backend Javascript frameworks to interact with the blockchain.
 :::
 
 Now we have all the dependencies required, we can start to write some Javascript. Create a new file called ```index.js```.
@@ -36,7 +36,7 @@ The require statements are pulling in the logic from Zilliqa-JS to use later in 
 
 For example the ```util``` class has methods dealing with BigNumbers and Zilliqa units. Similarly, the ```crypto``` class has methods dealing with converting an Base16 to Bech32 and resolving a Bech32 address from a private key string.
 
-The notable mention of this snippet is the newing up of a new Zilliqa Object with a network address as a parameter, the value is the network we want to connect to, in this example its ```dev-api``` aka testnet. To determine what network parameters you need for a specific enviroment, consult the [developer network documentation](https://dev.zilliqa.com/docs/apis/api-introduction).
+The notable mention of this snippet is the initialisation of a new Zilliqa Object with a network address as a parameter, the value is the network we want to connect to, in this example its ```dev-api``` aka testnet. To determine what network parameters you need for a specific environment, consult the [developer network documentation](https://dev.zilliqa.com/docs/apis/api-introduction).
 
 ```js
 // Dependency Implementation
@@ -48,7 +48,7 @@ const { fromBech32Address, toBech32Address, getAddressFromPrivateKey} = require(
 
 In the below snippet, we begin to create some of the configuration needed later to send a transaction. ```VERSION``` will be used later in the transaction call. We then add a private key to the Zilliqa object so later we can execute against a specific address we own.
 
-For our example, we ensure chainID and msgVersion are correct for testnet
+For our example, we ensure chain id and msgVersion are correct for testnet
 
 ```js
 // these values can change depending on what network you are connecting on

@@ -16,7 +16,7 @@ Compare this to the Pull model. First, the entity responsible for the initiation
 
 ![Docusaurus](/img/recipes/patterns/pull-diagram.png)
 
-Compartively the responsibility has switched from the contract owner to send directly to many addresses - to the contract owner sending a batch transaction to the contract containing all the accounts and their associated rewards. Users can now claim these directly from the contract.
+Comparatively the responsibility has switched from the contract owner to send directly to many addresses - to the contract owner sending a batch transaction to the contract containing all the accounts and their associated rewards. Users can now claim these directly from the contract.
 
 So we've moved from pushing transactions to users, to sending one transaction to a smart contract that allows the specific user to pull an amount from. How would we improve this further?
 
@@ -28,7 +28,7 @@ Given that you have the data and can present an API to a user which for a given 
 
 [Token distributors in Scilla](https://medium.com/builders-of-zilliqa/token-distributors-in-scilla-b37241f7466a)
 
-[Merkle tree and proofs for distributor](https://medium.com/builders-of-zilliqa/merkle-tree-and-proofs-for-distributor-e9c54f737e9)
+[Merkel tree and proofs for distributor](https://medium.com/builders-of-zilliqa/merkle-tree-and-proofs-for-distributor-e9c54f737e9)
 
 [ZAP-API](https://github.com/Switcheo/zap-api)
 

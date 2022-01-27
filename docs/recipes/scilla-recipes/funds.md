@@ -8,7 +8,7 @@ tags:
 
 # Funds
 
-One unit of ZIL as a native token is equal to 1000000000000 QA. (1 ZIL = 10^12 QA). When we deal with ZIL as a unit in scilla, it is represented as an ```Uint128```. The below example shows how to accept/send funds to/from a smart contract.
+One unit of ZIL as a native token is equal to 1000000000000 QA. (1 ZIL = 10^12 QA). When we deal with ZIL as a unit in Scilla, it is represented as an ```Uint128```. The below example shows how to accept/send funds to/from a smart contract.
 
 :::danger
 The example does not implement ownership logic, therefore anyone can withdraw funds.

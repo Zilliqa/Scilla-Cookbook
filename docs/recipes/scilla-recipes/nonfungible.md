@@ -18,11 +18,11 @@ Non-fungible tokens have associated with it some unique properties like some par
 
 [ZRC-6](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-6.md) defines another interface which has features to align itself with some of the patterns ERC-721 and ERC-1155 have such as royalty payments and batch minting.
 
-[ZRC-7](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-7.md) defines a metadata standard that developers should follow. The resource attached to a ZRC-1 / ZRC-6 should emit a JSON response which contains not only the image, but the traits and other relevenat project and token infomation which ecosystem partners can then universally consume.
+[ZRC-7](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-7.md) defines a metadata standard that developers should follow. The resource attached to a ZRC-1 / ZRC-6 should emit a JSON response which contains not only the image, but the traits and other relevant project and token information which ecosystem partners can then universally consume.
 
 ## How does it work?
 
-The non fungible contract has a state map called ```token_owners``` which associates an incrementing ```token_id``` to an address. The token has a concept of a ```token_uri``` which it associates with the ```token_id``` this is typically a JSON asset on the internet, ipfs, arweave and could hold any particular file. Only the ```contract_owner``` is able to mint, however the contract has a concept of being a "minter" which will allow any particular address the permission to Mint tokens on the ```contract_owner``` behalf and is a revokable permission.
+The non fungible contract has a state map called ```token_owners``` which associates an incrementing ```token_id``` to an address. The token has a concept of a ```token_uri``` which it associates with the ```token_id``` this is typically a JSON asset on the internet, ipfs, arweave and could hold any particular file. Only the ```contract_owner``` is able to mint, however the contract has a concept of being a "minter" which will allow any particular address the permission to Mint tokens on the ```contract_owner``` behalf and is a revocable permission.
 
 ## Types of non fungible contracts
 
@@ -102,7 +102,7 @@ transition SetContractOwnershipRecipient(to: ByStr20)
 transition AcceptContractOwnership()
 ```
 
-## Transfering Nonfungible Tokens
+## Transferring Nonfungible Tokens
 
 ```ocaml
 type TokenMove = | UserToContract | ContractToUser
@@ -163,7 +163,7 @@ Here's an example response, when querying a ZRC-6 non fungible contract for it's
 
 #### ZRC-7 external_url example
 
-Projects can take advantage of the external_url field to store project specific infomation
+Projects can take advantage of the external_url field to store project specific information
 
 ```js
 {

@@ -8,13 +8,13 @@ tags:
   - percentage
 ---
 
-# Safe mutiplication
+# Safe multiplication
 
 When your are working with numbers in any programming language you are subject to overflows. An overflow happens when the value of number is bigger than the maximum possible value offered by the machine.
 
 For example if you’re using an unsigned integer in Scilla. The possible values of your variable ranges from 0 to  2^256 (1.1579209e+77). So it means that if you’re around the maximum value and increment your variable it will error as it overflows the maximum value range.
 
-If developers want to mutiple two ```Uint128``` together, they should firstly upcast their current values into ```Uint256``` so it doesn't overflow, and then perform the mutiplication, finally downcasting the value to a ```Uint128``` after performing the division.
+If developers want to multiple two ```Uint128``` together, they should firstly upcast their current values into ```Uint256``` so it doesn't overflow, and then perform the multiplication, finally casting the value to a ```Uint128``` after performing the division.
 
 ## Safe percentage
 
@@ -67,8 +67,8 @@ We can deduce and reason the following.
 * A own's 12
 * The total of all the entries is 93
 * 12 is x percentage of 93 = 12.9
-* If the total rewards is 100Z or 100000000000000 QA
-* Then A is owed 12.9Z or 12903225806451 QA
+* If the total rewards is 100 Zil or 100000000000000 QA
+* Then A is owed 12.9 Zil or 12.9 Zil QA
 
 ```ocaml
 user_share = 12 

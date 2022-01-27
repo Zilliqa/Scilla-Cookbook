@@ -88,7 +88,7 @@ end
 ### Remote State Read - migration of Map
 
 This is an example how how migrate a map from contract A to contract B.
-Because this implementation contains no batching functionaltiy, if the map becomes too large, the read and write operations will exceed the maximum amount of gas allowed for a transaction to consume, rendering this function effectively broken.
+Because this implementation contains no batching functionality, if the map becomes too large, the read and write operations will exceed the maximum amount of gas allowed for a transaction to consume, rendering this function effectively broken.
 
 :::tip
 Can you improve the example to then batch on a selection of passed keys?

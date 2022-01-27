@@ -3,11 +3,11 @@ sidebar_position: 2
 ---
 # Deploy Contract
 
-Review the javascript that defines [deployContract.js](https://github.com/Zilliqa/Zilliqa-JavaScript-Library-Examples/blob/master/node/deployContract.js)
+Review the Javascript that defines [deployContract.js](https://github.com/Zilliqa/Zilliqa-JavaScript-Library-Examples/blob/master/node/deployContract.js)
 
 ## Deploy button Contract
 
-Using the deployContract.js file defined in Zilliqa-JS we have the ability to deploy a contract to a network. We provide a private key of the address which is deploying, the previous network configuration to estabilish a connection, in our case this is testnet, but could be mainnet or isolated enviroment.
+Using the deployContract.js file defined in Zilliqa-JS we have the ability to deploy a contract to a network. We provide a private key of the address which is deploying, the previous network configuration to establish a connection, in our case this is testnet, but could be mainnet or isolated environment.
 
 We refactor the `deployContract.js` method to fit our usecase.
 
@@ -213,7 +213,7 @@ async function DeploySendListenMonitor()
 DeploySendListenMonitor();
 ```
 
-Using the command ```node index.js``` we can run the javascript in the console and get the output.
+Using the command ```node index.js``` we can run the Javascript in the console and get the output.
 
 ```js
 our account balance is:

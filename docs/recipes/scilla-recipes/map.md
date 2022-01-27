@@ -9,16 +9,16 @@ A value of type ``Map kt vt`` provides a key-value store where ```kt``` is the t
 
 The type of map keys ```kt``` may be any one of the following primitive types: ```String, IntX, UintX, ByStrX, ByStr or BNum```.
 
-The type of values ```vt``` may be any type except a function type, this includes both builtin and user-defined algebraic datatypes.
+The type of values ```vt``` may be any type except a function type, this includes both builtin and user-defined algebraic data types.
 
 Take the below example of the [non fungible contract](nonfungible) contract, where the association between a token and an address is stored.
 
-```token_owners``` maps the value between a token_id and an address. Each token_id will have an associated addred when an entry is added.
+```token_owners``` maps the value between a token_id and an address. Each token_id will have an associated added when an entry is added.
 
 ```Emp``` specifies when the contract is initialized the map is empty.
 
 :::tip
-```token_owners``` has good logical key sense, since one addresses can own many tokens, the modeling rationship is like a primary key where token_id makes sense to be the key here.
+```token_owners``` has good logical key sense, since one addresses can own many tokens, the modelling relationship is like a primary key where token_id makes sense to be the key here.
 :::
 
 ```ocaml
@@ -60,11 +60,11 @@ If you need to track the how many items are in a large map, please read this art
 
 ## Map size
 
-Maps should not be considered as a way of storing large objects onchain, this will negatively affect your gas consumation when dealing with large collections of these items. It's recommended to keep maps as small as possible as gas will increase linearly with the amount of items.
+Maps should not be considered as a way of storing large objects onchain, this will negatively affect your gas consummation when dealing with large collections of these items. It's recommended to keep maps as small as possible as gas will increase linearly with the amount of items.
 
 ## Nested maps
 
-Take the below example of [Zilswap DEX](dex) contract, where they store a balance for a particilar liquidity pool.
+Take the below example of [Zilswap DEX](dex) contract, where they store a balance for a particular liquidity pool.
 
 ```balances``` maps the value of the fungible contract, to a value of a nested map. The nested map contains both an account and an amount.
 
