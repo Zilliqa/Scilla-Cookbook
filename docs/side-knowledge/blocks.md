@@ -5,9 +5,9 @@ tags:
   - finality 
   - blocks per day
 ---
-# Block Production
+# Block production
 
-When a transaction occurs, the data is submitted onchain, and the user pays some gas for the privillage to submit and have the chain respect the data they have posted. When it's posted to the network, it is bundled with other transactions that happened in the same period of time and is appended to the head of the blockchain.
+When a transaction occurs, the data is submitted onchain, and the user pays some gas for the privilege to submit and have the chain respect the data they have posted. When it's posted to the network, it is bundled with other transactions that happened in the same period of time and is appended to the head of the blockchain.
 
 ## What is sharding
 
@@ -25,7 +25,7 @@ Zilliqa on the other hand uses PBFT for consensus which means that once a block 
 
 In Ethereum for instance, exchanges often wait for 30 confirmations as a newly mined block may not end up being in the canonical chain.
 
-Also, though they are somewhat correlated, there is a difference between confimation latency and general throughput.
+Also, though they are somewhat correlated, there is a difference between confirmation latency and general throughput.
 
 ## How many blocks are there per day
 

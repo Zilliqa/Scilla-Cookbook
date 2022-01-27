@@ -3,11 +3,11 @@ tags:
   - notable 
   - contracts
 ---
-# Notable Contracts
+# Notable contracts
 
-This page stores notable contracts on the Zillqa network which have scilla logic which can be used as reference material.
+This page stores notable contracts on the Zilliqa network which have Scilla logic which can be used as reference material.
 
-## ZilSwap DEX
+## Zilswap DEX
 
 [zil1gkwt95a67lnpe774lcmz72y6ay4jh2asmmjw6u](https://viewblock.io/zilliqa/address/zil1gkwt95a67lnpe774lcmz72y6ay4jh2asmmjw6u?tab=code)
 

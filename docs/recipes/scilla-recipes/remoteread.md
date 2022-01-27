@@ -6,7 +6,7 @@ tags:
   - RSR
 ---
 
-# Remote State Reads
+# Remote state reads
 
 A remote state read is the mechanism to read another contract state from any another contract. These remote fetches can be implemented in a number of ways.
 
@@ -30,7 +30,7 @@ To perform a remote state read inline, the syntax  ```x <- & c.f``` is used.
 
 The type of c must be some contract address type declaring the field f. For instance, if c has the type ByStr20 with contract field paused : Bool end, then the value of the field paused at address c can be fetched using the statement ```x <- & c.paused```.
 
-## Example
+## Example contract
 
 ```ocaml
 scilla_version 0
@@ -62,7 +62,7 @@ transition ReadValueFromSetGet2(addr: ByStr20)
 end
 ```
 
-## Example - Immutable Parameters
+## Example - immutable Parameters
 
 Users must declare the remote contract mutable fields for which they are trying to access. If the contract has more mutable fields than the user requires to read, they can be omitted.
 
@@ -85,10 +85,10 @@ transition RemoteStateRead()
 end
 ```
 
-### Remote State Read - Migration of Map
+### Remote State Read - migration of Map
 
 This is an example how how migrate a map from contract A to contract B.
-Because this implementation contains no batching functionaltiy, if the map becomes too large, the read and write operations will exceed the maximum amount of gas allowed for a transaction to consume, rendering this function effectively broken.
+Because this implementation contains no batching functionality, if the map becomes too large, the read and write operations will exceed the maximum amount of gas allowed for a transaction to consume, rendering this function effectively broken.
 
 :::tip
 Can you improve the example to then batch on a selection of passed keys?
@@ -118,6 +118,6 @@ transition ReadFromMap (
 end
 ```
 
-## Further Reading
+## Further reading
 
 [Remote state read Implementation](https://github.com/Zilliqa/scilla/pull/1014/files)

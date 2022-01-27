@@ -8,14 +8,14 @@ tags:
 
 # Funds
 
-One unit of ZIL as a native token is equal to 1000000000000 QA. (1 ZIL = 10^12 QA). When we deal with ZIL as a unit in scilla, it is represented as an ```Uint128```. The below example shows how to accept/send funds to/from a smart contract.
+One unit of ZIL as a native token is equal to 1000000000000 QA. (1 ZIL = 10^12 QA). When we deal with ZIL as a unit in Scilla, it is represented as an ```Uint128```. The below example shows how to accept/send funds to/from a smart contract.
 
 :::danger
 The example does not implement ownership logic, therefore anyone can withdraw funds.
 Do not use this contract.
 :::
 
-## Accept ZIL Contract
+## Accept ZIL contract
 
 ```Deposit``` takes any ZIL presented to it with the ```accept``` keyword.
 
@@ -94,7 +94,7 @@ transition Empty() (* withdraw everything *)
 end
 ```
 
-## Refund Mechanism
+## Refund mechanism
 
 This function checks the ```_amount``` against a passed parameter ```cap```. If the amount sent is less than cap, the procedure does nothing, but in the case where you send more than ```cap```, it can calculate the difference equal to where you send exactly the right amount and returns the excess amount to the user.
 
@@ -113,8 +113,8 @@ procedure AcceptWithCap (cap : Uint128)
 end
 ```
 
-## Further Reading
+## Further reading
 
-[readthedocs - Money Idioms](https://scilla.readthedocs.io/en/latest/scilla-tips-and-tricks.html?highlight=funds#money-idioms)
+[Scilla Documentation - Money Idioms](https://scilla.readthedocs.io/en/latest/scilla-tips-and-tricks.html?highlight=funds#money-idioms)
 
-[readthedocs - Units](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=funds#mutable-fields)
+[Scilla Documentation - Units](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=funds#mutable-fields)

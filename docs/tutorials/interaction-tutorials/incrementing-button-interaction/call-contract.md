@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Calling a Contracts Transition
 
-Review the javascript that defines [callContract.js](https://github.com/Zilliqa/Zilliqa-JavaScript-Library-Examples/blob/master/node/callContract.js)
+Review the Javascript that defines [callContract.js](https://github.com/Zilliqa/Zilliqa-JavaScript-Library-Examples/blob/master/node/callContract.js)
 
 ## Calling a Transition
 

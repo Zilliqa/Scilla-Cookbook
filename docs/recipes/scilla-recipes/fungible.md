@@ -7,9 +7,9 @@ tags:
   - zrc-2
 ---
 
-# Fungible Token
+# Fungible token
 
-Fungible Tokens are an open standard for creating currencies. Fungibility is the property of goods or commodities whose individual units are essentially interchangeable, and each of its parts is indistinguishable from another part. An example is 1 ZIL can be traded for an equal value of 1 ZIL.
+Fungible tokens are an open standard for creating currencies. Fungibility is the property of goods or commodities whose individual units are essentially interchangeable, and each of its parts is indistinguishable from another part. An example is 1 ZIL can be traded for an equal value of 1 ZIL.
 
 ZRC-2 defines a minimum interface that a smart contract must implement to allow fungible tokens to be managed, tracked, owned, and traded peer-to-peer via wallets or exchanges.
 
@@ -20,7 +20,7 @@ The fungible contract has a state map called ```balances``` where it maps addres
 The fungible contract gives a token holder the ability to set an ```allowance``` for any address. This allowance address will have a spend limit it is allowed to spend on behalf of the token holder.
 
 :::note
-You cannot arbotarily move fungible tokens without you being either the owner or by giving an address some allowance.
+You cannot arbitrarily move fungible tokens without you being either the owner or by giving an address some allowance.
 :::
 
 The fungible contract comes in different flavours depending on what the user needs to leverage. The contracts have the following public transitions :
@@ -65,7 +65,7 @@ transition TransferFrom(from: ByStr20, to: ByStr20, amount: Uint128)
 ### Mintable
 
 :::warning
-The 'mintable' fungible contract should be viewed skeptically as the ```contract_owner``` can abortarily ```Mint``` new tokens.
+The 'mintable' fungible contract should be viewed sceptically as the ```contract_owner``` can arbitrarily ```Mint``` new tokens.
 :::
 
 ```ocaml
@@ -84,7 +84,7 @@ transition Burn(burn_account: ByStr20, amount: Uint128)
 ### Operatable
 
 :::warning
-The 'operatorable' fungible contract should be viewed skeptically as an ```operator``` can arbotarily move tokens.
+The 'operatable' fungible contract should be viewed sceptically as an ```operator``` can arbitrarily move tokens.
 :::
 
 ```ocaml
@@ -96,7 +96,7 @@ The 'operatorable' fungible contract should be viewed skeptically as an ```opera
 transition OperatorSend(from: ByStr20, to: ByStr20, amount: Uint128)
 ```
 
-## Transfering Fungible Tokens
+### Transferring Fungible Tokens
 
 ```ocaml
 procedure TransferFundsFromXToY(x: ByStr20, fungible_contract: ByStr20, y: ByStr20, funds: Uint128)
@@ -113,6 +113,26 @@ procedure TransferFundsFromXToY(x: ByStr20, fungible_contract: ByStr20, y: ByStr
 end
 ```
 
-## Further Reading
+## Decimal Example
 
-[readthedocs - Fungible Tokens](https://scilla.readthedocs.io/en/latest/scilla-by-example.html?highlight=fungible#fungible-tokens)
+Lets say we make a token with 2 decimals with a total supply of 1000. There are 100 sub-units (max of two decimals) to 1 full token. The total sub-unit supply of would be 1000*100=100000.
+
+| Amount to send | Fungible value |
+|----------------|----------------|
+| 0.01           | 1              |
+| 0.1            | 10             |
+| 1              | 100            |
+| 10             | 1000           |
+
+Lets take an example where we have 12 decimals with a supply of 1000. there are 1000000000000 sub-units (max of 12 decimals) to 1 full token. the total sub-unit supply would be 1000*1000000000000=100000000000000
+
+| Amount to send | Fungible value |
+|----------------|----------------|
+| 0.000000000001 | 1              |
+| 0.000000001    | 1000           |
+| 0.000001       | 1000000        |
+| 1              | 1000000000000  |
+
+## Further reading
+
+[Scilla Documentation - Fungible Tokens](https://scilla.readthedocs.io/en/latest/scilla-by-example.html?highlight=fungible#fungible-tokens)

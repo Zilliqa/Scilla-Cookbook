@@ -4,7 +4,7 @@ sidebar_position: 8
 
 # Events
 
-An event is a piece of data that gets stored on the blockchain and emited to any consuming client application listening. It is stored in the transaction history on the block the transaction was processed at.
+An event is a piece of data that gets stored on the blockchain and emitted to any consuming client application listening. It is stored in the transaction history on the block the transaction was processed at.
 
 An event is comprised of a number of parameters in the pattern of ```vname : value``` pairs delimited by ```;```. An event must contain the compulsory field _eventname, and may contain other fields such as the code field in the example above.
 
@@ -14,11 +14,11 @@ event e
 ```
 
 :::note
-Event calls can be useful for debugging by emiting function parameters and other relevent data
+Event calls can be useful for debugging by emitting function parameters and other relevant data
 :::
 
 :::tip
-It's good convention to emit an event on success or failure with the relevent parameters.
+It's good convention to emit an event on success or failure with the relevant parameters.
 :::
 
 ## IncrementingButton

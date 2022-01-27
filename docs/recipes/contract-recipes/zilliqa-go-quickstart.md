@@ -5,11 +5,11 @@ tags:
 
 # Zilliqa-Go SDK
 
-The [gozilliqa-sdk](https://github.com/Zilliqa/gozilliqa-sdk) version of zilliqa blockchain library.
+The [gozilliqa-sdk](https://github.com/Zilliqa/gozilliqa-sdk) version of Zilliqa blockchain library.
 
 Supports :
 
-- mutisig
+- multisig
 - traversal of blocks
 - create account
 - sign transaction

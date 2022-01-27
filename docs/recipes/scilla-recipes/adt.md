@@ -10,9 +10,9 @@ tags:
   - algebraic
 ---
 
-# Algebraic Data Types
+# Algebraic data types
 
-In functional programming and type theory, an algebraic data type (ADT) is a kind of composite type, formed of two or more other primative types.
+In functional programming and type theory, an algebraic data type (ADT) is a kind of composite type, formed of two or more other primitive types.
 
 ```ocaml
 type MyAdt =
@@ -40,7 +40,7 @@ type 'A List =
   | Nil
 ```
 
-At the moment, Scilla does not support user-defined polymorphic ADTs. Only the in-built ADTs List, Pair and Option are polymorphic. Users can define concrete ADTs such as MyAdt.
+At the moment, Scilla does not support user-defined polymorphic ADT. Only the in-built ADT List, Pair and Option are polymorphic. Users can define concrete ADT such as MyAdt.
 
 ### ADT's in Data Structures
 
@@ -145,7 +145,7 @@ procedure Example(game: Game)
 end
 ```
 
-## Full ADT examples
+## ADT example contracts
 
 ### Store ADT as List (Pair Parcel Uint32)
 
@@ -267,7 +267,7 @@ transition Remove()
 end
 ```
 
-## Further Reading
+## Further reading
 
 [adt.scilla](https://github.com/TheDrBee/oSCILLAtor/blob/079f2400cfa1e6fdc7a7b0449bd65406186a1f3e/contracts/Adt.scilla)
 
@@ -275,4 +275,4 @@ end
 
 [Interfacing.scilla](https://github.com/TheDrBee/oSCILLAtor/blob/079f2400cfa1e6fdc7a7b0449bd65406186a1f3e/contracts/Interfacing.scilla)
 
-[readthedocs - User Defined ADTs](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=adt#user-defined-adts)
+[Scilla Documentation - User Defined ADT](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=adt#user-defined-adts)

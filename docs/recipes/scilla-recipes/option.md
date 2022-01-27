@@ -14,7 +14,7 @@ Optional values are specified using the type ```Option t```, where ```t``` is so
 
 ```None``` represents the absence of a value. The None constructor takes no arguments.
 
-## Example Contract
+## Example contract
 
 ```ocaml
 scilla_version 0
@@ -60,6 +60,6 @@ transition Emit()
 end
 ```
 
-## Further Reading
+## Further reading
 
-[readthedocs - Option](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=option#option)
+[Scilla Documentation - Option](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=option#option)

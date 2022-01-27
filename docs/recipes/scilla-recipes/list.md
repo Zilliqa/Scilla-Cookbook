@@ -17,7 +17,7 @@ transition Test()
 end
 ```
 
-## Example List Contract
+## Example list contract
 
 ```ocaml
 scilla_version 0
@@ -274,7 +274,7 @@ transition CheckUniqueness()
 end
 ```
 
-## User Defined List Functions
+## User defined list functions
 
 The below snippets are user defined library snippets which involve the List type.
 
@@ -310,7 +310,7 @@ let listByStr20FilterOut =
       listByStr20Filter fn list
 ```
 
-## Further Reading
+## Further reading
 
 [TheDrBee - List.Scilla](https://github.com/TheDrBee/oSCILLAtor/blob/24e03d7f14802f84a1db4c183031d1f916eeac88/contracts/List.scilla)
-[readthedocs - List](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=list#list)
+[Scilla Documentation - List](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=list#list)

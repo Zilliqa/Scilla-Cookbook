@@ -7,12 +7,12 @@ sidebar_position: 6
 A ```transition``` is a way to define logic that interacts with the contract state. transitions are a part of the public interface of the contract, and may be invoked by sending a message to the contract.
 
 :::note
-Consider transitions as public encapuslation scope.
+Consider transitions as public encapsulation scope.
 :::
 
 Transitions are declared through keyword ```transition```. A procedure declaration is followed by the name of the procedure. The below example the procedure is called ```ExampleTransition```.
 
-The arguments to be passed to the transitions are wrapped within  ```()```. The below example defines one parameter where ```vname``` is the argument name and ```vtype``` is its type. When mutiple arguments are passed they are seperated by a ```,```.
+The arguments to be passed to the transitions are wrapped within  ```()```. The below example defines one parameter where ```vname``` is the argument name and ```vtype``` is its type. When multiple arguments are passed they are separated by a ```,```.
 
 Transitions indicate the end of processing by providing the keyword ```end```.
 
@@ -65,7 +65,7 @@ transition OwnerResetButton()
 end
 ```
 
-## IncrementingButton So far
+## IncrementingButton so far
 
 ```ocaml
 scilla_version 0

@@ -3,7 +3,7 @@ tags:
   - keywords
 ---
 
-# Glossary of Keywords & Conventions
+# Glossary of keywords & conventions
 
 This page is responsible for some of the most common development and blockchain terms and the conventions to follow onchain or with interactions.
 
@@ -29,7 +29,7 @@ Cryptographic hash of some data generated using a keypair.
 
 1 Unit of QA is worth 0.000001 LI and 0.000000000001 ZIL.
 
-QA is used when speaking about small values. Default scilla unit that can be represented as a Uint128.
+QA is used when speaking about small values. Default Scilla unit that can be represented as a Uint128.
 
 ```LI```
 
@@ -63,7 +63,7 @@ Starts a pattern matching block
 
 ```in```
 
-Used to chain a logical structure through mutiple variables.
+Used to chain a logical structure through multiple variables.
 
 ## Conventions
 
@@ -79,7 +79,7 @@ For a smart contract to accept incoming ZIL, it needs to do so explicitly using 
 
 However, there is currently no naming convention for transitions that can accept ZIL. As a result, cryptocurrency exchanges or cryptocurrency wallet providers do not know which ```_tag``` to set, should they wish to transfer ZIL to a contract address.
 
-By having a naming convention for transitions that can accept ZIL, one can easily transfer ZIL to a contract that follows this convention, thereby improving composability between mutiple contracts.
+By having a naming convention for transitions that can accept ZIL, one can easily transfer ZIL to a contract that follows this convention, thereby improving composability between multiple contracts.
 
 ```ocaml
 (* Accepts funds *)
@@ -88,4 +88,4 @@ transition AddFunds ()
 end
 ```
 
-## Further Reading
+## Further reading

@@ -13,18 +13,18 @@ tags:
   - sign
 ---
 
-# Zilliqa-JS Quickstart
+# Zilliqa-JS quickstart
 
 ## Getting started
 
 You will need Node and NPM installed on your machine for this guide.
 
-Read the [repo readme](https://github.com/Zilliqa/Zilliqa-JavaScript-Library) to get started with ```npm installing``` zilliqa-js to your local repo.
+Read the [repo readme](https://github.com/Zilliqa/Zilliqa-JavaScript-Library) to get started with ```npm installing``` Zilliqa-JS to your local repo.
 
 Create a burner testing wallet and fund it with tokens from the [faucet](https://dev-wallet.zilliqa.com/faucet?network=testnet).
 
 :::danger
-Do not publish your private key as a git artifact, the wallet is at risk.
+Do not publish your private key as a git artefact, the wallet is at risk.
 :::
 
 :::tip
@@ -33,7 +33,7 @@ Use a .env file and add it to your .gitignore
 
 ## HelloWorld Interaction Example
 
-Review the documentation from the [examples repo for zilliqa-js](https://github.com/Zilliqa/Zilliqa-JavaScript-Library-Examples)
+Review the documentation from the [examples repo for Zilliqa-JS](https://github.com/Zilliqa/Zilliqa-JavaScript-Library-Examples)
 
 Call a specific example by installing the dependencies and invoking the example command.
 
@@ -269,9 +269,9 @@ walletSign.js
 
 [Zilliqa-JS Example Interaction](https://github.com/Zilliqa/Zilliqa-JavaScript-Library-Examples/tree/master/node)
 
-### TheDrBee Contract Interactions
+### TheDrBee contract Interactions
 
-[Zilliqa-JS Contract Interaction](https://github.com/TheDrBee/oSCILLAtor/tree/main/js)
+[Zilliqa-JS contract Interaction](https://github.com/TheDrBee/oSCILLAtor/tree/main/js)
 
 ### Zilpay Repositories
 

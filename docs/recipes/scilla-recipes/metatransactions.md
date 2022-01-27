@@ -22,9 +22,9 @@ It can also be seen as a way to defer the processing of transactions or even to 
 
 [The ZRC-3 contract](https://github.com/Zilliqa/ZRC/blob/master/reference/MetaFungibleToken.scilla) adds a metatransfer transition to the existing ZRC-2 interface.
 
-## Docker Interaction
+## Docker interaction
 
-[relay.js](https://github.com/starling-foundries/relay.js) is a repository containing the cheque relay to forward metatransactions to zilliqa network (sometimes called a bouncer proxy).
+[relay.js](https://github.com/starling-foundries/relay.js) is a repository containing the cheque relay to forward metatransactions to Zilliqa network (sometimes called a bouncer proxy).
 
 This contract is based largely on the recommendations of EIP-965. It accomplishes similar goals, but also adds a functionality for gasless metatransactions. In this implementation the cheque is a message containing these parameters:
 
@@ -41,23 +41,23 @@ This contract is based largely on the recommendations of EIP-965. It accomplishe
 }
 ```
 
-Note that the recipient, amount, contract, fee and nonce values are hashed and signed client-side before submitting the metatransaction to an arbotarily relay which can use this metatransaction as a spend-by-proxy. Both the relay and sender can be confident that parameters are properly validated on-chain, only a valid metatransaction can be spent and it can only be spent once.
+Note that the recipient, amount, contract, fee and nonce values are hashed and signed client-side before submitting the metatransaction to an arbitrarily relay which can use this metatransaction as a spend-by-proxy. Both the relay and sender can be confident that parameters are properly validated on-chain, only a valid metatransaction can be spent and it can only be spent once.
 
 This spend function does not replace the normal Transfer transition or the OperatorSend functionality already possible with ZRC2, instead it offers a third method for authorizing these transfers. One in which the holder of a token with spending authority is not presumed to have the Zil onhand to pay for transactions. It also optionally allows for paying transaction fees in tokens.
 
-Posession of a metatransaction authorizes a relayer to submit this cheque on their behalf. This does not guarantee the funds, as any other transactions spending funds will be ordered like any other within the blockchain. This is by design as it removes the main way relays can abuse power - by censoring transactions.
+Possession of a metatransaction authorizes a relayer to submit this cheque on their behalf. This does not guarantee the funds, as any other transactions spending funds will be ordered like any other within the blockchain. This is by design as it removes the main way relays can abuse power - by censoring transactions.
 
 If a relayer does not submit the cheque in a timely manner, the token holder has the opportunity to send the same metatransaction to the voidcheque transition to ensure the stalled transaction is not processed later.
 
 ### Relayer responsibilities
 
-The relayer provides a public endpoint for recieving metatransactions, chequeing it's target contract and can validate any parameters to avoid wasting its own gas with a transaction that might be refused due to balance or previous spending of the metatransaction.
+The relayer provides a public endpoint for receiving metatransactions, chequeing it's target contract and can validate any parameters to avoid wasting its own gas with a transaction that might be refused due to balance or previous spending of the metatransaction.
 
-It may optionally report a minimum fee, but it cannot charge a fee that the token owner did not approve in the signed metatransaction. The anticipated malevolent behavior - a relayer censoring transactions - is mitigated by the possibility for multiple relayers.
+It may optionally report a minimum fee, but it cannot charge a fee that the token owner did not approve in the signed metatransaction. The anticipated malevolent behaviour - a relayer censoring transactions - is mitigated by the possibility for multiple relayers.
 
-## Further Reading
+## Further reading
 
-[Medium - ZRC3’s Grand Rewrite](https://medium.com/builders-of-zilliqa/zrc3s-grand-rewrite-22558797ea0)
+[Medium - ZRC-3 Grand Rewrite](https://medium.com/builders-of-zilliqa/zrc3s-grand-rewrite-22558797ea0)
 
 [ZRC-3 Specification](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-3.md)
 

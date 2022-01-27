@@ -19,7 +19,7 @@ Each usage of a Scilla literal, executing an expression and statement in Scilla 
 
 ```Gas Price``` is an amount you will pay for a unit of Gas. If the user increased gas price by * 2 - the gas units have stayed the same, but you are now paying twice as much for those units.
 
-## Further Reading
+## Further reading
 
 [Gas Pricing](https://dev.zilliqa.com/docs/basics/basics-zil-gas/)
 

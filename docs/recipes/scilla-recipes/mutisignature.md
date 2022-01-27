@@ -13,7 +13,7 @@ In blockchain-based applications, activities might need to be authorised by mult
 
 All the addresses that can authorise an activity might not be reachable at the time of issuing the transaction due to the sporadic or limited availability of some authorities. Also, it may not be possible to decide on all possible approvers in advance. How can a transaction be authorised by a subset (> 1) of approvers?
 
-[ZRC-4](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-4.md) defines the technical specification document that defines the mutisignature implementation.
+[ZRC-4](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-4.md) defines the technical specification document that defines the multisignature implementation.
 
 ## How does it work?
 
@@ -24,7 +24,7 @@ The transaction must be added to the contract before signatures can be collected
 If an owner changes his mind about a transaction, the signature can be revoked until the transaction is executed.
 
 :::note
-This wallet does not allow adding or removing owners, or changing the number of required signatures. To do any of those things, read the readme baked into the contract for further infomation.
+This wallet does not allow adding or removing owners, or changing the number of required signatures. To do any of those things, read the readme baked into the contract for further information.
 :::
 
 ## What could go wrong?
@@ -35,19 +35,19 @@ If a sufficient number of owners lose their private keys, or for any other reaso
 If an owner loses his private key, the remaining owners should move the funds to a new wallet (using the workflow baked into the readme of the contract) to ensure that funds are not locked if another owner loses his private key. The owner who originally lost his private key can generate a new key, and the corresponding address be added to the new wallet, so that the same set of persons own the new wallet.
 :::
 
-## Zilliqa mutisig
+## Zilliqa multisig
 
 ### Webportal
 
-The [Zilliqa multisig wallet](https://multisig.zilliqa.com/) is the easiest way of interfacing using a mutisig contract. It provides a user interface over the transitions this contract exposes.
+The [Zilliqa multisig wallet](https://multisig.zilliqa.com/) is the easiest way of interfacing using a multisig contract. It provides a user interface over the transitions this contract exposes.
 
 ### Contract
 
 ZRC-4 has a reference [contract](https://raw.githubusercontent.com/Zilliqa/ZRC/4e92efd31c5d9a43db8bf5a7d25f7e2916d54c1d/reference/multisig_wallet.scilla) that can be examined.
 
-The contract takes two immutable parameters. One for the List of ByStr20's used for signing, and the total number of required signatures needed. The contract then performs some validation to ensure the amount of signatures required is less than or equal to the required amount before continuing to setup the state variables. The state of the mutisig is concerned with capturing data relating to signatures, this is used later to check if enough signatures have been added to submit a transaction.
+The contract takes two immutable parameters. One for the List of ByStr20's used for signing, and the total number of required signatures needed. The contract then performs some validation to ensure the amount of signatures required is less than or equal to the required amount before continuing to setup the state variables. The state of the multisig is concerned with capturing data relating to signatures, this is used later to check if enough signatures have been added to submit a transaction.
 
-The contract has logical stubs related to the operation of the mutisig.
+The contract has logical stubs related to the operation of the multisig.
 
 ```ocaml
 (* Add signature to signature list *)
@@ -76,15 +76,15 @@ transition AddFunds ()
 
 ### Interaction
 
-ZRC-4 has a reference [interaction](https://github.com/Zilliqa/ZRC/tree/4e92efd31c5d9a43db8bf5a7d25f7e2916d54c1d/example/zrc4) library that can be used if users wanted to deploy or use the mutisig without interacting through the UI or IDE.
+ZRC-4 has a reference [interaction](https://github.com/Zilliqa/ZRC/tree/4e92efd31c5d9a43db8bf5a7d25f7e2916d54c1d/example/zrc4) library that can be used if users wanted to deploy or use the multisig without interacting through the UI or IDE.
 
-## Testing the Zilliqa mutisig
+## Testing the Zilliqa multisig
 
 ### Setup
 
-- Create three wallets (say A, B, C) using the [dev wallet generator](https://dev-wallet.zilliqa.com/generate), store the corresponding keystore files on your machine and note the BECH32(zil...) addresses. (you can import keystores into zilpay at a later convience)
+- Create three wallets (say A, B, C) using the [dev wallet generator](https://dev-wallet.zilliqa.com/generate), store the corresponding keystore files on your machine and note the BECH32(zil...) addresses. (you can import keystores into Zilpay at a later convenience)
 
-- Request testnet ZILs for these addresses [via the faucet](https://dev-wallet.zilliqa.com/faucet).
+- Request testnet Zil for these addresses [via the faucet](https://dev-wallet.zilliqa.com/faucet).
 
 ### Deployment via UI
 
@@ -95,26 +95,26 @@ ZRC-4 has a reference [interaction](https://github.com/Zilliqa/ZRC/tree/4e92efd3
 - Once the multisig wallet is deployed, you will have to add funds to the contract. For this, go to the multisig wallet interface and click Add Funds button from the right-hand panel. Add funds to the multisig wallet using the funds from address A using the UI.
 
 :::note
-You cannot send funds to the contract address through zilpay, it returns the error: ```contract account wont accept normal transactions```
+You cannot send funds to the contract address through Zilpay, it returns the error: ```contract account wont accept normal transactions```
 
 Note the transition for accepting payments in the contract transition stubs as an alternative.
 :::
 
 :::note
-There is not a mutisignature contract that currently accepts ZRC-2 tokens
+There is not a multisignature contract that currently accepts ZRC-2 tokens
 :::
 
 ### Approve a transaction
 
-- Let’s say you want to pay 5 ZILs to account C via the multisig wallet. In order to do this, log in the multisig wallet using account A. And click Transaction from the right-hand panel. Fill in the recipient address and the amount and send the transaction.
+- Let’s say you want to pay 5 Zil to account C via the multisig wallet. In order to do this, log in the multisig wallet using account A. And click Transaction from the right-hand panel. Fill in the recipient address and the amount and send the transaction.
 
 - Since it is a multisig wallet, any transfer of money from the wallet will require 2 out of 3 sign offs. Since A submitted the transaction, it is counted as a sign off. We now need either B or C to sign off.
 
 - Log in to the multisig wallet using account B, import the multisig wallet by providing the multisig wallet address (from Step 3.) Once the wallet is imported, you can click sign to sign of this transaction. Do check the transaction details.
 
-- Once the two signatures are obtained, you can use account B to execute the transaction. Execution is the final step in the transfer process and it will transfer 5 ZILs to C.
+- Once the two signatures are obtained, you can use account B to execute the transaction. Execution is the final step in the transfer process and it will transfer 5 Zil to C.
 
-## Further Reading
+## Further reading
 
 [Multisignature](https://research.csiro.au/blockchainpatterns/general-patterns/security-patterns/multiple-authorization/)
 
@@ -122,4 +122,4 @@ There is not a mutisignature contract that currently accepts ZRC-2 tokens
 
 [ZRC-4 Interaction](https://github.com/Zilliqa/ZRC/tree/4e92efd31c5d9a43db8bf5a7d25f7e2916d54c1d/example/zrc4)
 
-[Zilliqa Mutisignature Wallet UI](https://multisig.zilliqa.com/)
+[Zilliqa Multisignature Wallet UI](https://multisig.zilliqa.com/)

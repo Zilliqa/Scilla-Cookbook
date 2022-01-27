@@ -7,17 +7,17 @@ tags:
   - example
 ---
 
-# Full-Stack Examples
+# Full-stack examples
 
-[Zillet wallet fullstack - zillet](https://github.com/zillet/zillet)
+[Zillet wallet fullstack - Zillet](https://github.com/zillet/zillet)
 
-[Zilswap fullstack - zilswap](https://github.com/Switcheo/zilswap-webapp)
+[Zilswap fullstack - Zilswap](https://github.com/Switcheo/zilswap-webapp)
 
-[DragonZil fullstack - dragon-zil](https://github.com/DeepDragons/dragon-zil)
+[DragonZil fullstack - DragonZil](https://github.com/DeepDragons/dragon-zil)
 
-[Example Contract fullstack](https://github.com/zilpay/zilliqa-dApps)
+[Example contract fullstack](https://github.com/zilpay/zilliqa-dApps)
 
-[Zilliqa multisig fullstack - zilliqa](https://github.com/Zilliqa/zilliqa-multisig-wallet)
+[Zilliqa multisig fullstack - Zilliqa](https://github.com/Zilliqa/zilliqa-multisig-wallet)
 
 [ZRC-1 NFT auction fullstack - LazyNFT](https://github.com/betterclever/LazyNFT)
 
@@ -27,5 +27,5 @@ tags:
 
 # Mobile stack examples
 
-[Android wallet - xzil-wallet](https://github.com/AndreiD/xzil-wallet)
+[Android wallet - XZil-wallet](https://github.com/AndreiD/xzil-wallet)
 
