@@ -14,9 +14,9 @@ A [fungible token](fungible) is unit of currency that can be readily interchange
 
 Non-fungible tokens have associated with it some unique properties like some particular attributes, image, asset and therefore makes each piece unique. The tokens can be thought of as certificates of ownership for virtual or physical assets. A Non-Fungible contract is a collection of associations between token ids, there associated asset and an owning address.
 
-[ZRC-6](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-6.md) defines another interface which has features to align itself with some of the patterns ERC-721 and ERC-1155 have such as royalty payments and batch minting.
+[ZRC-6](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-6.md) defines a minimum interface of an NFT smart contract. It has features including royalty payments and batch minting.
 
-[ZRC-7](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-7.md) defines a metadata standard that developers should follow. The resource attached to a ZRC-1 / ZRC-6 should emit a JSON response which contains not only the image, but the traits and other relevant project and token information which ecosystem partners can then universally consume.
+[ZRC-7](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-7.md) defines a metadata standard that developers should follow to ensure ecosystem partners can universally consume. The resource attached to a ZRC-1 / ZRC-6 should emit a JSON response which contains not only the image, but the traits and other relevant project and token information.
 
 ### ZRC-6
 
