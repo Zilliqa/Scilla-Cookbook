@@ -32,7 +32,7 @@ type 'A MyPAdt =
   | MyPConstructor3
 ```
 
-MyPAdt is a polymorphic ADT with a type parameter (variable) 'A. When MyPAdt is, for example, instantiated with the type parameter 'A set to Int32, then MyPAdt will be the same as MyAdt. List, the Scilla built-in ADT is, for example, a polymorphic ADT. When we write List Int32, it means that we have instantiated List ADT with Int32. This in-built ADT, if it wasn't in-built, would look like.
+`MyPAdt` is a polymorphic ADT with a type parameter (variable) `'A`. When `MyPAdt` is, for example, instantiated with the type parameter `'A` set to `Int32`, then MyPAdt will share the same structure as `MyAdt`. `List`, the Scilla built-in ADT is, for example, a polymorphic ADT. When we write `List Int32`, it means that we have instantiated `List` ADT with `Int32`. This built-in ADT, if it wasn't built-in, would look like:
 
 ```ocaml
 type 'A List =
@@ -40,7 +40,7 @@ type 'A List =
   | Nil
 ```
 
-At the moment, Scilla does not support user-defined polymorphic ADT. Only the in-built ADT List, Pair and Option are polymorphic. Users can define concrete ADT such as MyAdt.
+At the moment, Scilla does not support user-defined polymorphic ADTs. Only the built-in ADTs `List`, `Pair` and `Option` are polymorphic. Users can only define concrete ADTs such as `MyAdt`.
 
 ### ADT's in Data Structures
 
