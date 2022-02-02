@@ -8,7 +8,7 @@ tags:
 
 Once a smart contract has been deployed to the network it becomes immutable. Let's consider some usecases where pauses become useful to implement in your smart contract design.
 
-Firstly, let's consider a vuneriability has been discovered in your contract. How do you begin to secure such a contract so that the vuneriability can't be executed?
+Firstly, let's consider a vulnerability has been discovered in your contract. How do you begin to secure such a contract so that the vulnerability can't be executed?
 
 What if you wanted to upgrade a contract to a new implementation. How do you stop users interacting with the old implementation?
 
