@@ -33,8 +33,13 @@ const config = {
   ],
 
   themeConfig: {
+    algolia: {
+      apiKey: "326fb4cbf74a421fcea0c27d4b80335b",
+      indexName: "scilla-cookbook",
+  
+    },
     googleAnalytics: {
-      trackingID: "G-GZV0S5106J",
+      trackingID: "UA-161852445-2",
       anonymizeIP: true, 
     },
     image: "img/site/meta.jpg?v=1",
