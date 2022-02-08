@@ -35,4 +35,21 @@ contract IncrementingButton
 
 These initialisation parameters can be viewed publicly from the ```state``` of the contract.
 
+### Checking the immutable variables
+It is possible to check that the immutable variables satisfy one or more conditions. For example, let's assume for a moment that our `IncrementingButton` contract has a second immutable variable `max_num_clicks: Uint32` that limits the number of clicks allowed, and that we want this variable to be positive. In other words, the deployment should fail if the variable is set to 0. This is called a "contract constraint" and is put in a ```with ... =>``` block right after the definition of the immutable variables. 
+
+```ocaml
+contract IncrementingButton
+(
+  contract_owner: ByStr20,
+  max_num_clicks: Uint32
+)
+with
+  let zero = Uint32 0 in (* check max_num_clicks > 0 *)
+  uint32_gt max_num_clicks zero
+=> 
+```
+More examples can be found in the [oSCILLAtor repo](https://github.com/TheDrBee/oSCILLAtor#initparams) under "InitParams".
+
+
 We are still missing required fields that stop our contract being compiled correctly. See the next topic about Scilla Versions.
