@@ -20,7 +20,7 @@ Metatransactions provide an alternative flow for users just getting started with
 
 It can also be seen as a way to defer the processing of transactions or even to guard a transition that requires multiparty authorization, although those applications are left to implementations and future standards.
 
-[The ZRC-3 contract](https://github.com/Zilliqa/ZRC/blob/master/reference/MetaFungibleToken.scilla) adds a metatransfer transition to the existing ZRC-2 interface.
+[The ZRC-3 contract](https://github.com/Zilliqa/ZRC/blob/main/reference-contracts/MetaFungibleToken.scilla) adds a metatransfer transition to the existing ZRC-2 interface.
 
 ## Docker interaction
 
@@ -37,7 +37,7 @@ This contract is based largely on the recommendations of EIP-965. It accomplishe
           "fee" : 2,
         "nonce" : 12,
     "signature" : "0xasdlj3io2j...",
-    "pubkey"    : "asdfg123..." 
+    "pubkey"    : "asdfg123..."
 }
 ```
 
@@ -61,7 +61,7 @@ It may optionally report a minimum fee, but it cannot charge a fee that the toke
 
 [ZRC-3 Specification](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-3.md)
 
-[ZRC-3 - Contract](https://github.com/Zilliqa/ZRC/blob/master/reference/MetaFungibleToken.scilla)
+[ZRC-3 - Contract](https://github.com/Zilliqa/ZRC/blob/main/reference-contracts/MetaFungibleToken.scilla)
 
 [ZRC3 - Interaction](https://github.com/Zilliqa/ZRC/tree/master/example/zrc3)
 
