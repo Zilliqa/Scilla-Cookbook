@@ -44,39 +44,6 @@ contract Ownership
 field owner : ByStr20 = owner_at_deployment (* the current owner *)
 field pending_owner: Option ByStr20 = None {ByStr20} (* a new owner has been proposed *)
 
-(* emit an event showing both the sender and the owner, and a bool if they equal *)
-transition IsOwnerCalling()
-  o <- owner;
-  is_owner = builtin eq _origin o;
-  ev = {_eventname: "Foo"; origin: _origin; owner: o; called_by_owner: is_owner};
-  event ev
-end
-
-(* change ownership: everyone can do this, not just the actual owner:
-    Should not be done in practice, we just show how to simply update a field *)
-transition ChangeOwner(new_owner : ByStr20)
-  old <- owner;
-  owner := new_owner;
-  ev = {_eventname: "ChangeOwner"; _origin: _origin; old_owner: old; new_owner: new_owner};
-  event ev
-end
-
-(* change ownership: only owner can do this: Still not optimal as a wrong
-    parameter will lock out the intended new_owner, and give away owner_ship *)
-transition ChangeOwnerByOwnerOnly(new_owner : ByStr20)
-  old <- owner;
-  is_owner = builtin eq _origin old;
-  match is_owner with
-  | False => (* do not change the owner as _origin is not current owner *)
-    ev = {_eventname: "ChangeOwnerByOwnerOnlyFailure"};
-    event ev
-  | True =>
-    owner := new_owner;
-    ev = {_eventname: "ChangeOwnerByOwnerOnlySuccess"};
-    event ev
-  end
-end
-
 (* the safe way of tranfering owner ship: current owner proposes a new owner    *)
 (* and the new onwer collects/accpets the owner ship                            *)
 transition RequestOwnershipTransfer(new_owner : ByStr20)

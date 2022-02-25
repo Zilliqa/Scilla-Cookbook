@@ -10,6 +10,20 @@ tags:
 
 Developers may want to deploy contracts through the IDE for testing which require complex types or interaction. This page specifies the untypical type interactions developers may have with the IDE.
 
+### Bool
+
+```ocaml
+field is_paused : Bool = True
+```
+
+```json
+{ 
+  "constructor": "False", 
+  "argtypes": [], 
+  "arguments": [] 
+}
+```
+
 
 ### List of Uint256
 

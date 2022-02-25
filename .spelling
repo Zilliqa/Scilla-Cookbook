@@ -264,5 +264,17 @@ ContractOwnerResetButton
 scillib
 whitespace
 unstoppabledomains_registry.scilla
+usecases
+resecure
+ssnlist
+ssns
+delegators
+delegator
+ssnlistproxy
+upgradeability
+Viewblock
+zil1ur8ehr9qeqrgkgf3qj3ruv5dyt0w8nj53drvuz
  - node_modules/@algolia/autocomplete-core/README.md
 algolia
+ - docs/recipes/scilla-recipes/staking.md
+zil1v25at4s3eh9w34uqqhe3vdvfsvcwq6un3fupc2
