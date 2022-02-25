@@ -20,7 +20,7 @@ Non-fungible tokens have associated with it some unique properties like some par
 
 ### ZRC-6
 
-The ZRC-6 contract can be found [here](https://github.com/Zilliqa/ZRC/blob/master/reference/zrc6.scilla).
+The ZRC-6 contract can be found [here](https://github.com/Zilliqa/ZRC/blob/main/reference-contracts/zrc6.scilla).
 
 The ZRC-6 specification can be found [here](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-6.md).
 
@@ -65,9 +65,9 @@ procedure MoveNonFungibleTokenFromContractToUser(token_move: TokenMove, recipien
         };
       msgs = one_msg transfer_to_user;
       send msgs;
-      e = {_eventname : "StoreMovedToUserSuccess"; nonfungible : nonfungible; token_id: token_id};  
+      e = {_eventname : "StoreMovedToUserSuccess"; nonfungible : nonfungible; token_id: token_id};
       event e
-      
+
     | UserToContract =>
     end
 end
