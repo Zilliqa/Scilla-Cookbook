@@ -274,6 +274,24 @@ ssnlistproxy
 upgradeability
 Viewblock
 zil1ur8ehr9qeqrgkgf3qj3ruv5dyt0w8nj53drvuz
+ADTs
+BatchMint
+InitParams
+ZRC
+MyNFTProject
+MNP
+base_uri
+SetRoyaltyFeeBPS
+SetRoyaltyRecipient
+edgecase
+Beanterra
+1337
+_sender
+mp4
+AWS
+permaweb
+sidebar_position
+4
  - node_modules/@algolia/autocomplete-core/README.md
 algolia
  - docs/recipes/scilla-recipes/staking.md

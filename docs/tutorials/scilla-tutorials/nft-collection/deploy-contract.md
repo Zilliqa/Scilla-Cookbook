@@ -10,7 +10,7 @@ For our examples, we'll be taking advantage of the simulated environment functio
 
 Copy the contract from the ZRC standard for [ZRC-6](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-6.md) - create a new blank Scilla file - paste in the copied contract and rename the IDE file to ZRC-6.
 
-Press deploy and the deployment initisation window will appear. Change Gas price to ```2000000000``` and gas limit to ```30000```. The default amount is too small for the amount of bytes we are trying to deploy.
+Press deploy and the deployment initialization window will appear. Change Gas price to ```2000000000``` and gas limit to ```30000```. The default amount is too small for the amount of bytes we are trying to deploy.
 
 ```initial_contract_owner``` This is an address you control that's considered the lead administrator of the contract. This address can later give other addresses permission to have ```Mint``` permissions or ```Operator``` permissions.
 

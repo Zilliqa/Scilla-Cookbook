@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Deploying a contract
 
-Taking the example for [HelloWorld scilla contract deployment](https://github.com/Zilliqa/Zilliqa-JavaScript-Library-Examples/blob/master/node/deployContract.js) we can extend this to deploy an NFT contract.
+Taking the example for [HelloWorld Scilla contract deployment](https://github.com/Zilliqa/Zilliqa-JavaScript-Library-Examples/blob/master/node/deployContract.js) we can extend this to deploy an NFT contract.
 
 ## Amendments made
 

@@ -10,9 +10,9 @@ Let's consider some options of where we could host these files.
 
 ## Surface Web
 
-AWS, Google, and any Linux web server have the advantage of being easily accessable by the general public and the speeds of fetching an image is relatively quick and easy depending on the network speed of you and the image service provider. 
+AWS, Google, and any Linux web server have the advantage of being easily accessible by the general public and the speeds of fetching an image is relatively quick and easy depending on the network speed of you and the image service provider. 
 
-These public environments have the potential to potentially go offline for maintainance or user error. Public servers also have the ability to change what image is shown is also possible by replacing the image on the server providing the content.
+These public environments have the potential to potentially go offline for maintenance or user error. Public servers also have the ability to change what image is shown is also possible by replacing the image on the server providing the content.
 
 Example URL : ```https://mybucket.s3.amazonaws.com/myimage.jpg```
 
@@ -46,7 +46,7 @@ Example URL :```ar://MAVgEMO3qlqe-qHNVs00qgwwbCb6FY2k15vJP3gBLW4```
 
 # MyNFTProject
 
-After you've chosen a storage location, uploaded your resource content and have available a link to access that resource publically over the internet. In the next step we can begin to create the metadata which contains a link to our public .mp4 asset.
+After you've chosen a storage location, uploaded your resource content and have available a link to access that resource publicly over the internet. In the next step we can begin to create the metadata which contains a link to our public .mp4 asset.
 
 ## Further reading
 
