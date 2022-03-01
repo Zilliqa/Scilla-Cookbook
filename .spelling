@@ -294,6 +294,7 @@ sidebar_position
 4
 fetchState.js
 express.js
+nft
  - node_modules/@algolia/autocomplete-core/README.md
 algolia
  - docs/recipes/scilla-recipes/staking.md

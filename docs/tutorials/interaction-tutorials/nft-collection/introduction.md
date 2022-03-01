@@ -12,7 +12,7 @@ You don't need any previous experience with Zilliqa-JS to follow along with this
 
 NFT Collection interaction is a walkthrough tutorial of some of the typical actions you might perform using Zilliqa-JS SDK to interact with deployed contract. The objective for this tutorial is:
 
-* Use Zilliqa-JS to deploy a ZRC-6 contract to the network 
+* Use Zilliqa-JS to deploy a ZRC-6 contract to the network
 * Use Zilliqa-JS to BatchMint tokens to addresses using a minter address
 * Use Zilliqa-JS to get the mutable state of our contract to determine if it's using token_uri or base_uri
 

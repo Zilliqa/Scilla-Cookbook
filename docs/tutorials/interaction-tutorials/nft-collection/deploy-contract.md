@@ -13,7 +13,6 @@ As we stated previously, to first do any NFT operations. We firstly need to crea
 The first change was to copy and paste the ZRC-6 contract code into this example program and remove some of the comments which caused errors.
 Next, we now need to change the immutable parameters being passed. As usual we always pass ```_scilla_version``` first, followed by our defined parameters.
 
-
 ## Example deployment code
 
 ```js

@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# batch minting ZRC-6
+# Batch minting ZRC-6
 
 Taking the example for [HelloWorld Scilla transition interaction](https://github.com/Zilliqa/Zilliqa-JavaScript-Library-Examples/blob/master/node/helloWorld.js) we can extend this to call our NFT contract to perform a Mint or BatchMint operation.
 

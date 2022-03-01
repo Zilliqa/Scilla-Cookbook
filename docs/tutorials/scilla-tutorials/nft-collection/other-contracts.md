@@ -15,7 +15,7 @@ The ZRC-6 NFT contract is scoped to only do so much, other functionality and int
 
 ## Migration contracts
 
-A migration contract is typically used to upgrade an existing NFT collection. Developers may think of many different ways to perform this action. The easiest method to preserve ```token_id``` association with a user address is to directly Mint the tokens to an contract which then burns a token_id (1337) from the old contract, if this operation is successful, then the contract then moves token_id (1337) to the user calling the migrator.
+A migration contract is typically used to upgrade an existing NFT collection. Developers may think of many different ways to perform this action. The easiest method to preserve ```token_id``` association with a user address is to directly Mint all of the tokens to an migration contract. When interacted with, burns a token_id from the old ZRC-1 or ZRC-6 contract, if this operation is successful, then the contract then moves the same token_id from the new nft contract to the user calling the migrator.
 
 [Duck Migrator](https://viewblock.io/zilliqa/address/zil1m2hhu9reau5t57qckj9w2ejttxmn3hyhy77hr4)
 

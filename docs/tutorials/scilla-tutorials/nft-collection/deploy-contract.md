@@ -6,7 +6,7 @@ sidebar_position: 2
 
 For our examples, we'll be taking advantage of the simulated environment functionality of the [Scilla IDE](https://ide.zilliqa.com/#/). This will speed up our productivity as we won't need to wait long for transactions to confirm. With simulated environment confirmed, the populated addresses should be funded, if not claim some from the simulated environment [faucet](https://dev-wallet.zilliqa.com/faucet?network=isolated_server).
 
-![Docusaurus](/img/tutorials/MyNFTProject/zrc6-params.png)
+![Docusaurus](/img/tutorials/mynftproject/zrc6-params.png)
 
 Copy the contract from the ZRC standard for [ZRC-6](https://github.com/Zilliqa/ZRC/blob/master/zrcs/zrc-6.md) - create a new blank Scilla file - paste in the copied contract and rename the IDE file to ZRC-6.
 
