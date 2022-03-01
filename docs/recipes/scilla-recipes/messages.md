@@ -148,7 +148,7 @@ The third example shows the case where a contract is the recipient of a Mint. Th
 You will receive a transaction error if your contract does not implement a callback stub as the chain of execution fails to find the _tag name on your contract.
 :::
 
-![Example banner](./img/../../../../static/img/recipes/messages/flow-diagram.png)
+![Example banner](/img/recipes/messages/flow-diagram.png)
 
 ## Further reading
 

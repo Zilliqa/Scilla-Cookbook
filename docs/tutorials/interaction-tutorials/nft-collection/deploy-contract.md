@@ -2,14 +2,17 @@
 sidebar_position: 2
 ---
 
-# Deploying a contract
+# Deploying a ZRC-6
 
 Taking the example for [HelloWorld Scilla contract deployment](https://github.com/Zilliqa/Zilliqa-JavaScript-Library-Examples/blob/master/node/deployContract.js) we can extend this to deploy an NFT contract.
+
+As we stated previously, to first do any NFT operations. We firstly need to create a contract to house the data association.
 
 ## Amendments made
 
 The first change was to copy and paste the ZRC-6 contract code into this example program and remove some of the comments which caused errors.
 Next, we now need to change the immutable parameters being passed. As usual we always pass ```_scilla_version``` first, followed by our defined parameters.
+
 
 ## Example deployment code
 

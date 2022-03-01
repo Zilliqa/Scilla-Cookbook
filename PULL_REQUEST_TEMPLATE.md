@@ -27,7 +27,7 @@ Images should be compressed using tinypng.com -->
 
 <!-- Check markdown spelling mistakes and add exceptions to the dictionary by running -->
 
-`\mdspell "docs/**/*.md"`
+```\mdspell "docs/**/*.md"```
 
 ## Testing
 

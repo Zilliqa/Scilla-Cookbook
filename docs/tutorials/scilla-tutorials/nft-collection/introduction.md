@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Introduction
 
-We are going to utilise the [ZRC-6 non-fungible token contract](/docs/recipes/scilla-recipes/nonfungible.md) to create and manage an art collection.
+We are going to utilise the [ZRC-6 non-fungible token contract](../../../recipes/scilla-recipes/nonfungible.md) to create and manage an art collection.
 
 You don't need any previous blockchain experience, but general Javascript experience will be useful.
 
@@ -21,3 +21,7 @@ NFT collection is a walkthrough tutorial of the steps required to setup an NFT p
 * Other typical NFT contract interactions
 
 Once we have setup our contract and initially tested the creation (minting) process, we can begin to move the calling of NFT contract logic to Zilliqa-JS to help automate this process or move this into a web interface.
+
+:::tip
+If you found this guide useful, please consider contributing your knowledge and scripts.
+:::

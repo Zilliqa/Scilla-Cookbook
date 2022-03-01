@@ -33,7 +33,7 @@ Take note of the metadata 'resource' being the previously uploaded resource file
 
 ## Making metadata public
 
-So previously we uploaded our image resource, which is attached on our metadata json object on line 3. This metadata json also needs to be uploaded so we can use the metadata link on the token.
+Previously we uploaded our image resource, which is attached on our metadata json object on line 3. This metadata json also needs to be uploaded so we can use the metadata link on the token.
 
 By having the image wrapped inside the metadata, it allows us to pass both the image and some richer details of the token, instead of passing just the image alone.
 
@@ -41,9 +41,9 @@ By having the image wrapped inside the metadata, it allows us to pass both the i
 
 Now with our image and metadata uploaded, we can decide if we want an API to serve the metadata, or if we want to directly embed it onto the token.
 
-The advantage of having an API serve the metadata is that a developer can control what the API is exposing. If files on IPFS need to change, the API can handle showing the correct file or data whilst hiding the data for tokens yet to be minted. In the case of when files need to change whilst embedded them onto the token, this is not possible as when a token_uri is set, the value is then immutable. 
+The advantage of having an API serve the metadata is that a developer can control what the API is exposing. If files on IPFS need to change, the API can handle showing the correct file or data whilst hiding the data for tokens yet to be minted. In the case of when files need to change whilst embedded them onto the token, this is not possible as when a token_uri is set, the value is then immutable.
 
-The developer can set base_uri to an API they control. An example is when ```initial_base_uri``` is set to ```www.api.example.com/``` and token_id is ```1```, ecosystem partners will query ```www.api.example.com/1```. 
+The developer can set base_uri to an API they control. An example is when ```initial_base_uri``` is set to ```www.api.example.com/``` and token_id is ```1```, ecosystem partners will query ```www.api.example.com/1```.
 
 The advantage of embedding the file onto the token is that it's quick and easy with no API required. But then is immutable for further changes. It is recommended to use a solution like decentralised storage to ensure your content isn't taken offline at any stage if opting for a token_uri implementation.
 
@@ -68,9 +68,11 @@ Some ecosystem partners may choose to present data about a collection from this 
 
 ```base_uri``` can be useful to use when you want to guard or change metadata frequently. The API is where you would decide on what to show depending on the current mint count state.
 
-The below is a very simple boilerplate implementation of an express API with more work needed to make it production ready.
+The below is a very simple express.js API.
 
 It currently reads a parameter passed with the GET request called ```token_uri```. It then queries this against an NFT contract checking how many tokens have currently been minted. If then does a further check to see if the token_id has been burnt. The API responds with different HTTP codes depending on which case the logic can match against.
+
+This can be extended to show metadata for correct requests to the API for a project level implementation.
 
 ```js
 const express = require('express')
@@ -127,7 +129,20 @@ async function isTokenIDBurnt(token_id) {
 app.listen(port, () => console.log(`Listening on ${port}`))
 ```
 
+### Contract state
+
+```json
+token_owners
+{
+  "1": "0x24ddedbf3a3df608f4c9fbf56153866947e1b159",
+  "2": "0x24ddedbf3a3df608f4c9fbf56153866947e1b159",
+  "3": "0x24ddedbf3a3df608f4c9fbf56153866947e1b159"
+}
+```
+
 ### Metadata exists for an existing token
+
+In this case, the token exists in state and has not been burnt.
 
 ```bash
 curl --location --request GET 'http://localhost:3000/?token_id=3'
@@ -137,6 +152,8 @@ curl --location --request GET 'http://localhost:3000/?token_id=3'
 
 ### Metadata does not exist for a burnt token
 
+In this case, the token has been burnt and metadata shouldn't be retrieved.
+
 ```bash
 curl --location --request GET 'http://localhost:3000/?token_id=4'
 
@@ -144,6 +161,8 @@ curl --location --request GET 'http://localhost:3000/?token_id=4'
 ```
 
 ### Metadata not exposed for non minted tokens
+
+In this case, the token requested does not exist on the chain and shouldn't be exposed until this token has been minted.
 
 ```bash
 curl --location --request GET 'http://localhost:3000/?token_id=5'
