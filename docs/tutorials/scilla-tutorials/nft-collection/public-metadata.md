@@ -43,7 +43,7 @@ Now with our image and metadata uploaded, we can decide if we want an API to ser
 
 The advantage of having an API serve the metadata is that a developer can control what the API is exposing. If files on IPFS need to change, the API can handle showing the correct file or data whilst hiding the data for tokens yet to be minted. In the case of when files need to change whilst embedded them onto the token, this is not possible as when a token_uri is set, the value is then immutable.
 
-The developer can set base_uri to an API they control. An example is when ```initial_base_uri``` is set to ```www.api.example.com/``` and token_id is ```1```, ecosystem partners will query ```www.api.example.com/1```.
+The developer can set base_uri to an API they control. An example is when ```initial_base_uri``` is set to ```www.api.example.com/``` and token_id is ```1```, ecosystem partners will query ```www.api.example.com/1``` when looking up details for token_id 1.
 
 The advantage of embedding the file onto the token is that it's quick and easy with no API required. But then is immutable for further changes. It is recommended to use a solution like decentralised storage to ensure your content isn't taken offline at any stage if opting for a token_uri implementation.
 
