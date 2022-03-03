@@ -10,15 +10,19 @@ With the metadata available and a decision made on if the project is using ```to
 
 As discussed previously, the base_uri mode offloads the handling of images and metadata to the API and as such, the minter does not have to provide a token_uri as that is calculated by base_uri/token_id. If a token_uri is provided here, then base_uri is overridden to show the token_uri for this particular token.
 
+```base_uri``` is suited best to randomised minting projects which do not want to expose potential data directly on the chain. This can have other implications regarding failed transactions inadvertently revealing the data for a token depending on the implementation.
+
 ![Docusaurus](../../../../static/img/tutorials/mynftproject/mint-base.png)
 
-Another advantage of base_uri is that since no token_uri needs to be provided, you can BatchMint several tokens whilst not providing a token_uri.
+Another advantage of base_uri is that since no ```token_uri``` needs to be provided, you can BatchMint several tokens whilst not providing a token_uri.
 
 ## token_uri
 
 If you are not providing a base_uri, every token is expected to have a ```token_uri``` where the metadata can be found.
 
 ![Docusaurus](../../../../static/img/tutorials/mynftproject/mint-token.png)
+
+```token_uri``` is best suited to non-randomised projects. Since the data resides on the chain a failed transaction will reveal the ```token_uri``` so this is best used when the data is not required to be private. If ```base_uri``` is empty, then it is expected that all of the tokens will use ```token_uri```.
 
 ## Contract state
 

@@ -20,7 +20,7 @@ NFT collection is a walkthrough tutorial of the steps required to setup an NFT p
 * Mint a token to an address
 * Other typical NFT contract interactions
 
-Once we have setup our contract and initially tested the creation (minting) process, we can begin to move the calling of NFT contract logic to Zilliqa-JS to help automate this process or move this into a web interface.
+Once we have setup our contract and initially tested the creation (minting) process, we can begin to move the calling of NFT contract logic to zilliqa-js to help automate this process or move this into a web interface.
 
 :::tip
 If you found this guide useful, please consider contributing your knowledge and scripts.

@@ -14,8 +14,9 @@ Press deploy and the deployment initialization window will appear. Change Gas pr
 
 ```initial_contract_owner``` This is an address you control that's considered the lead administrator of the contract. This address can later give other addresses permission to have ```Mint``` permissions or ```Operator``` permissions.
 
-```initial_base_uri``` We'll come back to this later in detail. This is an optional way of providing metadata/images for your tokens by using an API. 
-An example is when ```initial_base_uri``` is set to ```www.api.example.com/``` and token_id ```1``` is queried, ecosystem partners will look at ```www.api.example.com/1```. 
+```initial_base_uri``` We'll come back to this later in detail. This is an optional way of providing metadata/images for your tokens by using an API.
+
+An example is when ```initial_base_uri``` is set to ```www.api.example.com/``` and token_id ```1``` is queried, ecosystem partners will look at ```www.api.example.com/1```.
 
 ```name``` The name of your NFT contract. (MyNFTProject)
 

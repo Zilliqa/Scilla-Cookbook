@@ -7,7 +7,7 @@ Review the Javascript that defines [deployContract.js](https://github.com/Zilliq
 
 ## Deploy button Contract
 
-Using the deployContract.js file defined in Zilliqa-JS we have the ability to deploy a contract to a network. We provide a private key of the address which is deploying, the previous network configuration to establish a connection, in our case this is testnet, but could be mainnet or isolated environment.
+Using the deployContract.js file defined in zilliqa-js we have the ability to deploy a contract to a network. We provide a private key of the address which is deploying, the previous network configuration to establish a connection, in our case this is testnet, but could be mainnet or isolated environment.
 
 We refactor the `deployContract.js` method to fit our usecase.
 

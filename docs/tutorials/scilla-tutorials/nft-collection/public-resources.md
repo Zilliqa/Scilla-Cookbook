@@ -26,11 +26,13 @@ A node can pin content in order to keep (and provide) it forever, or discard con
 
 If you add a new version of your file to IPFS, its cryptographic hash is different, and so it gets a new CID. This means files stored on IPFS are resistant to tampering and censorship — any changes to a file don't overwrite the original, and common chunks across files can be reused in order to minimize storage costs.
 
-Bad URL : ```https://permaweb.eu.org/ipfs/QmSjJGa7zXUbixvYJpgkRkaSCYEBtSwgVtfzkoD3QkSsty```
+An IPFS URL can be fetched from a specific provider using a gateway URL and an IPFS hash. In the below case, the gateway is ```https://permaweb.eu.org/ipfs/``` and the IPFS CID is ```QmSjJGa7zXUbixvYJpgkRkaSCYEBtSwgVtfzkoD3QkSsty```. This pattern of coupling a gateway to a CID is restrictive as the CID can be fetched from any valid gateway.
 
-We can tell ecosystem partners we have a file on IPFS with the syntax ```ipfs://```. Ecosystem providers will use any provider they wish this way, including their own IPFS server. This reduces closely-coupling a provider with a resource, we should take advantage of our content being available on any node.
+Gateway defined URL : ```https://permaweb.eu.org/ipfs/QmSjJGa7zXUbixvYJpgkRkaSCYEBtSwgVtfzkoD3QkSsty```
 
-Example URL :```ipfs://QmSjJGa7zXUbixvYJpgkRkaSCYEBtSwgVtfzkoD3QkSsty```
+We can tell ecosystem partners we have a file on IPFS with the syntax ```ipfs://```. Ecosystem providers will use any provider they wish this way, including their own IPFS server. This reduces the coupling between a gateway and a resource.
+
+Any gateway can be used URL :```ipfs://QmSjJGa7zXUbixvYJpgkRkaSCYEBtSwgVtfzkoD3QkSsty```
 
 ## Arweave
 
@@ -38,11 +40,11 @@ Lastly, Arweave is a worldwide community-owned permaweb. Anyone can contribute t
 
 All content the permaweb holds is permanent, decentralized, and easily retrievable. This includes images, text, applications, and just about anything else that lives on the web.
 
-Bad URL : ```https://gacwaegdw6vfvhx2uhgvntjuvigda3bg7iky3jgxtpet66abfvxa.arweave.net/MAVgEMO3qlqe-qHNVs00qgwwbCb6FY2k15vJP3gBLW4```
+Gateway defined URL : ```https://gacwaegdw6vfvhx2uhgvntjuvigda3bg7iky3jgxtpet66abfvxa.arweave.net/MAVgEMO3qlqe-qHNVs00qgwwbCb6FY2k15vJP3gBLW4```
 
 We can tell ecosystem partners we have a file on Arweave with the syntax ```ar://```. Ecosystem providers will use any provider they wish this way, including their own Arweave server.
 
-Example URL :```ar://MAVgEMO3qlqe-qHNVs00qgwwbCb6FY2k15vJP3gBLW4```
+Any gateway can be used URL :```ar://MAVgEMO3qlqe-qHNVs00qgwwbCb6FY2k15vJP3gBLW4```
 
 ## MyNFTProject
 
