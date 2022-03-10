@@ -175,3 +175,5 @@ curl --location --request GET 'http://localhost:3000/?token_id=5'
 ## Further reading
 
 [ipfs.io - Best Practices For NFT Data](https://docs.ipfs.io/how-to/best-practices-for-nft-data)
+
+[Zilliqa Github - What is Metadata and Token URI?](https://github.com/Zilliqa/ZRC/blob/main/zrcs/zrc-7.md#i-what-is-metadata-and-token-uri)
