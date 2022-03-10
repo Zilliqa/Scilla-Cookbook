@@ -37,7 +37,7 @@ Previously we uploaded our image resource, which is attached on our metadata jso
 
 By having the image wrapped inside the metadata, it allows us to pass both the image and some richer details of the token, instead of passing just the image alone.
 
-## base_uri vs token_uri
+## When to use base URI
 
 Now with our image and metadata uploaded, we can decide if we want an API to serve the metadata, or if we want to directly embed it onto the token.
 
@@ -45,7 +45,9 @@ The advantage of having an API serve the metadata is that a developer can contro
 
 The developer can set base_uri to an API they control. An example is when ```initial_base_uri``` is set to ```www.api.example.com/``` and token_id is ```1```, ecosystem partners will query ```www.api.example.com/1``` when looking up details for token_id 1.
 
-The advantage of embedding the file onto the token is that it's quick and easy with no API required. But then is immutable for further changes. It is recommended to use a solution like decentralised storage to ensure your content isn't taken offline at any stage if opting for a token_uri implementation.
+Once the minting phase is complete and if the metadata won't change in the future. Developers may choose to remove the API and change base_uri to some folder of decentralised storage. An IPFS folder is the recommended solution. The base_uri would become ```ipfs://QmeUhYpVsJUD2ekWnbSsvjQ2vSBWDbrC2PmnjdCswYTjDF/``` and the same logic of having the token_id become part of the query string. ```ipfs://QmeUhYpVsJUD2ekWnbSsvjQ2vSBWDbrC2PmnjdCswYTjDF/1```
+
+An advantage of embedding the file onto the token is that it's quick and easy with no API required. But then is immutable for further changes. It is recommended to use a solution like decentralised storage to ensure your content isn't taken offline at any stage if opting for a token_uri implementation.
 
 It's possible to have a ```base_uri``` set and have set a ```token_uri```  for a token_id. In this case, the standard says that ```token_uri``` overrides ```base_uri``` if both are present.
 
@@ -169,3 +171,7 @@ curl --location --request GET 'http://localhost:3000/?token_id=5'
 
 403 requested token_id 5 is greater than what was found onchain 4
 ```
+
+## Further reading
+
+[ipfs.io - Best Practices For NFT Data](https://docs.ipfs.io/how-to/best-practices-for-nft-data)
