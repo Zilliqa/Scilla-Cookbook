@@ -9,7 +9,7 @@ const config = {
   tagline:
     "For the scilla development community, by the scilla development community",
   url: "https://scilla-cookbook.org",
-  baseUrl: "/Scilla-Cookbook/",
+  baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/site/favicon.ico",
