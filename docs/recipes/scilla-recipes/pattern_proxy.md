@@ -18,17 +18,14 @@ The proxy pattern is easily understood with an example of minting NFTs. An NFT c
 (* configured with 'NFT_Proxy' as a minter before calls are made *)
 contract NonfungibleToken()
 
-procedure MintToken(to: ByStr20)
-  IsMinter _sender;
+(* internal proc to mint the token *)
+procedure MintToken(to: ByStr20, token_uri: String)
   ...
 end
 
-transition AddMinter(to: ByStr20)
-...
-end
-
-(* if anyone BUT the minter calls this transition an error is thrown *)
-transition Mint(to: ByStr20)
+(* (2) NFT checks the sender of the call, checking if they are an approved minter *)
+transition Mint(to: ByStr20, token_uri: String)
+  IsMinter _sender;
   MintToken to;
   ...
 end
@@ -38,15 +35,23 @@ end
 (* allows anyone to call ProxyBuy, when sending to NonfungibleToken the _sender 'NFT_Proxy' will be a minter *)
 contract NFT_Proxy()
 
-procedure ProxyCallMint(to: ByStr20)
+(* (1a) internal proc to ask the NFT contract to mint a token *)
+procedure ProxyCallMint(token_uri: String)
   IsMinter _sender;
-    e = {};
+    e = {
+    _tag: "MintToken";
+    _recipient: NonfungibleToken;
+    _amount: Uint128 0;
+    to: _sender;
+    token_uri: token_uri
+  };
+  msgs = one_msg msg_to_sender;
+  send msgs
   ...
 end
 
-(* _sender calls this function *)
+(* (1) user calls this function on the proxy *)
 transition ProxyBuy()
-  (* is _amount the quantity we are expecting? *)
   ProxyCallMint;
   ...
 end

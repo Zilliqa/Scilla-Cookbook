@@ -6,10 +6,10 @@ sidebar_position: 5
 
 We've met all the objectives set out in 300 lines of easy to read and understand Javascript and now have a form of primitive automation.
 
-- [x] Use Zilliqa-JS to deploy a contract.
-- [x] Use Zilliqa-JS to interact with and press the button.
-- [x] Use Zilliqa-JS to get the mutable state of our contract.
-- [x] Use Zilliqa-JS to listen for events in our contract.
+- [x] Use zilliqa-js to deploy a contract.
+- [x] Use zilliqa-js to interact with and press the button.
+- [x] Use zilliqa-js to get the mutable state of our contract.
+- [x] Use zilliqa-js to listen for events in our contract.
 
 ```js
 const { BN, Long, bytes, units } = require('@zilliqa-js/util');
