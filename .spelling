@@ -297,6 +297,21 @@ fetchState.js
 express.js
 nft
 bech32
+SetBaseURI
+AddMinter
+RemoveMinter
+AddOperator
+RemoveOperator
+SetContractOwnershipRecipient
+BurnToken
+SetSpender
+TransferToken
+TransferFrom
+RemoveSpender
+dapps
+deadlinks
+404
+NFTCollection
  - node_modules/@algolia/autocomplete-core/README.md
 algolia
  - docs/recipes/scilla-recipes/staking.md

@@ -28,11 +28,17 @@ If you add a new version of your file to IPFS, its cryptographic hash is differe
 
 An IPFS URL can be fetched from a specific provider using a gateway URL and an IPFS hash. In the below case, the gateway is ```https://permaweb.eu.org/ipfs/``` and the IPFS CID is ```QmSjJGa7zXUbixvYJpgkRkaSCYEBtSwgVtfzkoD3QkSsty```. This pattern of coupling a gateway to a CID is restrictive as the CID can be fetched from any valid gateway.
 
+:::danger
 Gateway defined URL : ```https://permaweb.eu.org/ipfs/QmSjJGa7zXUbixvYJpgkRkaSCYEBtSwgVtfzkoD3QkSsty```
+:::
+
+If a gateway is used then this can lead to performance issues when rendering your resources on ecosystem dapps, as the gateway has a limit to how much data you can request in a given time.
 
 We can tell ecosystem partners we have a file on IPFS with the syntax ```ipfs://```. Ecosystem providers will use any provider they wish this way, including their own IPFS server. This reduces the coupling between a gateway and a resource.
 
+:::tip
 Any gateway can be used URL :```ipfs://QmSjJGa7zXUbixvYJpgkRkaSCYEBtSwgVtfzkoD3QkSsty```
+:::
 
 ## Arweave
 
@@ -40,13 +46,21 @@ Lastly, Arweave is a worldwide community-owned permaweb. Anyone can contribute t
 
 All content the permaweb holds is permanent, decentralized, and easily retrievable. This includes images, text, applications, and just about anything else that lives on the web.
 
+:::danger
 Gateway defined URL : ```https://gacwaegdw6vfvhx2uhgvntjuvigda3bg7iky3jgxtpet66abfvxa.arweave.net/MAVgEMO3qlqe-qHNVs00qgwwbCb6FY2k15vJP3gBLW4```
+:::
 
 We can tell ecosystem partners we have a file on Arweave with the syntax ```ar://```. Ecosystem providers will use any provider they wish this way, including their own Arweave server.
 
+:::tip
 Any gateway can be used URL :```ar://MAVgEMO3qlqe-qHNVs00qgwwbCb6FY2k15vJP3gBLW4```
+:::
 
-## MyNFTProject
+## Points to consider
+
+If you use a non decentralised type of image storage and if payment was to be suspended, the provider would stop hosting your images. Typically this leads to deadlinks  and this isn't appealing to buy an asset which has a resource potentially returning a 404 in the future. Decentralised hosting ensures that as long as a node somewhere is pinning that asset then it will exist on the network to be served.
+
+## NFTCollection
 
 After you've chosen a storage location, uploaded your resource content and have available a link to access that resource publicly over the internet. In the next step we can begin to create the metadata which contains a link to our public .mp4 asset.
 

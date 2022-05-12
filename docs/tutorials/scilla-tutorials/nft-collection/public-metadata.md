@@ -8,7 +8,7 @@ The below is an example of what metadata for a token should be presented. Read t
 
 Take note of the metadata 'resource' being the previously uploaded resource file location.
 
-```json {3}
+```json {3,4,5}
 {
   "name": "Creature #101",
   "resources": [
@@ -33,9 +33,13 @@ Take note of the metadata 'resource' being the previously uploaded resource file
 
 ## Making metadata public
 
-Previously we uploaded our image resource, which is attached on our metadata json object on line 3. This metadata json also needs to be uploaded so we can use the metadata link on the token.
+Previously we uploaded our image resource, which is attached on our metadata json object on lines 3-5. This metadata json also needs to be uploaded so we can use the metadata link on the token.
 
 By having the image wrapped inside the metadata, it allows us to pass both the image and some richer details of the token, instead of passing just the image alone.
+
+:::tip
+we can give our metadata mutability using base_uri or immutability using token_uri
+:::
 
 ## When to use base URI
 
@@ -47,9 +51,15 @@ The developer can set base_uri to an API they control. An example is when ```ini
 
 Once the minting phase is complete and if the metadata won't change in the future. Developers may choose to remove the API and change base_uri to some folder of decentralised storage. An IPFS folder is the recommended solution. The base_uri would become ```ipfs://QmeUhYpVsJUD2ekWnbSsvjQ2vSBWDbrC2PmnjdCswYTjDF/``` and the same logic of having the token_id become part of the query string. ```ipfs://QmeUhYpVsJUD2ekWnbSsvjQ2vSBWDbrC2PmnjdCswYTjDF/1```
 
+## When to use token URI
+
 An advantage of embedding the file onto the token is that it's quick and easy with no API required. But then is immutable for further changes. It is recommended to use a solution like decentralised storage to ensure your content isn't taken offline at any stage if opting for a token_uri implementation.
 
 It's possible to have a ```base_uri``` set and have set a ```token_uri```  for a token_id. In this case, the standard says that ```token_uri``` overrides ```base_uri``` if both are present.
+
+:::tip
+Since the metadata is immutable and cannot be changed, it's recommended to use base URI to have control over changing the value if it becomes unavailable in the future.
+:::
 
 ## Creating project level metadata
 
@@ -67,6 +77,10 @@ Some ecosystem partners may choose to present data about a collection from this 
 ```
 
 ## Metadata API scaffolding
+
+:::tip
+For our example we will use token_uri, so have no need for this API.
+:::
 
 ```base_uri``` can be useful to use when you want to guard or change metadata frequently. The API is where you would decide on what to show depending on the current mint count state.
 
