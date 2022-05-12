@@ -4,8 +4,8 @@
   <ShortName>Scilla Cookbook</ShortName>
   <Description>Search Scilla Cookbook</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://elliott-green.github.io/Scilla-Cookbook-1/img/site/favicon.ico</Image>
-  <Url type="text/html" method="get" template="https://elliott-green.github.io/Scilla-Cookbook-1/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://elliott-green.github.io/Scilla-Cookbook-1/opensearch.xml" />
-  <moz:SearchForm>https://elliott-green.github.io/Scilla-Cookbook-1/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://scilla-cookbook.org/Scilla-Cookbook/img/site/favicon.ico</Image>
+  <Url type="text/html" method="get" template="https://scilla-cookbook.org/Scilla-Cookbook/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://scilla-cookbook.org/Scilla-Cookbook/opensearch.xml" />
+  <moz:SearchForm>https://scilla-cookbook.org/Scilla-Cookbook/</moz:SearchForm>
 </OpenSearchDescription>
