@@ -70,13 +70,13 @@ contract Proxy()
 
 transition ProxyPressButton(example_contract_address: ByStr20)
     i_value = Uint256 44;
-    b_value = example_contract_address
+    b_value = example_contract_address;
     example_contract_call = {
         _tag: "ExampleWithParams";
         _recipient: example_contract_address;
         _amount: Uint128 0;
         int_value: i_value;
-        bystr_value: b_value;
+        bystr_value: b_value
     };
     msgs = one_msg example_contract_call;
     send msgs
