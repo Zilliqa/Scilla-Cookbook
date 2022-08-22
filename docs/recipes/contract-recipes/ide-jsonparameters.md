@@ -57,6 +57,8 @@ transition Test(input: List (Pair ByStr20 Uint256))
 
 ### List of Pair
 
+Used as part of BatchMint in ZRC-6.
+
 ```ocaml
 transition Test(input: List (Pair ByStr20 Uint32))
 ```
@@ -64,17 +66,17 @@ transition Test(input: List (Pair ByStr20 Uint32))
 ```json
   {
     "vname": "plist",
-    "type": "List (Pair ByStr20 Uint32)",
+    "type": "List (Pair ByStr20 String)",
     "value": [
       {
         "constructor": "Pair",
-        "argtypes": [ "ByStr20", "Uint32" ],
-        "arguments": [ "0x12345678901234567890123456789012345678ab", "1" ]
+        "argtypes": [ "ByStr20", "String" ],
+        "arguments": [ "0x12345678901234567890123456789012345678ab", "" ]
       },
       {
         "constructor": "Pair",
-        "argtypes": [ "ByStr20", "Uint32" ],
-        "arguments": [ "0x12345678901234567890123456789012345678bd", "2" ]
+        "argtypes": [ "ByStr20", "String" ],
+        "arguments": [ "0x12345678901234567890123456789012345678bd", "" ]
       } 
     ]
   }
@@ -133,3 +135,4 @@ transition Test(input: Vnode)
   ]
 }
 ```
+

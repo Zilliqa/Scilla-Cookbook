@@ -267,6 +267,24 @@ transition Remove()
 end
 ```
 
+### Remote Read ADT (JS only)
+
+In this example two contracts are deployed. `RemoteReadAdt` will perform a remote read call to `RemoteReadAdtFrom` where the remote reads type is a custom ADT.
+
+[This example is shown in Javascript](https://github.com/TheDrBee/oSCILLAtor/blob/main/js/RemoteReadAdt.js). Once the two contracts are deployed, one call is made to `RemoteReadAdtFrom` to edit it's state field to have some value, then another call is made to `RemoteReadAdt` to read the custom type just set.
+
+Since the two contracts share a library, it is possible for them to share types.
+
+```ocaml
+scilla_version 0
+
+library AdtLib
+
+type AB =
+ | A of Uint32
+ | B of Uint32
+```
+
 ## Further reading
 
 [adt.scilla](https://github.com/TheDrBee/oSCILLAtor/blob/079f2400cfa1e6fdc7a7b0449bd65406186a1f3e/contracts/Adt.scilla)
@@ -276,3 +294,7 @@ end
 [Interfacing.scilla](https://github.com/TheDrBee/oSCILLAtor/blob/079f2400cfa1e6fdc7a7b0449bd65406186a1f3e/contracts/Interfacing.scilla)
 
 [Scilla Documentation - User Defined ADT](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html?highlight=adt#user-defined-adts)
+
+[TheDrBee - RemoteReadAdt.js](https://github.com/TheDrBee/oSCILLAtor/blob/main/js/RemoteReadAdt.js)
+
+[TheDrBee - AdtLib.scilib](https://github.com/TheDrBee/oSCILLAtor/blob/main/scilib/AdtLib.scilib)
