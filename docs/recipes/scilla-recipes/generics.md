@@ -1,0 +1,166 @@
+---
+tags:
+  - generic
+  - types
+  - tfun
+---
+
+# Generic Types
+
+The TypeFunction smart contract shows examples how to define generic type function with argument `t : T`, and how to use them for concrete types `tfun: 'T => expr`.
+
+fst is copied from PairUtils: it extracts the first element of a Pair holding values of two arbitrary types 'A and 'B (the parametric types). The transition StringUint32Pair(.) shows how to apply it for a Pair holding a first element of type String and a second one of type Uint32 (it returns the String element).
+
+list_from_option constructs a list out of an Option holding one or no value of an arbitrary type. If the option holds a value (of type 'A, the parametric type), a one element list is returned with this value (of type 'A). This is shown with an Option holding a Uint32. If the option does not hold a value (still of type 'A, but constructed using None), the list returned is empty (but defined to hold elements of type 'A nevertheless).
+
+pair_compare compares the two elements of a Pair with both elements of a general type 'A. It takes a functor compare as argument: compare: 'A -> 'A -> Bool. As an example we use the builtin type Uint32 and use the builtin eq as comparison operator, see transition ArePairElementsEqual(a: Uint32, b: Uint32).
+
+Note that one can not use builtin eq inside a typed function directly, as it does only work for some types but not for general types. To compare general types (e.g. a user defined ADT) one has to write a comparison functor which we show for the example of an ADT just holding a (builtin!) Uint32 value, see transition ArePairElementsEqualWithADT(a: Uint32, b: Uint32).
+
+```ocaml
+scilla_version 0
+
+(*
+  Type functions: how to define and use them
+
+  from Scilla documentation:
+  tfun 'T => expr : A type function that takes 'T as a parametric type
+  and returns the value to which expression expr evaluates.
+
+  Note: a type function can have more than one parametric type
+*)
+
+library TypeFunction
+
+(* first  element in a Pair (a,b)         *)
+(* a is of type A, b of type B            *)
+(* copied here from PairUtils library     *)
+let fst =
+  tfun 'A => (* a is of type A *)
+  tfun 'B => (* b is of type B *)
+  fun (p : Pair ('A) ('B)) =>
+    match p with
+    | Pair a b => a
+    end
+
+(* Build a list out of an Option holding    *)
+(* a value of any type (or None)            *)
+(* if the Option has a value, a one-element *)
+(* list with that value is built, otherwise *)
+(* an empty list                            *)
+let list_from_option =
+  tfun 'A =>
+  fun(op: Option ('A)) =>
+    let empty_list = Nil {'A} in
+    match op with
+    | None => (* Option has no value *)
+      empty_list
+    | Some value => (* Option has a value *)
+      Cons {'A} value empty_list
+    end
+
+(* A typed function where one of the arguments is *)
+(* a function again: The builtin 'eq' can only be *)
+(* used for builtin types. Here we show how to    *)
+(* write a typed function on a general type that  *)
+(* gets the equality comparison as a function     *)
+(* and IF the function type IS a builtin type it  *)
+(* can use the builtin eq.                        *)
+(* The example is a general Pair where both ele-  *)
+(* ments are of the same type and it returns the  *)
+(* result of a comparison function applied to the *)
+(* two elements                                   *)  
+let pair_compare = 
+  tfun 'A =>
+  fun (p : Pair ('A) ('A) ) =>
+  fun (compare: 'A -> 'A -> Bool) =>
+    match p with 
+    | Pair a b => 
+      compare a b
+    end  
+
+type ADT = | ADT of Uint32
+
+contract TypeFunction
+()
+
+(* call the library function fst with types 'A=String, 'B=Uint32 *)
+transition StringUint32Pair()
+  (* create a Pair for testing *)
+  p = (* p = (a_string, b_num = ("Hello", 13) *)
+    let a_string = "Hello" in
+    let b_num = Uint32 13 in
+    Pair {String Uint32} a_string b_num;
+  (* call the t fun fst with A'=String, B'=Uint32 *)
+  result =
+    let first_el = @fst String Uint32 in
+    first_el p;
+  ev = {_eventname : "StringUint32Pair"; first_el : result};
+  event ev
+end
+
+(* call the library function list_from_option twice:            *)
+(*  1) with type 'A = Uint32 and an Option holding value 1      *)
+(*      ==> returns a list [1] (elements of type Uint32)        *)
+(*  2) with type 'A = Bool with an Option not holding a value   *)
+(*      ==> returns an empty list [] (elements of type Bool)    *)
+transition ListFromOption()
+  option1 = let one = Uint32 1 in
+    Some {Uint32} one;
+  list1 = let lUint32 = @list_from_option Uint32 in
+    lUint32 option1;
+  option2 = None {Bool};
+  list2 = let lBool = @list_from_option Bool in
+    lBool option2;
+  ev = {_eventname: "ListFromOption";
+    option_Uint32: option1; list_Uint32: list1;
+    option_Bool: option2; list_bool: list2};
+  event ev
+end
+
+(* call the library function pair_compare for a Pair holding    *)
+(* two Uint32's and compare the entries for equality using      *)
+(* builtin 'eq'                                                 *)
+transition ArePairElementsEqual(a: Uint32, b: Uint32)
+  res = 
+    let equal = 
+      fun(x: Uint32) =>
+      fun(y: Uint32) =>
+        builtin eq x y (* use builtin eq on builtin type Uint32 *) 
+      in
+    let pair_equal = @pair_compare Uint32 in (* set type to builtin Uint32 *)
+    let pair = Pair {Uint32 Uint32} a b in (* apply it to a Pair (a,b) *)
+  pair_equal pair equal; (* use 'equal' as comparison function *)
+  ev = { _eventname: "ArePairElementsEqual"; a: a; b: b; result: res };
+  event ev
+end
+
+(* call the library function pair_compare for a Pair holding    *)
+(* two user defined ADTs holding Uint32's                       *)
+transition ArePairElementsEqualWithADT(a: Uint32, b: Uint32)
+  aa = ADT a; (* construct ADT to use lib function with ADT *)
+  bb = ADT b;
+  res = 
+    let equal = (* extract values from ADT and only then use builtin eq *)
+      fun(x: ADT) =>
+      fun(y: ADT) =>
+        let get_val = fun(adt: ADT) => (* extract the value of type Uint32 *)
+          match adt with 
+          | ADT value => value
+          end 
+        in
+        let xx = get_val x in 
+        let yy = get_val y in (* xx and yy are now of type Uint32 *)
+        builtin eq xx yy
+      in
+    let pair_equal = @pair_compare ADT in (* set type to non builtin ADT *)
+    let pair = Pair {ADT ADT} aa bb in 
+  pair_equal pair equal; (* use 'equal' as comparison function *)
+  ev = { _eventname: "ArePairElementsEqualWithADT"; a: a; b: b; result: res };
+  event ev
+end
+```
+
+[TheDrBee - TypeFunction.scilla](https://github.com/TheDrBee/oSCILLAtor/blob/main/contracts/TypeFunction.scilla)
+
+[Scilla Documentation - Expressions](https://scilla.readthedocs.io/en/latest/scilla-in-depth.html#expressions)

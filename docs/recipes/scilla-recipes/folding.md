@@ -76,6 +76,92 @@ let fib = fun (n : Nat) =>
   match res with | Pair x y => x end
 ```
 
+## Multiple argument forall
+
+The below example `ForAllWithArgs` shows a possibility on how to work around a limitation of forall. Namely that forall calls a procedure that takes exactly one argument for each element of a list one-by-one. 
+
+It is, however, not possible to pass another argument possibly of a different type in the same call, or a parameter. One could use a field to "pass" the parameter, writing its value before calling forall and reading it in the procedure. However, this still does not allow passing a different second argument in each call, rather this is gas expensive and hacky solution.
+
+The solution presented here constructs a list holding Pairs of the first and second argument (using list_zip from ListUtils), and this list of pairs is passed to forall. Consequently, the procedure takes an argument of such a pair type. Inside the procedure the pair is split in its two elements (using fst and snd from PairUtils) and this gives the two arguments from the Pair.
+
+```ocaml
+(* forall calls a procedure with each element of a list as its argument       *)
+(* one after the other. However, it is not possible to call a procedure       *)
+(* with more than one argument using forall. One solution is shown here:      *)
+(* - create a 2nd list holding the 2nd arguments                              *)
+(* - use list_zip to create a list holding pairs with elements of both lists  *)
+(* - define the procedure to take as argument a pair (holding same types)     *)
+(* - use forall on this list calling the procedure for each of its elements   *)
+(* - in the procedure extract the two elements of the pair: the 2nd entry     *)
+(*   is the second argument, or the parameter                                 *)
+
+scilla_version 0
+
+import ListUtils PairUtils
+
+library ForAllWithArgs
+
+
+let one   = Uint32 1
+let two   = Uint32 2
+let three = Uint32 3
+
+let mOne = Int32 -1
+let mTwo = Int32 -2
+let mThree = Int32 -3
+
+let create_3el_list =
+  tfun 'A =>
+  fun (e1 : 'A) =>
+  fun (e2 : 'A) =>
+  fun (e3 : 'A) =>
+    let nil = Nil {'A} in
+    let le3 = Cons {'A} e3 nil in (* insert in front *)
+    let le2e3 = Cons {'A} e2 le3 in
+    Cons {'A} e1 le2e3 (* [e1, e2, e3] *)
+
+contract ForAllWithArgs()
+
+field results: List Int32 = Nil {Int32}
+
+procedure Product(p: Pair Uint32 Int32)
+  (* compute the product of the pairs' elements (integer product) *)
+  arg1 =
+    let f = @fst Uint32 Int32 in
+    f p;
+  arg2 =
+    let s = @snd Uint32 Int32 in
+    s p;
+  arg1_int  = builtin to_int32 arg1; (* arg1 is a Uint32, convert to Int32 *)
+  match arg1_int with
+  | Some int =>
+    prod = builtin mul int arg2;
+    current_list <- results;
+    new_list = Cons {Int32} prod current_list;
+    results := new_list
+  | None =>
+  end
+end
+
+transition ForAllProductWithArg()
+  uints =
+    let cr = @create_3el_list Uint32 in
+    cr one two three;
+  ints =
+    let cr = @create_3el_list Int32 in
+    cr mOne mTwo mThree;
+  pairs = (* create a list of pairs p_i = (arg1_i, arg2_i), i=0,1,2 *)
+    let zip = @list_zip Uint32 Int32 in
+    zip uints ints;
+  forall pairs Product;
+  res <- results;
+  (* expected result: [3*(-3), 2*(-2), 1*(-1)] = [-9, -4, -1] *)
+  ev = {_eventname: "Results"; products: res};
+  event ev
+end
+```
+
 ## Further reading
 
 [TheDrBee - Recursion.scilla](https://github.com/TheDrBee/oSCILLAtor/blob/main/contracts/Recursion.scilla)
+[TheDrBee - ForAllWithArgs.scilla](https://github.com/TheDrBee/oSCILLAtor/blob/main/contracts/ForAllWithArgs.scilla)

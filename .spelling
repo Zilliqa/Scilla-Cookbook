@@ -312,6 +312,11 @@ dapps
 deadlinks
 404
 NFTCollection
+js
+hacky
+fst
+snd
+eq
  - node_modules/@algolia/autocomplete-core/README.md
 algolia
  - docs/recipes/scilla-recipes/staking.md
@@ -322,3 +327,19 @@ L106
 zil1uejexs2t55m7jed4ur4hywjckngl4nyfzcgrpm
  - docs/tutorials/scilla-tutorials/nft-collection/public-metadata.md
 ipfs.io
+ - docs/recipes/scilla-recipes/adt.md
+RemoteReadAdt.js
+AdtLib.scilib
+ - docs/recipes/scilla-recipes/folding.md
+list_zip
+ForAllWithArgs.scilla
+ - docs/recipes/scilla-recipes/generics.md
+TypeFunction
+StringUint32Pair
+list_from_option
+pair_compare
+ArePairElementsEqual
+ArePairElementsEqualWithADT
+TypeFunction.scilla
+ - docs/recipes/scilla-recipes/pair.md
+Truple
