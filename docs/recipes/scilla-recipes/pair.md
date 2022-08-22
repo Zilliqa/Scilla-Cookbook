@@ -48,7 +48,7 @@ transition BatchMint(to: ByStr20, token_uris_list: List String)
 
 Since an instance of a Pairs element can have a type, it's possible to nest another Pair inside your pair.
 
-The first element is a key, so this could be a users address, the second element is an instance of pair, so when you examine the second element, it'll have two more values of some type to read from, with the inital key, we have three values, from two nested instances of Pair.
+The first element is a key, so this could be a users address, the second element is an instance of pair, so when you examine the second element, it'll have two more values of some type to read from, with the initial key, we have three values, from two nested instances of Pair.
 
 ```ocaml
 scilla_version 0
